@@ -1,3 +1,5 @@
+package model;
+
 public class Pet
 {
   private String species;
@@ -93,7 +95,7 @@ public class Pet
 
   public String toString()
   {
-    return "Pet{" + "species='" + species + '\'' + ", age=" + age + ", gender='"
+    return "model.Pet{" + "species='" + species + '\'' + ", age=" + age + ", gender='"
         + gender + '\'' + ", color='" + color + '\'' + ", name='" + name + '\''
         + ", comment='" + comment + '\'' + ", price=" + price + '}';
   }

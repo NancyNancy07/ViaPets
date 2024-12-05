@@ -1,3 +1,5 @@
+package model;
+
 public class Rodent extends Pet
 {
   private boolean isAggressive;

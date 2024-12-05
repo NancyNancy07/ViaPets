@@ -1,3 +1,5 @@
+package model;
+
 public class Fish extends Pet
 {
   private boolean isPredator;
