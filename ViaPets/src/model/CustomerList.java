@@ -13,23 +13,44 @@ public class CustomerList
 
   public void addCustomer(Customer customer)
   {
-    customers.add(customer);
+    if (customers.size() > 0)
+    {
+      customers.add(customer);
+    }
   }
 
-  //  here should not be customer
   public void setCustomers(Customer customer, int index)
   {
-    //    customers.get(index).
+    if (index < 0 || index >= customers.size())
+    {
+      System.out.println("Invalid index");
+    }
+    else
+    {
+      customers.set(index, customer);
+
+    }
   }
 
   public void removeCustomer(int index)
   {
-    customers.remove(index);
+    if (index < 0 || index >= customers.size())
+    {
+      System.out.println("Invalid index");
+    }
+    else
+    {
+      customers.remove(index);
+    }
   }
 
   public Customer getCustomer(int index)
   {
-    return customers.get(index);
+    if (index < 0 && index >= customers.size())
+    {
+      return null;
+    }
+    return customers.get(index)
   }
 
   public int getAllNumberOfCustomers()
