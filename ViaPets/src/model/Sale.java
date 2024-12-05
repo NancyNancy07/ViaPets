@@ -7,10 +7,10 @@ public class Sale
   private double finalPrice;
   private Customer customer;
   private Pet pet;
-  private Date date;
+  private MyDate date;
   private String time;
 
-  public Sale(double finalPrice, Customer customer, Pet pet, Date date)
+  public Sale(double finalPrice, Customer customer, Pet pet, MyDate date)
   {
     this.finalPrice = finalPrice;
     this.customer = customer;

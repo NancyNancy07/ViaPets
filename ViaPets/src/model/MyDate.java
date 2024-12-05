@@ -47,7 +47,10 @@ public class MyDate
   {
     return day + "/" + month + "/" + year;
   }
-
+  public MyDate copy()
+  {
+    return new MyDate(day, month, year);
+  }
   public boolean equals(Object obj)
   {
     if (obj == null || obj.getClass() != getClass())
