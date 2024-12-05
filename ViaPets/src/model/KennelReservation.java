@@ -7,6 +7,7 @@ public class KennelReservation
   private double price;
   private Pet pet;
   private Customer customer;
+  private MyDate startDate, endDate;
 
   // Constructor
   public KennelReservation(double price)
@@ -45,19 +46,34 @@ public class KennelReservation
     this.customer = customer;
   }
 
+  public MyDate getStartDate()
+  {
+    return startDate;
+  }
+
+  public MyDate getEndDate()
+  {
+    return endDate;
+  }
+
+  public void setStartDate(MyDate startDate)
+  {
+    this.startDate = startDate;
+  }
+
+  public void setEndDate(MyDate endDate)
+  {
+    this.endDate = endDate;
+  }
+
   public String toString()
   {
     return "KennelReservation{" + "price=" + price + ", pet=" + pet
-        + ", customer=" + customer + '}';
+        + ", customer=" + customer + '}' + "Start Date: " + startDate + "End Date: " + endDate;
   }
 
   public boolean equals(Object obj)
   {
-    if (this == obj)
-    {
-      return true;
-    }
-
     if (obj == null || getClass() != obj.getClass())
     {
       return false;
@@ -67,13 +83,6 @@ public class KennelReservation
 
     return price == other.price && pet.equals(other.pet) && customer.equals(
         other.customer);
-
-
-
-
-
-    return true;
   }
-
 }
 

@@ -13,10 +13,7 @@ public class CustomerList
 
   public void addCustomer(Customer customer)
   {
-    if (customers.size() > 0)
-    {
-      customers.add(customer);
-    }
+    customers.add(customer);
   }
 
   public void setCustomers(Customer customer, int index)
@@ -46,11 +43,11 @@ public class CustomerList
 
   public Customer getCustomer(int index)
   {
-    if (index < 0 && index >= customers.size())
+    if (index < 0 || index >= customers.size())
     {
       return null;
     }
-    return customers.get(index)
+    return customers.get(index);
   }
 
   public int getAllNumberOfCustomers()

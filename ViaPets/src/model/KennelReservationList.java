@@ -4,19 +4,19 @@ import java.util.ArrayList;
 
 public class KennelReservationList
 {
-  private final int maxNumberOfReservations;
-  private final ArrayList<KennelReservation> kennelReservations;
+  private int currentNumberOfReservations;
+  private ArrayList<KennelReservation> kennelReservations;
 
   public KennelReservationList(int maxNumberOfReservations)
   {
-    this.maxNumberOfReservations = maxNumberOfReservations;
-    this.kennelReservations = new ArrayList<KennelReservation>();
+    this.currentNumberOfReservations = 0;
+    this.kennelReservations = new ArrayList<KennelReservation>(maxNumberOfReservations);
   }
 
   // Methods
   public void addKennelReservation(KennelReservation reservation)
   {
-    if (kennelReservations.size() < maxNumberOfReservations)
+    if (kennelReservations.size() > currentNumberOfReservations)
     {
       kennelReservations.add(reservation);
     }
@@ -64,22 +64,37 @@ public class KennelReservationList
     }
   }
 
+
   public KennelReservation[] getAllKennelReservations()
   {
-    return kennelReservations.toArray(new KennelReservation[0]);
+    return kennelReservations.toArray(new KennelReservation[currentNumberOfReservations]);
   }
-   //public boolean equals(Object obj) {
-   // if (this == obj) return true; // Same reference
-    //if (obj == null || getClass() != obj.getClass()) return false; // Null or different class
 
-    //KennelReservationList other = (KennelReservationList) obj;
-
-
-    //if (this.maxNumberOfReservations != other.maxNumberOfReservations) return false;
-
-
-   // return this.getAllReservations().equals(other.getAllReservations());
+  public String toString()
+  {
+    String str = "";
+    for (int i = 0; i < currentNumberOfReservations; i++)
+    {
+      str += kennelReservations.get(i) + "\n";
+    }
+    return str;
   }
+
+   public boolean equals(Object obj) {
+    if (obj == null || getClass() != obj.getClass()) return false;
+
+    KennelReservationList other = (KennelReservationList) obj;
+
+
+    if (this.currentNumberOfReservations != other.currentNumberOfReservations) return false;
+
+
+    for (int i = 0; i < currentNumberOfReservations; i++) {
+      if (!kennelReservations.get(i).equals(other.kennelReservations.get(i))) return false;
+    }
+    return true;
+  }
+}
 
 
 

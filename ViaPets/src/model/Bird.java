@@ -14,7 +14,7 @@ public class Bird extends Pet
   public Bird(String species, int age, String gender, String color,
       String comment, double price, String preferredFood)
   {
-    super(species, age, gender, color, name, comment, price);
+    super(species, age, gender, color, comment, price);
     this.preferredFood = preferredFood;
   }
 
@@ -35,7 +35,7 @@ public class Bird extends Pet
 
   public boolean equals(Object obj)
   {
-    if (obj == null || getClass() != obj.getClasss())
+    if (obj == null || getClass() != obj.getClass())
     {
       return false;
     }

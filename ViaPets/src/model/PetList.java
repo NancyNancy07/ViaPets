@@ -26,7 +26,7 @@ public class PetList
     pets.set(index, pet);
   }
 
-  public void remobePet(int index)
+  public void removePet(int index)
   {
     pets.remove(index);
   }
