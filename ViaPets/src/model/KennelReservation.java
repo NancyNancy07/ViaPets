@@ -10,9 +10,13 @@ public class KennelReservation
   private MyDate startDate, endDate;
 
   // Constructor
-  public KennelReservation(double price)
+  public KennelReservation(double price, Pet pet, Customer customer, MyDate startDate, MyDate endDate)
   {
     this.price = price;
+    this.pet = pet;
+    this.customer = customer;
+    this.startDate = startDate.copy();
+    this.endDate = endDate.copy();
   }
 
   // Getters and Setters
