@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<customers>
+    <customer>
+        <name>TurboMode Doe</name>
+        <phoneNumber>1234 Main St</phoneNumber>
+        <email>asd321@gmail.com</email>
+    </customer>
+    <customer>
+        <name>Jane Doe</name>
+        <phoneNumber>1234 Main St</phoneNumber>
+        <email>turbobbo@gmail.com</email>
+    </customer>
+    <customer>
+        <name>John Doe</name>
+        <phoneNumber>1234 Main St</phoneNumber>
+        <email>bangarang@gmail.com</email>
+    </customer>
+</customers>
