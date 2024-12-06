@@ -64,7 +64,9 @@ public class CustomerList implements Serializable
 
   public String toString()
   {
-    return "CustomerList:\n" + customers;
+    String rtnString = "";
+
+    return rtnString += customers;
   }
 
   public boolean equals(Object obj)

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ViaPetsController">
+    <children>
+        <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0">
+            <tabs>
+                <Tab fx:id="petTab" onSelectionChanged="#tabChanged" text="Pets">
+                    <content>
+                        <TableView fx:id="petTable" fixedCellSize="0.0" prefHeight="160.0" prefWidth="547.0">
+                            <columns>
+                                <TableColumn fx:id="petName" minWidth="3.33331298828125" prefWidth="74.66665649414062" text="Name" />
+                                <TableColumn fx:id="petSpecies" prefWidth="90.66665649414062" text="Species" />
+                                <TableColumn fx:id="petAge" prefWidth="74.66667175292969" text="Age" />
+                                <TableColumn fx:id="petGender" prefWidth="96.6666259765625" text="Gender" />
+                                <TableColumn fx:id="petColor" prefWidth="93.33331298828125" text="Color" />
+                                <TableColumn fx:id="petComments" prefWidth="79.33331298828125" text="Comments" />
+                                <TableColumn fx:id="petPrice" prefWidth="88.66668701171875" text="Price" />
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                        </TableView>
+                    </content>
+                </Tab>
+                <Tab fx:id="kennelReservationTab" text="Kennel Reservations" />
+                <Tab fx:id="saleTab" onSelectionChanged="#initialize" text="Sales" />
+                <Tab fx:id="customerTab" onSelectionChanged="#tabChanged" text="Customers">
+                    <content>
+                        <TableView fx:id="customerTable" fixedCellSize="0.0">
+                            <columns>
+                                <TableColumn fx:id="customerName" prefWidth="189.99996948242188" text="Name" />
+                                <TableColumn fx:id="customerPhone" prefWidth="202.0" text="Phone Number" />
+                                <TableColumn fx:id="customerEmail" prefWidth="208.0" text="Email Address" />
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                        </TableView>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Pane fx:id="customerDataDisplay" layoutX="90.0" prefHeight="289.0" prefWidth="402.0">
+            <children>
+                <TextArea fx:id="customerTextArea" layoutY="55.0" prefHeight="234.0" prefWidth="402.0" />
+                <Button layoutX="364.0" layoutY="76.0" mnemonicParsing="false" onAction="#setCloseButton" text="X" />
+                <Button fx:id="editButton" layoutX="203.0" layoutY="238.0" mnemonicParsing="false" onAction="#editData" text="Edit" />
+                <Button contentDisplay="RIGHT" layoutX="134.0" layoutY="238.0" mnemonicParsing="false" text="Remove" />
+                <Label layoutX="15.0" layoutY="117.0" text="Name:" />
+                <Label layoutX="14.0" layoutY="153.0" text="Phone:" />
+                <Label layoutX="17.0" layoutY="183.0" text="Email:" />
+                <TextField fx:id="nameField" layoutX="59.0" layoutY="113.0" />
+                <TextField fx:id="phoneField" layoutX="59.0" layoutY="149.0" />
+                <TextField fx:id="emailField" layoutX="59.0" layoutY="179.0" />
+                <Label layoutX="129.0" layoutY="74.0" text="Customer Details:">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
+</Pane>

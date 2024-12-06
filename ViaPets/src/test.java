@@ -26,23 +26,25 @@ public class test
       System.out.println("\n");
     }*/
 
-
     CustomerList customers = new CustomerList();
-    Customer customer1 = new Customer("John Doe", "1234 Main St", "asd321@gmail.com");
-    Customer customer2 = new Customer("Jane Doe", "1234 Main St", "turbobbo@gmail.com");
-    Customer customer3 = new Customer("John Doe", "1234 Main St", "bangarang@gmail.com");
-    Customer customer4 = new Customer("John Doe", "1234 Main St", "bangarang@gmail.com");
+    Customer customer1 = new Customer("John Doe", "1234 Main St",
+        "asd321@gmail.com");
+    Customer customer2 = new Customer("Jane Doe", "1234 Main St",
+        "turbobbo@gmail.com");
+    Customer customer3 = new Customer("John Doe", "1234 Main St",
+        "bangarang@gmail.com");
+    Customer customer4 = new Customer("John Doe", "1234 Main St",
+        "bangarang@gmail.com");
 
     customers.addCustomer(customer1);
     customers.addCustomer(customer2);
     customers.addCustomer(customer3);
     customers.addCustomer(customer4);
 
-    ViaPetsModelManager modelManager = new ViaPetsModelManager("customers.bin", "pets.bin", "sales.bin", "kennelReservations.bin");
+    ViaPetsModelManager modelManager = new ViaPetsModelManager("customers.bin",
+        "pets.bin", "sales.bin", "kennelReservations.bin");
     modelManager.saveCustomers(customers);
     CustomerList customersFromFile = modelManager.getAllCustomers();
-
-
     System.out.println(customersFromFile);
   }
 }

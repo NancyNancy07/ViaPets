@@ -47,8 +47,8 @@ public class Customer implements Serializable
 
   public String toString()
   {
-    return "Customer details: \nName: " + name + ", Phone: " + phoneNumber
-        + ", Email Address: " + emailAddress;
+    return "Customer Details: " + "\nName: " + name + "\nPhone Number: "
+        + phoneNumber + "\nEmail Address: " + emailAddress + "\n";
   }
 
   public boolean equals(Object obj)
