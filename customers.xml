@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CustomerList>
   <customers>
-    <emailAddress>johndoe@email.com</emailAddress>
-    <phoneNumber>123-456-7890</phoneNumber>
-    <name>John Doe</name>
-  </customers>
-  <customers>
     <emailAddress>janesmith@email.com</emailAddress>
     <phoneNumber>234-567-8901</phoneNumber>
     <name>Jane Smith</name>
@@ -26,6 +21,11 @@
     <name>Charlie White</name>
   </customers>
   <customers>
+    <emailAddress>davidg@email.com</emailAddress>
+    <phoneNumber>678-901-2345</phoneNumber>
+    <name>David Green</name>
+  </customers>
+  <customers>
     <emailAddress>evab@email.com</emailAddress>
     <phoneNumber>789-012-3456</phoneNumber>
     <name>Eva Black</name>
@@ -39,5 +39,10 @@
     <emailAddress>gracer@email.com</emailAddress>
     <phoneNumber>901-234-5678</phoneNumber>
     <name>Grace Red</name>
+  </customers>
+  <customers>
+    <emailAddress>henryg@email.com</emailAddress>
+    <phoneNumber>012-345-6789</phoneNumber>
+    <name>Henry Gray</name>
   </customers>
 </CustomerList>

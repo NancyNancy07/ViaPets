@@ -59,38 +59,19 @@ public class ViaPetsModelManager
     }
   }
 
-/*
-  public void saveCustomers(CustomerList customers) throws ParserException
+  public PetList getAllPets() throws ParserException
   {
-    XmlJsonParser parser = new XmlJsonParser();
-    try
+    if (viaPetsShop != null)
     {
-      File customersFile = parser.toXml(customers, "customers.xml");
-      System.out.println("Customers saved to customers.xml");
+      PetList allPets = new PetList();
+      allPets = viaPetsShop.getPetList();
+      return allPets;
     }
-    catch (ParserException e)
+    else
     {
-      System.err.println(
-          "Error parsing customer data to XML: " + e.getMessage());
+      return null;
     }
-    */
-/*try
-    {
-      MyFileHandler.writeToBinaryFile(customerFileName, customers);
-    }
-    catch (FileNotFoundException e)
-    {
-      System.out.println("File not found");
-    }
-    catch (IOException e)
-    {
-      System.out.println("IO Error writing to file");
-      System.out.println(e);
-      System.out.println(e.getMessage());
-    }*//*
-
   }
-*/
 
   public void writeCustomers() throws ParserException
   {
@@ -107,7 +88,25 @@ public class ViaPetsModelManager
     }
     XmlJsonParser parser = new XmlJsonParser();
     File customers = parser.toXml(allCustomers, "customers.xml");
-    System.out.println("Wrote customer data to XML file");
+    System.out.println("Wrote customers data to XML file");
+  }
+
+  public void writePets() throws ParserException
+  {
+    PetList allPets = getAllPets();
+    if (allPets == null)
+    {
+      System.out.println("Pet list is null");
+    }
+
+    if (allPets.getNumberOfPets() == 0)
+    {
+      System.out.println("No pet to write");
+    }
+
+    XmlJsonParser parser = new XmlJsonParser();
+    File pets = parser.toXml(allPets, "pets.xml");
+    System.out.println("Wrote pets data to XML file");
   }
 
   public CustomerList readCustomers() throws ParserException
@@ -127,6 +126,22 @@ public class ViaPetsModelManager
     return customers;
   }
 
+  public PetList readPets() throws ParserException
+  {
+    XmlJsonParser parser = new XmlJsonParser();
+    PetList pets = parser.fromXml("pets.xml", PetList.class);
+
+    try
+    {
+      pets = parser.fromXml("pets.xml", PetList.class);
+    }
+    catch (ParserException e)
+    {
+      System.err.println("Error parsing XML: " + e.getMessage());
+    }
+    return pets;
+  }
+
   public void removeCustomer(int index) throws ParserException
   {
     CustomerList allCustomers = readCustomers();
@@ -142,11 +157,32 @@ public class ViaPetsModelManager
     }
   }
 
+  public void removePet(int index) throws ParserException
+  {
+    PetList allPets = readPets();
+    if (index >= 0 && index < allPets.getNumberOfPets())
+    {
+      Pet removePet = allPets.getPet(index);
+      if (removePet != null)
+      {
+        allPets.removePet(removePet);
+        savePetList(allPets);
+      }
+    }
+  }
+
   public void saveCustomerList(CustomerList allCustomers) throws ParserException
   {
     System.out.println("new list");
     XmlJsonParser parser = new XmlJsonParser();
     File customers = parser.toXml(allCustomers, "customers.xml");
+  }
+
+  public void savePetList(PetList allPets) throws ParserException
+  {
+    System.out.println("new list");
+    XmlJsonParser parser = new XmlJsonParser();
+    File pets = parser.toXml(allPets, "pets.xml");
   }
   /*public void writePets()
   {

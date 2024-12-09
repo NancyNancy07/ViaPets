@@ -45,12 +45,12 @@ public class ViaPetsController
   private ViaPetsModelManager modelManager;
   private ViaPetsShop viaPetsShop;
 
-  public void initialize()
+  public void initialize() throws ParserException
   {
     viaPetsShop = new ViaPetsShop();
-    modelManager = new ViaPetsModelManager("customers.xml", "pets.bin",
+    modelManager = new ViaPetsModelManager("customers.xml", "pets.xml",
         "sales.bin", "kennelReservation.bin");
-    //    updateCustomerBox();
+    updatePetBox();
     customerDataDisplay.setVisible(false);
 
   }
@@ -135,11 +135,44 @@ public class ViaPetsController
     }
   }
 
-  public void updatePetBox()
+  public void updatePetBox() throws ParserException
   {
     if (modelManager != null)
     {
-      System.out.println("pet is here");
+      PetList allPets = modelManager.readPets();
+
+      petTable.getItems().clear();
+
+      for (int i = 0; i < allPets.getNumberOfPets(); i++)
+      {
+        Pet petData = allPets.getPet(i);
+        petTable.getItems().add(petData);
+      }
+
+      petName.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getName()));
+      petSpecies.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getSpecies()));
+      petAge.setCellValueFactory(data -> new SimpleStringProperty(
+          String.valueOf(data.getValue().getAge())));
+      petGender.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getGender()));
+      petColor.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getColor()));
+      petComments.setCellValueFactory(data -> new SimpleStringProperty(
+          String.valueOf(data.getValue().getComment())));
+      petPrice.setCellValueFactory(data -> new SimpleStringProperty(
+          String.valueOf(data.getValue().getPrice())));
+
+      //      adding a listener to know which row is selected
+      petTable.getSelectionModel().selectedItemProperty()
+          .addListener((old, current, newP) -> {
+            if (newP != null)
+            {
+              //              System.out.println(newP);
+              //              showCustomerData(newC);
+            }
+          });
     }
 
   }

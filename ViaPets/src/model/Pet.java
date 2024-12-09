@@ -1,6 +1,8 @@
 package model;
 
-public class Pet
+import java.io.Serializable;
+
+public class Pet implements Serializable
 {
   private String species;
   private int age;
@@ -95,9 +97,9 @@ public class Pet
 
   public String toString()
   {
-    return "model.Pet{" + "species='" + species + '\'' + ", age=" + age + ", gender='"
-        + gender + '\'' + ", color='" + color + '\'' + ", name='" + name + '\''
-        + ", comment='" + comment + '\'' + ", price=" + price + '}';
+    return "Pets Details: \n" + "Species: " + species + ", Age: " + age
+        + ", Gender: " + gender + ", Color: " + color + ", Name: " + name
+        + ", Comment: " + comment + ", Price: " + price + "\n";
   }
 
   public boolean equals(Object obj)

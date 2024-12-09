@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class PetList
+public class PetList implements Serializable
 {
   private ArrayList<Pet> pets;
 
@@ -39,6 +40,11 @@ public class PetList
     pets.remove(index);
   }
 
+  public void removePet(Pet pet)
+  {
+    pets.remove(pet);
+  }
+
   public Pet[] getPetsForSale()
   {
     ArrayList<Pet> forSaleList = new ArrayList<>();
@@ -63,7 +69,7 @@ public class PetList
     String output = "";
     for (int i = 0; i < pets.size(); i++)
     {
-      output += (pets.get(i).toString() + "\n");
+      output += (pets.get(i) + "\n");
     }
     return output;
   }
