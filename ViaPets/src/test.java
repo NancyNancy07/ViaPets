@@ -27,6 +27,8 @@ public class test
     }*/
 
     CustomerList customers = new CustomerList();
+    PetList pets = new PetList();
+
     Customer customer1 = new Customer("John Doe", "1234 Main St",
         "asd321@gmail.com");
     Customer customer2 = new Customer("Jane Doe", "1234 Main St",
@@ -35,16 +37,45 @@ public class test
         "bangarang@gmail.com");
     Customer customer4 = new Customer("John Doe", "1234 Main St",
         "bangarang@gmail.com");
+    Customer customer5 = new Customer("John Doe", "1234 Main St",
+        "bangarang@gmail.com");
+
+    Dog pet1 = new Dog("Dog", 5, "Male", "Brown", "Beton","Good boy", 4502, "Golden Retriever", "John Doe");
+    Cat pet2 = new Cat("Cat", 5, "Male", "Brown", "Beton","Good boy", 4502, "Maine Coon", "John Doe");
+    Rodent pet3 = new Rodent("Rodent", 5, "Male", "Brown", "Beton","Good boy", 4502, true);
+    Fish pet4 = new Fish("Fish", 5, "Male", "Brown", "Beton","Good boy", 4502, true, true);
+    Bird pet5 = new Bird("Bird", 5, "Male", "Brown", "Beton","Good boy", 4502, "Seeds");
+    Various pet6 = new Various("Giraffe", 5, "Male", "Brown", "Beton","Good boy", 4502);
+
+    pets.addPet(pet1);
+    pets.addPet(pet2);
+    pets.addPet(pet3);
+    pets.addPet(pet4);
+    pets.addPet(pet5);
+    pets.addPet(pet6);
+
 
     customers.addCustomer(customer1);
     customers.addCustomer(customer2);
     customers.addCustomer(customer3);
     customers.addCustomer(customer4);
+    customers.addCustomer(customer5);
 
-    ViaPetsModelManager modelManager = new ViaPetsModelManager("customers.bin",
-        "pets.bin", "sales.bin", "kennelReservations.bin");
-    modelManager.saveCustomers(customers);
-    CustomerList customersFromFile = modelManager.getAllCustomers();
-    System.out.println(customersFromFile);
+
+
+    ViaPetsShop viaPetsShop = new ViaPetsShop();
+
+    viaPetsShop.setCustomerList(customers);
+    viaPetsShop.setPetList(pets);
+
+    ViaPetsModelManager modelManager = new ViaPetsModelManager("customers.xml",
+        "pets.xml", "sales.bin", "kennelReservations.bin", viaPetsShop);
+//    modelManager.writeCustomers();
+//    CustomerList customersFromFile = modelManager.readCustomers();
+//    System.out.println(customersFromFile);
+
+    modelManager.writePets();
+    PetList petsFromFile = modelManager.readPets();
+    System.out.println(petsFromFile);
   }
 }

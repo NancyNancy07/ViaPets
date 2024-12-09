@@ -56,7 +56,7 @@ public class ViaPetsController
   {
     if (modelManager != null)
     {
-      CustomerList allCustomers = modelManager.getAllCustomers();
+      CustomerList allCustomers = modelManager.readCustomers();
 
       customerTable.getItems().clear();
 
