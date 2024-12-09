@@ -56,7 +56,7 @@
                 <TextArea fx:id="customerTextArea" layoutY="55.0" prefHeight="234.0" prefWidth="402.0" />
                 <Button layoutX="364.0" layoutY="76.0" mnemonicParsing="false" onAction="#setCloseButton" text="X" />
                 <Button fx:id="editButton" layoutX="203.0" layoutY="238.0" mnemonicParsing="false" onAction="#editData" text="Edit" />
-                <Button contentDisplay="RIGHT" layoutX="134.0" layoutY="238.0" mnemonicParsing="false" text="Remove" />
+                <Button fx:id="removeButton" contentDisplay="RIGHT" layoutX="134.0" layoutY="238.0" mnemonicParsing="false" onAction="#removeCustomer" text="Remove" />
                 <Label layoutX="15.0" layoutY="117.0" text="Name:" />
                 <Label layoutX="14.0" layoutY="153.0" text="Phone:" />
                 <Label layoutX="17.0" layoutY="183.0" text="Email:" />

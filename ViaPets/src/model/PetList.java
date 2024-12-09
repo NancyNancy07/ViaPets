@@ -18,7 +18,15 @@ public class PetList
 
   public Pet getPet(int index)
   {
-    return pets.get(index);
+    if (index >= 0 && index < pets.size())
+    {
+      return pets.get(index);
+    }
+    else
+    {
+      System.out.println("Invalid index");
+      return null;
+    }
   }
 
   public void setPet(Pet pet, int index)
@@ -37,7 +45,7 @@ public class PetList
     for (int i = 0; i < pets.size(); i++)
     {
       Pet pet = pets.get(i);
-      if (pets.get(i).getPrice()!=0)
+      if (pets.get(i).getPrice() != 0)
       {
         forSaleList.add(pet);
       }
@@ -53,13 +61,12 @@ public class PetList
   public String toString()
   {
     String output = "";
-    for (int i =0 ; i < pets.size(); i++)
+    for (int i = 0; i < pets.size(); i++)
     {
       output += (pets.get(i).toString() + "\n");
     }
     return output;
   }
-
 
   public boolean equals(Object obj)
   {

@@ -9,10 +9,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import model.Customer;
-import model.CustomerList;
-import model.Pet;
-import model.ViaPetsModelManager;
+import model.*;
+import parser.ParserException;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 public class ViaPetsController
 {
@@ -37,15 +37,18 @@ public class ViaPetsController
   @FXML private TextArea customerTextArea;
   @FXML private Button closeButton;
   @FXML private Button editButton;
+  @FXML private Button removeButton;
   @FXML private TextField nameField;
   @FXML private TextField phoneField;
   @FXML private TextField emailField;
 
   private ViaPetsModelManager modelManager;
+  private ViaPetsShop viaPetsShop;
 
   public void initialize()
   {
-    modelManager = new ViaPetsModelManager("customers.bin", "pets.bin",
+    viaPetsShop = new ViaPetsShop();
+    modelManager = new ViaPetsModelManager("customers.xml", "pets.bin",
         "sales.bin", "kennelReservation.bin");
     //    updateCustomerBox();
     customerDataDisplay.setVisible(false);
@@ -53,6 +56,7 @@ public class ViaPetsController
   }
 
   public void updateCustomerBox()
+      throws ParserException, ParserConfigurationException
   {
     if (modelManager != null)
     {
@@ -116,6 +120,21 @@ public class ViaPetsController
     }
   }
 
+  public void removeCustomer() throws ParserException
+  {
+    if (viaPetsShop != null && modelManager != null)
+    {
+      int currentIndex = customerTable.getSelectionModel().getSelectedIndex();
+      System.out.println(currentIndex);
+      if (currentIndex != -1)
+      {
+        customerTable.getItems().remove(currentIndex);
+        modelManager.removeCustomer(currentIndex);
+
+      }
+    }
+  }
+
   public void updatePetBox()
   {
     if (modelManager != null)
@@ -126,6 +145,7 @@ public class ViaPetsController
   }
 
   public void tabChanged(Event e)
+      throws ParserException, ParserConfigurationException
   {
     if (customerTab != null && customerTab.isSelected())
     {

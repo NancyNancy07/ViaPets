@@ -45,4 +45,13 @@
         <comment>Good boy</comment>
         <price>4502.0</price>
     </pet>
+    <pet>
+        <name>Beton</name>
+        <species>Giraffe</species>
+        <age>5</age>
+        <gender>Male</gender>
+        <color>Brown</color>
+        <comment>Good boy</comment>
+        <price>4502.0</price>
+    </pet>
 </pets>

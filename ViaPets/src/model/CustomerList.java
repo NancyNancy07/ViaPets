@@ -42,6 +42,14 @@ public class CustomerList implements Serializable
     }
   }
 
+  public void removeCustomer(Customer customer)
+  {
+    if (customer != null)
+    {
+      customers.remove(customer);
+    }
+  }
+
   public Customer getCustomer(int index)
   {
     if (index < 0 || index >= customers.size())
@@ -65,8 +73,11 @@ public class CustomerList implements Serializable
   public String toString()
   {
     String rtnString = "";
-
-    return rtnString += customers;
+    for (int i = 0; i < customers.size(); i++)
+    {
+      rtnString += (customers.get(i) + "\n");
+    }
+    return rtnString;
   }
 
   public boolean equals(Object obj)
