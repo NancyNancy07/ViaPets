@@ -21,10 +21,24 @@ public class ViaPetsController
   @FXML private Tab kennelReservationTab;
   @FXML private Tab saleTab;
   @FXML private Tab customerTab;
+  @FXML private Tab addCustomerTab;
   @FXML private TableView<Customer> customerTable;
   @FXML private TableColumn<Customer, String> customerName;
   @FXML private TableColumn<Customer, String> customerPhone;
   @FXML private TableColumn<Customer, String> customerEmail;
+  @FXML private Pane customerDataDisplay;
+  @FXML private TextArea customerTextArea;
+  @FXML private Button closeButton;
+  @FXML private Button removeButton;
+  @FXML private Button editButton;
+  @FXML private Button updateButton;
+  @FXML private TextField nameField;
+  @FXML private TextField phoneField;
+  @FXML private TextField emailField;
+  @FXML private TextField newCName;
+  @FXML private TextField newCPhone;
+  @FXML private TextField newCEmail;
+
   @FXML private TableView<Pet> petTable;
   @FXML private TableColumn<Pet, String> petName;
   @FXML private TableColumn<Pet, String> petSpecies;
@@ -33,15 +47,17 @@ public class ViaPetsController
   @FXML private TableColumn<Pet, String> petColor;
   @FXML private TableColumn<Pet, String> petComments;
   @FXML private TableColumn<Pet, String> petPrice;
-  @FXML private Pane customerDataDisplay;
-  @FXML private TextArea customerTextArea;
-  @FXML private Button closeButton;
-  @FXML private Button editButton;
-  @FXML private Button removeButton;
-  @FXML private Button updateButton;
-  @FXML private TextField nameField;
-  @FXML private TextField phoneField;
-  @FXML private TextField emailField;
+  @FXML private Pane petDataDisplay;
+  @FXML private TextField petNameField;
+  @FXML private TextField speciesField;
+  @FXML private TextField ageField;
+  @FXML private TextField genderField;
+  @FXML private TextField colorField;
+  @FXML private TextField commentsField;
+  @FXML private TextField priceField;
+  @FXML private Button closeButton2;
+  @FXML private Button editPetButton;
+  @FXML private Button updatePetButton;
 
   private ViaPetsModelManager modelManager;
   private ViaPetsShop viaPetsShop;
@@ -53,6 +69,9 @@ public class ViaPetsController
         "sales.bin", "kennelReservation.bin");
     updatePetBox();
     customerDataDisplay.setVisible(false);
+    petDataDisplay.setVisible(false);
+    updateButton.setVisible(false);
+    updatePetButton.setVisible(false);
 
   }
 
@@ -91,35 +110,6 @@ public class ViaPetsController
     }
   }
 
-  public void setCloseButton()
-  {
-    customerDataDisplay.setVisible(false);
-  }
-
-  public void editData() throws ParserException
-  {
-    if (editButton.getText().equals("Edit"))
-    {
-      nameField.setEditable(true);
-      phoneField.setEditable(true);
-      emailField.setEditable(true);
-      editButton.setText("Update");
-    }
-    else if (editButton.getText().equals("Update"))
-    {
-      int currentIndex = customerTable.getSelectionModel().getSelectedIndex();
-      if(currentIndex!=-1){
-        Customer selectedCustomer = customerTable.getSelectionModel().getSelectedItem();
-        selectedCustomer.setName(nameField.getText());
-        selectedCustomer.setPhoneNumber(phoneField.getText());
-        selectedCustomer.setEmailAddress(emailField.getText());
-
-        modelManager.updateCustomer(currentIndex,selectedCustomer);
-      }
-    }
-
-  }
-
   public void showCustomerData(Customer selectedCustomer)
   {
     if (selectedCustomer != null)
@@ -136,20 +126,78 @@ public class ViaPetsController
     }
   }
 
+  public void editData() throws ParserException
+  {
+    editButton.setVisible(false);
+    updateButton.setVisible(true);
+    nameField.setEditable(true);
+    phoneField.setEditable(true);
+    emailField.setEditable(true);
+  }
+
+  public void updateCustomerData()
+      throws ParserException, ParserConfigurationException
+  {
+    int currentIndex = customerTable.getSelectionModel().getSelectedIndex();
+    if (currentIndex != -1)
+    {
+      Customer selectedCustomer = customerTable.getSelectionModel()
+          .getSelectedItem();
+      selectedCustomer.setName(nameField.getText());
+      selectedCustomer.setPhoneNumber(phoneField.getText());
+      selectedCustomer.setEmailAddress(emailField.getText());
+
+      System.out.println(selectedCustomer);
+      modelManager.updateCustomer(currentIndex, selectedCustomer);
+      setCloseButton();
+      updateCustomerBox();
+    }
+
+  }
+
   public void removeCustomer() throws ParserException
   {
-    if (viaPetsShop != null && modelManager != null)
+    if (modelManager != null)
     {
       int currentIndex = customerTable.getSelectionModel().getSelectedIndex();
-      System.out.println(currentIndex);
-      if (currentIndex != -1)
+      if (currentIndex >= 0)
       {
-        customerTable.getItems().remove(currentIndex);
-        modelManager.removeCustomer(currentIndex);
-        customerDataDisplay.setVisible(false);
-
+        Customer selectedCustomer = customerTable.getItems()
+            .remove(currentIndex);
+        if (selectedCustomer != null)
+        {
+          CustomerList allCustomers = modelManager.readCustomers();
+          allCustomers.removeCustomer(selectedCustomer);
+          modelManager.saveCustomerList(allCustomers);
+          customerDataDisplay.setVisible(false);
+          System.out.println("Customer removed.");
+        }
+      }
+      else
+      {
+        System.out.println("No customer selected for removal.");
       }
     }
+  }
+
+  public void addCustomer() throws ParserException, ParserConfigurationException
+  {
+    String name = newCName.getText();
+    String phone = newCPhone.getText();
+    String email = newCEmail.getText();
+
+    Customer newCustomer = new Customer(name, phone, email);
+    System.out.println(newCustomer);
+
+    if ((name != " ") && (phone != " ") && (email != " "))
+    {
+      modelManager.addCustomer(newCustomer);
+    }
+    newCName.clear();
+    newCPhone.clear();
+    newCEmail.clear();
+
+    updateCustomerBox();
   }
 
   public void updatePetBox() throws ParserException
@@ -187,11 +235,117 @@ public class ViaPetsController
             if (newP != null)
             {
               //              System.out.println(newP);
-              //              showCustomerData(newC);
+              showPetData(newP);
             }
           });
     }
 
+  }
+
+  public void showPetData(Pet selectedPet)
+  {
+    if (selectedPet != null)
+    {
+      petDataDisplay.setVisible(true);
+      petNameField.setText(selectedPet.getName());
+      speciesField.setText(selectedPet.getSpecies());
+      ageField.setText(String.valueOf(selectedPet.getAge()));
+      genderField.setText(selectedPet.getGender());
+      colorField.setText(selectedPet.getColor());
+      commentsField.setText(selectedPet.getComment());
+      priceField.setText(String.valueOf(selectedPet.getPrice()));
+
+      petNameField.setEditable(false);
+      speciesField.setEditable(false);
+      ageField.setEditable(false);
+      genderField.setEditable(false);
+      colorField.setEditable(false);
+      commentsField.setEditable(false);
+      priceField.setEditable(false);
+
+    }
+  }
+
+  public void editPetData() throws ParserException
+  {
+    editPetButton.setVisible(false);
+    updatePetButton.setVisible(true);
+    petNameField.setEditable(true);
+    ageField.setEditable(true);
+    commentsField.setEditable(true);
+    priceField.setEditable(true);
+  }
+
+  public void UpdatePetData() throws ParserException
+  {
+    int currentIndex = petTable.getSelectionModel().getSelectedIndex();
+    if (currentIndex != -1)
+    {
+      Pet selectedPet = petTable.getSelectionModel().getSelectedItem();
+      selectedPet.setName(petNameField.getText());
+      //        selectedPet.setSpecies(speciesField.getText());
+      selectedPet.setAge(Integer.parseInt(ageField.getText()));
+      selectedPet.setComment(commentsField.getText());
+      selectedPet.setPrice(Double.parseDouble(priceField.getText()));
+
+      modelManager.updatePet(currentIndex, selectedPet);
+      setCloseButton();
+      updatePetBox();
+    }
+  }
+
+  public void removePet() throws ParserException
+  {
+    if (modelManager != null)
+    {
+      int currentIndex = petTable.getSelectionModel().getSelectedIndex();
+      if (currentIndex >= 0)
+      {
+        Pet selectedPet = petTable.getItems().remove(currentIndex);
+        if (selectedPet != null)
+        {
+          PetList allPets = modelManager.readPets();
+          allPets.removePet(selectedPet);
+          modelManager.savePetList(allPets);
+          petDataDisplay.setVisible(false);
+          System.out.println("Pet removed.");
+        }
+      }
+      else
+      {
+        System.out.println("No pet selected for removal.");
+      }
+    }
+  }
+
+  public void addPet() throws ParserException, ParserConfigurationException
+  {
+    String name = newCName.getText();
+    String phone = newCPhone.getText();
+    String email = newCEmail.getText();
+
+    Customer newCustomer = new Customer(name, phone, email);
+    System.out.println(newCustomer);
+
+    if ((name != " ") && (phone != " ") && (email != " "))
+    {
+      modelManager.addCustomer(newCustomer);
+    }
+    newCName.clear();
+    newCPhone.clear();
+    newCEmail.clear();
+
+    updateCustomerBox();
+  }
+
+  public void setCloseButton()
+  {
+    customerDataDisplay.setVisible(false);
+    petDataDisplay.setVisible(false);
+    editButton.setVisible(true);
+    updateButton.setVisible(false);
+    editPetButton.setVisible(true);
+    updatePetButton.setVisible(false);
   }
 
   public void tabChanged(Event e)

@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <PetList>
   <pets>
-    <gender>Male</gender>
-    <color>Brown</color>
-    <species>Dog</species>
-    <price>450.0</price>
-    <name>Buddy</name>
-    <comment>Very energetic and playful</comment>
-    <age>2</age>
-  </pets>
-  <pets>
     <gender>Female</gender>
     <color>White</color>
     <species>Cat</species>
@@ -25,7 +16,7 @@
     <price>120.0</price>
     <name>Thumper</name>
     <comment>Curious and loves carrots</comment>
-    <age>1</age>
+    <age>5</age>
   </pets>
   <pets>
     <gender>Female</gender>
@@ -49,7 +40,7 @@
     <gender>Female</gender>
     <color>Ginger</color>
     <species>Cat</species>
-    <price>320.0</price>
+    <price>500.0</price>
     <name>Mittens</name>
     <comment>Adventurous and curious</comment>
     <age>2</age>
@@ -71,15 +62,6 @@
     <name>Nemo</name>
     <comment>Calm and peaceful</comment>
     <age>1</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Golden</color>
-    <species>Dog</species>
-    <price>500.0</price>
-    <name>Lucy</name>
-    <comment>Very affectionate</comment>
-    <age>3</age>
   </pets>
   <pets>
     <gender>Male</gender>
@@ -602,14 +584,5 @@
     <name>Amber</name>
     <comment>Adventurous and fun</comment>
     <age>2</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Brown</color>
-    <species>Dog</species>
-    <price>440.0</price>
-    <name>Cooper</name>
-    <comment>Protective and playful</comment>
-    <age>3</age>
   </pets>
 </PetList>

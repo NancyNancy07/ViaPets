@@ -185,16 +185,51 @@ public class ViaPetsModelManager
     File pets = parser.toXml(allPets, "pets.xml");
   }
 
-  public void updateCustomer(int index, Customer updatedCustomer) throws ParserException {
+  public void updateCustomer(int index, Customer updatedCustomer)
+      throws ParserException
+  {
     CustomerList allCustomers = readCustomers();
-    if (index >= 0 && index < allCustomers.getAllNumberOfCustomers()) {
+    if (index >= 0 && index < allCustomers.getAllNumberOfCustomers())
+    {
       allCustomers.setCustomer(index, updatedCustomer);
       saveCustomerList(allCustomers);
 
       System.out.println("Updated customer and saved to XML file.");
-    } else {
+    }
+    else
+    {
       System.out.println("Invalid customer index: " + index);
     }
+  }
+
+  public void updatePet(int index, Pet updatedPet) throws ParserException
+  {
+    PetList allPets = readPets();
+    if (index >= 0 && index < allPets.getNumberOfPets())
+    {
+      allPets.setPet(updatedPet, index);
+      savePetList(allPets);
+
+      System.out.println("Updated pet and saved to XML file.");
+    }
+    else
+    {
+      System.out.println("Invalid pet index: " + index);
+    }
+  }
+
+  public void addCustomer(Customer customer) throws ParserException
+  {
+    CustomerList allCustomers = readCustomers();
+    if (customer != null)
+    {
+      allCustomers.addCustomer(customer);
+      saveCustomerList(allCustomers);
+
+      System.out.println("added a customer and saved to XML file.");
+
+    }
+
   }
   /*public void writePets()
   {
