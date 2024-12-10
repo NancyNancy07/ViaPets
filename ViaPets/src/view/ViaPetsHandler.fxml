@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
@@ -8,6 +9,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -51,23 +53,64 @@
                 </Tab>
             </tabs>
         </TabPane>
-        <Pane fx:id="customerDataDisplay" layoutX="90.0" prefHeight="289.0" prefWidth="402.0">
+        <Pane fx:id="customerDataDisplay" layoutX="90.0" layoutY="31.0" prefHeight="289.0" prefWidth="402.0">
             <children>
-                <TextArea fx:id="customerTextArea" layoutY="55.0" prefHeight="234.0" prefWidth="402.0" />
+                <TextArea fx:id="customerTextArea" editable="false" layoutY="55.0" prefHeight="234.0" prefWidth="402.0" />
                 <Button layoutX="364.0" layoutY="76.0" mnemonicParsing="false" onAction="#setCloseButton" text="X" />
-                <Button fx:id="editButton" layoutX="203.0" layoutY="238.0" mnemonicParsing="false" onAction="#editData" text="Edit" />
-                <Button fx:id="removeButton" contentDisplay="RIGHT" layoutX="134.0" layoutY="238.0" mnemonicParsing="false" onAction="#removeCustomer" text="Remove" />
-                <Label layoutX="15.0" layoutY="117.0" text="Name:" />
-                <Label layoutX="14.0" layoutY="153.0" text="Phone:" />
-                <Label layoutX="17.0" layoutY="183.0" text="Email:" />
-                <TextField fx:id="nameField" layoutX="59.0" layoutY="113.0" />
-                <TextField fx:id="phoneField" layoutX="59.0" layoutY="149.0" />
-                <TextField fx:id="emailField" layoutX="59.0" layoutY="179.0" />
                 <Label layoutX="129.0" layoutY="74.0" text="Customer Details:">
                     <font>
                         <Font size="19.0" />
                     </font>
                 </Label>
+                <HBox alignment="BOTTOM_CENTER" layoutY="112.0" prefHeight="28.0" prefWidth="402.0">
+                    <children>
+                        <Label text="Name:" />
+                        <TextField fx:id="nameField">
+                            <HBox.margin>
+                                <Insets left="6.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox alignment="BASELINE_CENTER" layoutY="142.0" prefHeight="28.0" prefWidth="402.0">
+                    <children>
+                        <Label text="Phone:" />
+                        <TextField fx:id="phoneField">
+                            <HBox.margin>
+                                <Insets left="4.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox alignment="BASELINE_CENTER" layoutY="170.0" prefHeight="25.0" prefWidth="402.0">
+                    <children>
+                        <Label text="Email:" />
+                        <TextField fx:id="emailField">
+                            <HBox.margin>
+                                <Insets left="7.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox alignment="BASELINE_CENTER" layoutX="2.0" layoutY="210.0" prefHeight="25.0" prefWidth="402.0">
+                    <children>
+                        <Button fx:id="removeButton" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#removeCustomer" text="Remove">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="editButton" mnemonicParsing="false" onAction="#editData" text="Edit">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="updateButton" mnemonicParsing="false" text="Update">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
             </children>
         </Pane>
     </children>

@@ -184,6 +184,18 @@ public class ViaPetsModelManager
     XmlJsonParser parser = new XmlJsonParser();
     File pets = parser.toXml(allPets, "pets.xml");
   }
+
+  public void updateCustomer(int index, Customer updatedCustomer) throws ParserException {
+    CustomerList allCustomers = readCustomers();
+    if (index >= 0 && index < allCustomers.getAllNumberOfCustomers()) {
+      allCustomers.setCustomer(index, updatedCustomer);
+      saveCustomerList(allCustomers);
+
+      System.out.println("Updated customer and saved to XML file.");
+    } else {
+      System.out.println("Invalid customer index: " + index);
+    }
+  }
   /*public void writePets()
   {
     DocumentBuilder builder = null;

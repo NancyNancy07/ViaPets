@@ -50,6 +50,14 @@ public class CustomerList implements Serializable
     }
   }
 
+  public void setCustomer(int index, Customer customer)
+  {
+    if (index >= 0 && index < customers.size())
+    {
+      customers.set(index, customer);
+    }
+  }
+
   public Customer getCustomer(int index)
   {
     if (index < 0 || index >= customers.size())

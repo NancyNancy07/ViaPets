@@ -38,6 +38,7 @@ public class ViaPetsController
   @FXML private Button closeButton;
   @FXML private Button editButton;
   @FXML private Button removeButton;
+  @FXML private Button updateButton;
   @FXML private TextField nameField;
   @FXML private TextField phoneField;
   @FXML private TextField emailField;
@@ -95,12 +96,27 @@ public class ViaPetsController
     customerDataDisplay.setVisible(false);
   }
 
-  public void editData()
+  public void editData() throws ParserException
   {
-    nameField.setEditable(true);
-    phoneField.setEditable(true);
-    emailField.setEditable(true);
-    editButton.setText("Update");
+    if (editButton.getText().equals("Edit"))
+    {
+      nameField.setEditable(true);
+      phoneField.setEditable(true);
+      emailField.setEditable(true);
+      editButton.setText("Update");
+    }
+    else if (editButton.getText().equals("Update"))
+    {
+      int currentIndex = customerTable.getSelectionModel().getSelectedIndex();
+      if(currentIndex!=-1){
+        Customer selectedCustomer = customerTable.getSelectionModel().getSelectedItem();
+        selectedCustomer.setName(nameField.getText());
+        selectedCustomer.setPhoneNumber(phoneField.getText());
+        selectedCustomer.setEmailAddress(emailField.getText());
+
+        modelManager.updateCustomer(currentIndex,selectedCustomer);
+      }
+    }
 
   }
 
@@ -130,6 +146,7 @@ public class ViaPetsController
       {
         customerTable.getItems().remove(currentIndex);
         modelManager.removeCustomer(currentIndex);
+        customerDataDisplay.setVisible(false);
 
       }
     }
