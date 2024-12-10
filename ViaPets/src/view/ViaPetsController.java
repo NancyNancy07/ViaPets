@@ -58,6 +58,13 @@ public class ViaPetsController
   @FXML private Button closeButton2;
   @FXML private Button editPetButton;
   @FXML private Button updatePetButton;
+  @FXML private TextField newPetName;
+  @FXML private TextField newPetSpecies;
+  @FXML private TextField newPetAge;
+  @FXML private TextField newGenderField;
+  @FXML private TextField newColorField;
+  @FXML private TextField newCommentsField;
+  @FXML private TextField newPriceField;
 
   private ViaPetsModelManager modelManager;
   private ViaPetsShop viaPetsShop;
@@ -189,9 +196,13 @@ public class ViaPetsController
     Customer newCustomer = new Customer(name, phone, email);
     System.out.println(newCustomer);
 
-    if ((name != " ") && (phone != " ") && (email != " "))
+    if ((!name.equals(" ")) && (!phone.equals(" ")) && (!email.equals(" ")))
     {
       modelManager.addCustomer(newCustomer);
+    }
+    else
+    {
+      System.out.println("Fill the all fields.");
     }
     newCName.clear();
     newCPhone.clear();
@@ -320,22 +331,35 @@ public class ViaPetsController
 
   public void addPet() throws ParserException, ParserConfigurationException
   {
-    String name = newCName.getText();
-    String phone = newCPhone.getText();
-    String email = newCEmail.getText();
+    String name = newPetName.getText();
+    String species = newPetSpecies.getText();
+    int age = Integer.parseInt(newPetAge.getText());
+    String gender = newGenderField.getText();
+    String color = newColorField.getText();
+    double price = Double.parseDouble(newPriceField.getText());
+    String comment = newCommentsField.getText();
 
-    Customer newCustomer = new Customer(name, phone, email);
-    System.out.println(newCustomer);
+    Pet newPet = new Pet(species, age, gender, color, name, comment, price);
 
-    if ((name != " ") && (phone != " ") && (email != " "))
+    if ((!name.equals(" ")) && (!species.equals(" ")) && (age != -1)
+        && (!gender.equals(" ")) && (!color.equals(" ")) && (price != -1)
+        && (!comment.equals(" ")))
     {
-      modelManager.addCustomer(newCustomer);
+      modelManager.addPet(newPet);
     }
-    newCName.clear();
-    newCPhone.clear();
-    newCEmail.clear();
+    else
+    {
+      System.out.println("Fill all fields");
+    }
+    newPetName.clear();
+    newPetSpecies.clear();
+    newPetAge.clear();
+    newGenderField.clear();
+    newColorField.clear();
+    newPriceField.clear();
+    newCommentsField.clear();
 
-    updateCustomerBox();
+    updatePetBox();
   }
 
   public void setCloseButton()

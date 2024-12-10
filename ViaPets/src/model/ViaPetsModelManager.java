@@ -231,6 +231,20 @@ public class ViaPetsModelManager
     }
 
   }
+
+  public void addPet(Pet pet) throws ParserException
+  {
+    PetList allPets = readPets();
+    if (pet != null)
+    {
+      allPets.addPet(pet);
+      savePetList(allPets);
+
+      System.out.println("added a pet and saved to XML file.");
+
+    }
+
+  }
   /*public void writePets()
   {
     DocumentBuilder builder = null;

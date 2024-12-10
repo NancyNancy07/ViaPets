@@ -415,13 +415,13 @@
     <age>4</age>
   </pets>
   <pets>
-    <gender>Female</gender>
-    <color>White</color>
-    <species>Dog</species>
-    <price>500.0</price>
-    <name>Angel</name>
-    <comment>Gentle and sweet</comment>
-    <age>3</age>
+    <gender>male</gender>
+    <color>red</color>
+    <species>dog</species>
+    <price>1000.0</price>
+    <name>roll</name>
+    <comment>bad</comment>
+    <age>4</age>
   </pets>
   <pets>
     <gender>Male</gender>
@@ -584,5 +584,14 @@
     <name>Amber</name>
     <comment>Adventurous and fun</comment>
     <age>2</age>
+  </pets>
+  <pets>
+    <gender>male</gender>
+    <color>red</color>
+    <species>dog</species>
+    <price>1000.0</price>
+    <name>roll</name>
+    <comment>good</comment>
+    <age>4</age>
   </pets>
 </PetList>

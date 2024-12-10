@@ -50,4 +50,9 @@
     <phoneNumber>7687578565</phoneNumber>
     <name>nancy</name>
   </customers>
+  <customers>
+    <emailAddress/>
+    <phoneNumber/>
+    <name/>
+  </customers>
 </CustomerList>
