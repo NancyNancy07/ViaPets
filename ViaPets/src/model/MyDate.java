@@ -28,6 +28,11 @@ public class MyDate
     return year;
   }
 
+  public MyDate getDate()
+  {
+    return this;
+  }
+
   public void setDay(int day)
   {
     this.day = day;
@@ -47,10 +52,12 @@ public class MyDate
   {
     return day + "/" + month + "/" + year;
   }
+
   public MyDate copy()
   {
     return new MyDate(day, month, year);
   }
+
   public boolean equals(Object obj)
   {
     if (obj == null || obj.getClass() != getClass())

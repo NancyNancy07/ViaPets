@@ -1,0 +1,51 @@
+Final Price: 1000.0
+Customer Details: 
+Name: John Doe
+Phone Number: 123 Elm Street
+Email Address: 555-1234
+Pets Details: 
+Species: Dog, Age: 2, Gender: Male, Color: Brown, Name: Buddy, Comment: Very energetic and playful, Price: 600.0
+Date: 1/3/2024
+Time: 22:50:42
+
+Final Price: 400.0
+Customer Details: 
+Name: Jane Smith
+Phone Number: 456 Oak Avenue
+Email Address: 555-5678
+Pets Details: 
+Species: Cat, Age: 3, Gender: Female, Color: White, Name: Whiskers, Comment: Loves cuddling and napping, Price: 500.0
+Date: 1/3/2024
+Time: 22:50:42
+
+Final Price: 600.0
+Customer Details: 
+Name: Sam Green
+Phone Number: 789 Pine Lane
+Email Address: 555-9101
+Pets Details: 
+Species: Rabbit, Age: 1, Gender: Male, Color: Grey, Name: Thumper, Comment: Curious and loves carrots, Price: 900.0
+Date: 1/3/2024
+Time: 22:50:42
+
+Final Price: 800.0
+Customer Details: 
+Name: Emma White
+Phone Number: 321 Maple Drive
+Email Address: 555-1122
+Pets Details: 
+Species: Parrot, Age: 4, Gender: Female, Color: Green, Name: Polly, Comment: Likes to mimic sounds, Price: 1000.0
+Date: 1/3/2024
+Time: 22:50:42
+
+Final Price: 300.0
+Customer Details: 
+Name: Liam Brown
+Phone Number: 654 Birch Blvd
+Email Address: 555-3344
+Pets Details: 
+Species: Dog, Age: 5, Gender: Male, Color: Black, Name: Rex, Comment: Loyal and friendly, Price: 500.0
+Date: 1/3/2024
+Time: 22:50:42
+
+

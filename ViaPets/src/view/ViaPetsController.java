@@ -4,11 +4,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import model.*;
 import parser.ParserException;
 
 import javax.xml.parsers.ParserConfigurationException;
+import java.time.LocalDate;
 
 public class ViaPetsController
 {
@@ -26,29 +28,32 @@ public class ViaPetsController
   @FXML private TableColumn<Pet, String> salePetPrice;
   @FXML private Button removeButton1;
   @FXML private Button saleCustomer;
-  @FXML private TableView<Pet> saleListTable;
-  @FXML private TableColumn<Pet, String> salePetDetails;
-  @FXML private TableColumn<Pet, String> saleCustomerDetails;
-  @FXML private Tab saleCustomerTab;
-  @FXML private Pane saleCustomerDataDisplay;
+  @FXML private TableView<Sale> saleListTable;
+  @FXML private TableColumn<Sale, String> salePetDetails;
+  @FXML private TableColumn<Sale, String> saleCustomerDetails;
+  @FXML private TableColumn<Sale, String> saleDateDetails;
+  @FXML private TableColumn<Sale, String> salePriceDetails;
+
   @FXML private TableView<Customer> saleListCustomerTable;
   @FXML private TableColumn<Customer, String> saleListCustomerName;
   @FXML private TableColumn<Customer, String> saleListCustomerPhone;
   @FXML private TableColumn<Customer, String> saleListCustomerEmail;
-  @FXML private Button saleNewCustomerButton;
+  @FXML private ComboBox<String> customerComboBox;
+  @FXML private AnchorPane saleNewCustomerDialog;
+  @FXML private TextField saleNewCustomerName;
+  @FXML private TextField saleNewCustomerPhone;
+  @FXML private TextField saleNewCustomerEmail;
 
-  //  @FXML private TableColumn<Pet, String> SalePetAge;
+  @FXML private ComboBox<String> petComboBox;
+  @FXML private TextField finalPrice;
+  @FXML private DatePicker date;
 
   @FXML private Tab customerTab;
-  @FXML private Tab addCustomerTab;
   @FXML private TableView<Customer> customerTable;
   @FXML private TableColumn<Customer, String> customerName;
   @FXML private TableColumn<Customer, String> customerPhone;
   @FXML private TableColumn<Customer, String> customerEmail;
   @FXML private Pane customerDataDisplay;
-  @FXML private TextArea customerTextArea;
-  @FXML private Button closeButton;
-  @FXML private Button removeButton;
   @FXML private Button editButton;
   @FXML private Button updateButton;
   @FXML private TextField nameField;
@@ -411,94 +416,208 @@ public class ViaPetsController
   {
     if (modelManager != null)
     {
-      PetList allPets = modelManager.readPets();
-      saleTable.getItems().clear();
-
-      for (int i = 0; i < allPets.getNumberOfPets(); i++)
-      {
-        Pet petData = allPets.getPet(i);
-        saleTable.getItems().add(petData);
-      }
-      salePetName.setCellValueFactory(
-          data -> new SimpleStringProperty(data.getValue().getName()));
-      salePetSpecies.setCellValueFactory(
-          data -> new SimpleStringProperty(data.getValue().getSpecies()));
-      salePetAge.setCellValueFactory(data -> new SimpleStringProperty(
-          String.valueOf(data.getValue().getAge())));
-      salePetGender.setCellValueFactory(
-          data -> new SimpleStringProperty(data.getValue().getGender()));
-      salePetColor.setCellValueFactory(
-          data -> new SimpleStringProperty(data.getValue().getColor()));
-      salePetComments.setCellValueFactory(data -> new SimpleStringProperty(
-          String.valueOf(data.getValue().getComment())));
-      salePetPrice.setCellValueFactory(data -> new SimpleStringProperty(
-          String.valueOf(data.getValue().getPrice())));
-
-      //      adding a listener to know which row is selected
-      saleTable.getSelectionModel().selectedItemProperty()
-          .addListener((old, current, newP) -> {
-            if (newP != null)
-            {
-              //              System.out.println(newP);
-              showPetData(newP);
-            }
-          });
-    }
-
-  }
-
-  public void addSaleCustomer() throws ParserException
-  {
-    saleCustomerDataDisplay.setVisible(true);
-
-    if (modelManager != null)
-    {
       CustomerList allCustomers = modelManager.readCustomers();
+      PetList allPets = modelManager.readPets();
+      SaleList allSales = modelManager.readSales();
+      saleListTable.getItems().clear();
 
-      saleListCustomerTable.getItems().clear();
+      for (int i = 0; i < allSales.getAllNumberOfSales(); i++)
+      {
+        Sale saleData = allSales.getSale(i);
+        saleListTable.getItems().add(saleData);
+      }
+
+      salePetDetails.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getPet().getName()));
+      saleCustomerDetails.setCellValueFactory(data -> new SimpleStringProperty(
+          data.getValue().getCustomer().getName()));
+      saleDateDetails.setCellValueFactory(data -> new SimpleStringProperty(
+          data.getValue().getDate().toString()));
+      salePriceDetails.setCellValueFactory(data -> new SimpleStringProperty(
+          String.valueOf(data.getValue().getFinalPrice())));
+
+      customerComboBox.getItems().clear();
+      petComboBox.getItems().clear();
+
+      customerComboBox.setValue("Select Customer");
+      petComboBox.setValue("Select Pet");
 
       for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
       {
-        Customer customerData = allCustomers.getCustomer(i);
-        saleListCustomerTable.getItems().add(customerData);
+        String name = allCustomers.getCustomer(i).getName();
+        customerComboBox.getItems().add(name);
       }
 
-      saleListCustomerName.setCellValueFactory(
-          data -> new SimpleStringProperty(data.getValue().getName()));
-      saleListCustomerPhone.setCellValueFactory(
-          data -> new SimpleStringProperty(data.getValue().getPhoneNumber()));
-      saleListCustomerEmail.setCellValueFactory(
-          data -> new SimpleStringProperty(data.getValue().getEmailAddress()));
-      ;
-
-      //      adding a listener to know which row is selected
-      saleListCustomerTable.getSelectionModel().selectedItemProperty()
-          .addListener((old, current, selectedCustomer) -> {
-            if (selectedCustomer != null)
-            {
-              System.out.println(selectedCustomer);
-              showCustomerData(selectedCustomer);
-              try
-              {
-                //                check the customer
-                boolean alreadyExist = selectedCustomer.equals(
-                    saleListCustomerTable.getItems());
-
-                System.out.println(alreadyExist);
-                if (!alreadyExist)
-                {
-                  addCustomer();
-                }
-              }
-              catch (ParserException | ParserConfigurationException e)
-              {
-                throw new RuntimeException(e);
-              }
-            }
-          });
+      for (int i = 0; i < allPets.getNumberOfPets(); i++)
+      {
+        String name = allPets.getPet(i).getName();
+        petComboBox.getItems().add(name);
+      }
     }
-    //    System.out.println("pet sold");
   }
+
+  public void saleAddCustomerButton()
+  {
+    saleNewCustomerDialog.setVisible(true);
+  }
+
+  public void addSaleCustomer()
+      throws ParserException, ParserConfigurationException
+  {
+    CustomerList allCustomers = modelManager.readCustomers();
+
+    String name = saleNewCustomerName.getText();
+    String phone = saleNewCustomerPhone.getText();
+    String email = saleNewCustomerEmail.getText();
+
+    Customer customer = new Customer(name, phone, email);
+
+    Customer existingCustomer = null;
+    for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
+    {
+      existingCustomer = allCustomers.getCustomer(i);
+    }
+    if (customer != null && !customer.equals(existingCustomer))
+    {
+      modelManager.addCustomer(customer);
+      updateCustomerBox();
+      updateSaleBox();
+
+      saleNewCustomerName.clear();
+      saleNewCustomerPhone.clear();
+      saleNewCustomerEmail.clear();
+      saleNewCustomerDialog.setVisible(false);
+
+    }
+    else
+    {
+      System.out.println("Customer already exists");
+    }
+
+    //    //    if (modelManager != null)
+    //    //    {
+    //    //      CustomerList allCustomers = modelManager.readCustomers();
+    //    //
+    //    //      saleListCustomerTable.getItems().clear();
+    //    //
+    //    //      for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
+    //    //      {
+    //    //        Customer customerData = allCustomers.getCustomer(i);
+    //    //        saleListCustomerTable.getItems().add(customerData);
+    //    //      }
+    //    //
+    //    //      saleListCustomerName.setCellValueFactory(
+    //    //          data -> new SimpleStringProperty(data.getValue().getName()));
+    //    //      saleListCustomerPhone.setCellValueFactory(
+    //    //          data -> new SimpleStringProperty(data.getValue().getPhoneNumber()));
+    //    //      saleListCustomerEmail.setCellValueFactory(
+    //    //          data -> new SimpleStringProperty(data.getValue().getEmailAddress()));
+    //    //      ;
+    //    //
+    //    //      //      adding a listener to know which row is selected
+    //    //      saleListCustomerTable.getSelectionModel().selectedItemProperty()
+    //    //          .addListener((old, current, selectedCustomer) -> {
+    //    //            if (selectedCustomer != null)
+    //    //            {
+    //    //              System.out.println(selectedCustomer);
+    //    //              showCustomerData(selectedCustomer);
+    //    //              try
+    //    //              {
+    //    //                //                check the customer
+    //    //                boolean alreadyExist = selectedCustomer.equals(
+    //    //                    saleListCustomerTable.getItems());
+    //    //
+    //    //                System.out.println(alreadyExist);
+    //    //                if (!alreadyExist)
+    //    //                {
+    //    //                  addCustomer();
+    //    //                }
+    //    //              }
+    //    //              catch (ParserException | ParserConfigurationException e)
+    //    //              {
+    //    //                throw new RuntimeException(e);
+    //    //              }
+    //    //            }
+    //    //          });
+    //    //    }
+    //    //    System.out.println("pet sold");
+    //  }
+  }
+
+  public void addSale() throws ParserException
+  {
+    String customerName = customerComboBox.getValue();
+    CustomerList allCustomers = modelManager.readCustomers();
+    Customer saleCustomer = null;
+    for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
+    {
+      if (customerName.equals(allCustomers.getCustomer(i).getName()))
+      {
+        saleCustomer = allCustomers.getCustomer(i);
+      }
+    }
+    String petName = petComboBox.getValue();
+    PetList allPets = modelManager.readPets();
+    Pet salePet = null;
+    for (int i = 0; i < allPets.getNumberOfPets(); i++)
+    {
+      if (petName.equals(allPets.getPet(i).getName()))
+      {
+        salePet = allPets.getPet(i);
+      }
+    }
+    String priceText = finalPrice.getText();
+    double sellPrice = 0.0;
+    if (priceText != null && !priceText.isEmpty())
+    {
+      sellPrice = Double.parseDouble(priceText);
+    }
+    LocalDate sellDate = null;
+    MyDate myDate = null;
+
+    if (date != null)
+    {
+      sellDate = date.getValue();
+      myDate = new MyDate(sellDate.getDayOfMonth(), sellDate.getMonthValue(),
+          sellDate.getYear());
+    }
+
+    if (salePet != null && saleCustomer != null)
+    {
+      Sale sale = new Sale(sellPrice, saleCustomer, salePet, myDate);
+      modelManager.addSale(sale);
+      updateSaleBox();
+      //      addSaleToTable(sale);
+
+      //      customerComboBox.getItems().clear();
+      //      petComboBox.getItems().clear();
+
+      //      customerComboBox.setValue("Select Customer");
+      //      petComboBox.setValue("Select Pet");
+
+      finalPrice.clear();
+      date.setValue(null);
+      System.out.println("sale added");
+    }
+
+  }
+
+  //  public void addSaleToTable(Sale sale)
+  //  {
+  //    saleListTable.getItems().add(sale);
+  //
+  //    salePetDetails.setCellValueFactory(
+  //        data -> new SimpleStringProperty(data.getValue().getPet().getName()));
+  //
+  //    saleCustomerDetails.setCellValueFactory(data -> new SimpleStringProperty(
+  //        data.getValue().getCustomer().getName()));
+  //
+  //    saleDateDetails.setCellValueFactory(
+  //        data -> new SimpleStringProperty(data.getValue().getDate().toString()));
+  //
+  //    salePriceDetails.setCellValueFactory(data -> new SimpleStringProperty(
+  //        String.valueOf(data.getValue().getFinalPrice())));
+  //  }
 
   public void setCloseButton()
   {

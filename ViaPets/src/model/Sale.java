@@ -1,4 +1,5 @@
 package model;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -9,6 +10,8 @@ public class Sale
   private Pet pet;
   private MyDate date;
   private String time;
+  private String customerName;
+  private String petName;
 
   public Sale(double finalPrice, Customer customer, Pet pet, MyDate date)
   {
@@ -17,6 +20,19 @@ public class Sale
     this.pet = pet;
     this.date = date.copy();
 
+    LocalDateTime now = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+    this.time = now.format(formatter);
+  }
+
+  public Sale(double finalPrice, String customer, String pet, MyDate date)
+  {
+    this.finalPrice = finalPrice;
+    this.date = date.copy();
+    this.customerName = customer;
+    this.petName = pet;
+    this.customer = new Customer();
+    this.pet = new Pet();
     LocalDateTime now = LocalDateTime.now();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     this.time = now.format(formatter);
@@ -37,6 +53,35 @@ public class Sale
     return time;
   }
 
+  public String getCustomerName()
+  {
+    if (customerName != null)
+    {
+      return customerName;
+    }
+    return null;
+  }
+
+  public String getPetName()
+  {
+    return petName;
+  }
+
+  public Customer getCustomer()
+  {
+    return customer;
+  }
+
+  public Pet getPet()
+  {
+    return pet;
+  }
+
+  public MyDate getDate()
+  {
+    return date;
+  }
+
   public void setTime(String time)
   {
     this.time = time;
@@ -44,16 +89,19 @@ public class Sale
 
   public String toString()
   {
-    return "Final Price: " + finalPrice + "\nCustomer: " + customer + "\nPet: " + pet + "\nDate: " + date + "\nTime: " + time;
+    return "Final Price: " + finalPrice + "\n" + customer + "\n" + pet
+        + "\nDate: " + date + "\nTime: " + time + "\n";
   }
 
   public boolean equals(Object obj)
   {
-    if(obj == null || obj.getClass() != getClass())
+    if (obj == null || obj.getClass() != getClass())
     {
       return false;
     }
-    Sale tempSale = (Sale)obj;
-    return finalPrice == tempSale.finalPrice && customer.equals(tempSale.customer) && pet.equals(tempSale.pet) && date.equals(tempSale.date) && time.equals(tempSale.time);
+    Sale tempSale = (Sale) obj;
+    return finalPrice == tempSale.finalPrice && customer.equals(
+        tempSale.customer) && pet.equals(tempSale.pet) && date.equals(
+        tempSale.date) && time.equals(tempSale.time);
   }
 }

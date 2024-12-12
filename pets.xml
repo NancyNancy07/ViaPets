@@ -28,6 +28,15 @@
     <age>1</age>
   </pets>
   <pets>
+    <gender>Female</gender>
+    <color>Green</color>
+    <species>Parrot</species>
+    <price>200.0</price>
+    <name>Polly</name>
+    <comment>Likes to mimic sounds</comment>
+    <age>4</age>
+  </pets>
+  <pets>
     <gender>Male</gender>
     <color>Black</color>
     <species>Dog</species>
@@ -43,7 +52,7 @@
     <price>320.0</price>
     <name>Mittens</name>
     <comment>Adventurous and curious</comment>
-    <age>5</age>
+    <age>2</age>
   </pets>
   <pets>
     <gender>Male</gender>
@@ -51,7 +60,7 @@
     <species>Hamster</species>
     <price>50.0</price>
     <name>Peanut</name>
-    <comment>Loves running on the wheel nj</comment>
+    <comment>Loves running on the wheel</comment>
     <age>1</age>
   </pets>
   <pets>
@@ -61,7 +70,7 @@
     <price>30.0</price>
     <name>Nemo</name>
     <comment>Calm and peaceful</comment>
-    <age>10</age>
+    <age>1</age>
   </pets>
   <pets>
     <gender>Female</gender>
@@ -602,14 +611,5 @@
     <name>Cooper</name>
     <comment>Protective and playful</comment>
     <age>3</age>
-  </pets>
-  <pets>
-    <gender>nm</gender>
-    <color>jjj</color>
-    <species>k</species>
-    <price>7777.0</price>
-    <name>hghg</name>
-    <comment>njkj</comment>
-    <age>6</age>
   </pets>
 </PetList>

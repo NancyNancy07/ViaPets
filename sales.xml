@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SaleList>
+  <saleList>
+    <date>
+      <month>3</month>
+      <year>2024</year>
+      <day>1</day>
+    </date>
+    <finalPrice>1000.0</finalPrice>
+    <time>00:03:07</time>
+    <pet>
+      <gender>Male</gender>
+      <color>Brown</color>
+      <species>Dog</species>
+      <price>600.0</price>
+      <name>Buddy</name>
+      <comment>Very energetic and playful</comment>
+      <age>2</age>
+    </pet>
+    <customer>
+      <emailAddress>555-1234</emailAddress>
+      <phoneNumber>123 Elm Street</phoneNumber>
+      <name>John Doe</name>
+    </customer>
+  </saleList>
+  <saleList>
+    <date>
+      <month>3</month>
+      <year>2024</year>
+      <day>1</day>
+    </date>
+    <finalPrice>400.0</finalPrice>
+    <time>00:03:07</time>
+    <pet>
+      <gender>Female</gender>
+      <color>White</color>
+      <species>Cat</species>
+      <price>500.0</price>
+      <name>Whiskers</name>
+      <comment>Loves cuddling and napping</comment>
+      <age>3</age>
+    </pet>
+    <customer>
+      <emailAddress>555-5678</emailAddress>
+      <phoneNumber>456 Oak Avenue</phoneNumber>
+      <name>Jane Smith</name>
+    </customer>
+  </saleList>
+  <saleList>
+    <date>
+      <month>3</month>
+      <year>2024</year>
+      <day>1</day>
+    </date>
+    <finalPrice>600.0</finalPrice>
+    <time>00:03:07</time>
+    <pet>
+      <gender>Male</gender>
+      <color>Grey</color>
+      <species>Rabbit</species>
+      <price>900.0</price>
+      <name>Thumper</name>
+      <comment>Curious and loves carrots</comment>
+      <age>1</age>
+    </pet>
+    <customer>
+      <emailAddress>555-9101</emailAddress>
+      <phoneNumber>789 Pine Lane</phoneNumber>
+      <name>Sam Green</name>
+    </customer>
+  </saleList>
+  <saleList>
+    <date>
+      <month>3</month>
+      <year>2024</year>
+      <day>1</day>
+    </date>
+    <finalPrice>800.0</finalPrice>
+    <time>00:03:07</time>
+    <pet>
+      <gender>Female</gender>
+      <color>Green</color>
+      <species>Parrot</species>
+      <price>1000.0</price>
+      <name>Polly</name>
+      <comment>Likes to mimic sounds</comment>
+      <age>4</age>
+    </pet>
+    <customer>
+      <emailAddress>555-1122</emailAddress>
+      <phoneNumber>321 Maple Drive</phoneNumber>
+      <name>Emma White</name>
+    </customer>
+  </saleList>
+  <saleList>
+    <date>
+      <month>3</month>
+      <year>2024</year>
+      <day>1</day>
+    </date>
+    <finalPrice>300.0</finalPrice>
+    <time>00:03:07</time>
+    <pet>
+      <gender>Male</gender>
+      <color>Black</color>
+      <species>Dog</species>
+      <price>500.0</price>
+      <name>Rex</name>
+      <comment>Loyal and friendly</comment>
+      <age>5</age>
+    </pet>
+    <customer>
+      <emailAddress>555-3344</emailAddress>
+      <phoneNumber>654 Birch Blvd</phoneNumber>
+      <name>Liam Brown</name>
+    </customer>
+  </saleList>
+  <saleList>
+    <date>
+      <month>12</month>
+      <year>2024</year>
+      <day>14</day>
+    </date>
+    <finalPrice>123.66</finalPrice>
+    <time>00:03:28</time>
+    <pet>
+      <gender>Female</gender>
+      <color>Ginger</color>
+      <species>Cat</species>
+      <price>320.0</price>
+      <name>Mittens</name>
+      <comment>Adventurous and curious</comment>
+      <age>2</age>
+    </pet>
+    <customer>
+      <emailAddress>bobbrown@email.com</emailAddress>
+      <phoneNumber>456-789-0123</phoneNumber>
+      <name>Bob Brown</name>
+    </customer>
+  </saleList>
+</SaleList>

@@ -35,6 +35,16 @@ public class Pet implements Serializable
     this.price = price;
   }
 
+  public Pet()
+  {
+    this.species = "";
+    this.age = -1;
+    this.gender = "";
+    this.color = "";
+    this.comment = "";
+    this.price = -0.0;
+  }
+
   public String getSpecies()
   {
     return species;
@@ -99,7 +109,7 @@ public class Pet implements Serializable
   {
     return "Pets Details: \n" + "Species: " + species + ", Age: " + age
         + ", Gender: " + gender + ", Color: " + color + ", Name: " + name
-        + ", Comment: " + comment + ", Price: " + price + "\n";
+        + ", Comment: " + comment + ", Price: " + price;
   }
 
   public boolean equals(Object obj)
@@ -111,8 +121,9 @@ public class Pet implements Serializable
 
     Pet other = (Pet) obj;
     return species.equals(other.species) && age == other.age && gender.equals(
-        other.gender) && color.equals(other.color) && name.equals(other.name)
-        && comment.equals(other.comment) && price == other.price;
+        other.gender) && color.equals(other.color) && name != null
+        && name.equals(other.name) && comment.equals(other.comment)
+        && price == other.price;
   }
 
 }

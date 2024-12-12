@@ -15,6 +15,13 @@ public class Customer implements Serializable
     this.emailAddress = emailAddress;
   }
 
+  public Customer()
+  {
+    this.name = "";
+    this.phoneNumber = "";
+    this.emailAddress = "";
+  }
+
   public String getName()
   {
     return name;
@@ -48,7 +55,7 @@ public class Customer implements Serializable
   public String toString()
   {
     return "Customer Details: " + "\nName: " + name + "\nPhone Number: "
-        + phoneNumber + "\nEmail Address: " + emailAddress + "\n";
+        + phoneNumber + "\nEmail Address: " + emailAddress;
   }
 
   public boolean equals(Object obj)
