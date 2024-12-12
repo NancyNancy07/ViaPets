@@ -51,6 +51,12 @@ public class KennelReservationList
     }
   }
 
+  public int getAllNumberOfKennelReservations()
+  {
+    return kennelReservations.size();
+  }
+
+
   public KennelReservation getKennelReservation(int index)
   {
     if (index >= 0 && index < kennelReservations.size())

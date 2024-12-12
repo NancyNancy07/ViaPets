@@ -28,6 +28,24 @@ public class SaleList
     }
   }
 
+  public int getNumberOfSales()
+  {
+    return saleList.size();
+  }
+
+  public void setSale(Sale sale, int index)
+  {
+    if(index < 0 || index >= saleList.size())
+    {
+      //Exceptions to add
+      System.out.println("Invalid index");
+    }
+    else
+    {
+      saleList.set(index, sale);
+    }
+  }
+
   public Sale getSale(int index)
   {
     if(index < 0 || index >= saleList.size())
