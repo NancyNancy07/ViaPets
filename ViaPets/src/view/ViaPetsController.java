@@ -1,14 +1,10 @@
 package view;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import model.*;
 import parser.ParserException;
 
@@ -20,6 +16,29 @@ public class ViaPetsController
   @FXML private Tab petTab;
   @FXML private Tab kennelReservationTab;
   @FXML private Tab saleTab;
+  @FXML private TableView<Pet> saleTable;
+  @FXML private TableColumn<Pet, String> salePetName;
+  @FXML private TableColumn<Pet, String> salePetSpecies;
+  @FXML private TableColumn<Pet, String> salePetAge;
+  @FXML private TableColumn<Pet, String> salePetGender;
+  @FXML private TableColumn<Pet, String> salePetColor;
+  @FXML private TableColumn<Pet, String> salePetComments;
+  @FXML private TableColumn<Pet, String> salePetPrice;
+  @FXML private Button removeButton1;
+  @FXML private Button saleCustomer;
+  @FXML private TableView<Pet> saleListTable;
+  @FXML private TableColumn<Pet, String> salePetDetails;
+  @FXML private TableColumn<Pet, String> saleCustomerDetails;
+  @FXML private Tab saleCustomerTab;
+  @FXML private Pane saleCustomerDataDisplay;
+  @FXML private TableView<Customer> saleListCustomerTable;
+  @FXML private TableColumn<Customer, String> saleListCustomerName;
+  @FXML private TableColumn<Customer, String> saleListCustomerPhone;
+  @FXML private TableColumn<Customer, String> saleListCustomerEmail;
+  @FXML private Button saleNewCustomerButton;
+
+  //  @FXML private TableColumn<Pet, String> SalePetAge;
+
   @FXML private Tab customerTab;
   @FXML private Tab addCustomerTab;
   @FXML private TableView<Customer> customerTable;
@@ -79,6 +98,7 @@ public class ViaPetsController
     petDataDisplay.setVisible(false);
     updateButton.setVisible(false);
     updatePetButton.setVisible(false);
+    saleCustomer.setVisible(false);
 
   }
 
@@ -255,7 +275,7 @@ public class ViaPetsController
 
   public void showPetData(Pet selectedPet)
   {
-    if (selectedPet != null)
+    if (selectedPet != null && petTab.isSelected())
     {
       petDataDisplay.setVisible(true);
       petNameField.setText(selectedPet.getName());
@@ -273,6 +293,31 @@ public class ViaPetsController
       colorField.setEditable(false);
       commentsField.setEditable(false);
       priceField.setEditable(false);
+
+    }
+    else if (selectedPet != null && saleTab.isSelected())
+    {
+      saleCustomer.setVisible(true);
+      petDataDisplay.setVisible(true);
+      editPetButton.setVisible(false);
+      updatePetButton.setVisible(false);
+      removeButton1.setVisible(false);
+
+      petNameField.setText(selectedPet.getName());
+      speciesField.setText(selectedPet.getSpecies());
+      ageField.setText(String.valueOf(selectedPet.getAge()));
+      genderField.setText(selectedPet.getGender());
+      colorField.setText(selectedPet.getColor());
+      commentsField.setText(selectedPet.getComment());
+      priceField.setText(String.valueOf(selectedPet.getPrice()));
+
+      petNameField.setEditable(false);
+      speciesField.setEditable(false);
+      ageField.setEditable(false);
+      genderField.setEditable(false);
+      colorField.setEditable(false);
+      commentsField.setEditable(false);
+      priceField.setEditable(true);
 
     }
   }
@@ -362,6 +407,99 @@ public class ViaPetsController
     updatePetBox();
   }
 
+  public void updateSaleBox() throws ParserException
+  {
+    if (modelManager != null)
+    {
+      PetList allPets = modelManager.readPets();
+      saleTable.getItems().clear();
+
+      for (int i = 0; i < allPets.getNumberOfPets(); i++)
+      {
+        Pet petData = allPets.getPet(i);
+        saleTable.getItems().add(petData);
+      }
+      salePetName.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getName()));
+      salePetSpecies.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getSpecies()));
+      salePetAge.setCellValueFactory(data -> new SimpleStringProperty(
+          String.valueOf(data.getValue().getAge())));
+      salePetGender.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getGender()));
+      salePetColor.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getColor()));
+      salePetComments.setCellValueFactory(data -> new SimpleStringProperty(
+          String.valueOf(data.getValue().getComment())));
+      salePetPrice.setCellValueFactory(data -> new SimpleStringProperty(
+          String.valueOf(data.getValue().getPrice())));
+
+      //      adding a listener to know which row is selected
+      saleTable.getSelectionModel().selectedItemProperty()
+          .addListener((old, current, newP) -> {
+            if (newP != null)
+            {
+              //              System.out.println(newP);
+              showPetData(newP);
+            }
+          });
+    }
+
+  }
+
+  public void addSaleCustomer() throws ParserException
+  {
+    saleCustomerDataDisplay.setVisible(true);
+
+    if (modelManager != null)
+    {
+      CustomerList allCustomers = modelManager.readCustomers();
+
+      saleListCustomerTable.getItems().clear();
+
+      for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
+      {
+        Customer customerData = allCustomers.getCustomer(i);
+        saleListCustomerTable.getItems().add(customerData);
+      }
+
+      saleListCustomerName.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getName()));
+      saleListCustomerPhone.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getPhoneNumber()));
+      saleListCustomerEmail.setCellValueFactory(
+          data -> new SimpleStringProperty(data.getValue().getEmailAddress()));
+      ;
+
+      //      adding a listener to know which row is selected
+      saleListCustomerTable.getSelectionModel().selectedItemProperty()
+          .addListener((old, current, selectedCustomer) -> {
+            if (selectedCustomer != null)
+            {
+              System.out.println(selectedCustomer);
+              showCustomerData(selectedCustomer);
+              try
+              {
+                //                check the customer
+                boolean alreadyExist = selectedCustomer.equals(
+                    saleListCustomerTable.getItems());
+
+                System.out.println(alreadyExist);
+                if (!alreadyExist)
+                {
+                  addCustomer();
+                }
+              }
+              catch (ParserException | ParserConfigurationException e)
+              {
+                throw new RuntimeException(e);
+              }
+            }
+          });
+    }
+    //    System.out.println("pet sold");
+  }
+
   public void setCloseButton()
   {
     customerDataDisplay.setVisible(false);
@@ -382,6 +520,10 @@ public class ViaPetsController
     else if (petTab != null && petTab.isSelected())
     {
       updatePetBox();
+    }
+    else if (saleTab != null && saleTab.isSelected())
+    {
+      updateSaleBox();
     }
   }
 }

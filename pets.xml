@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <PetList>
   <pets>
+    <gender>Male</gender>
+    <color>Brown</color>
+    <species>Dog</species>
+    <price>450.0</price>
+    <name>Buddy</name>
+    <comment>Very energetic and playful</comment>
+    <age>2</age>
+  </pets>
+  <pets>
     <gender>Female</gender>
     <color>White</color>
     <species>Cat</species>
@@ -16,16 +25,7 @@
     <price>120.0</price>
     <name>Thumper</name>
     <comment>Curious and loves carrots</comment>
-    <age>5</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Green</color>
-    <species>Parrot</species>
-    <price>200.0</price>
-    <name>Polly</name>
-    <comment>Likes to mimic sounds</comment>
-    <age>4</age>
+    <age>1</age>
   </pets>
   <pets>
     <gender>Male</gender>
@@ -40,10 +40,10 @@
     <gender>Female</gender>
     <color>Ginger</color>
     <species>Cat</species>
-    <price>500.0</price>
+    <price>320.0</price>
     <name>Mittens</name>
     <comment>Adventurous and curious</comment>
-    <age>2</age>
+    <age>5</age>
   </pets>
   <pets>
     <gender>Male</gender>
@@ -51,7 +51,7 @@
     <species>Hamster</species>
     <price>50.0</price>
     <name>Peanut</name>
-    <comment>Loves running on the wheel</comment>
+    <comment>Loves running on the wheel nj</comment>
     <age>1</age>
   </pets>
   <pets>
@@ -61,7 +61,16 @@
     <price>30.0</price>
     <name>Nemo</name>
     <comment>Calm and peaceful</comment>
-    <age>1</age>
+    <age>10</age>
+  </pets>
+  <pets>
+    <gender>Female</gender>
+    <color>Golden</color>
+    <species>Dog</species>
+    <price>500.0</price>
+    <name>Lucy</name>
+    <comment>Very affectionate</comment>
+    <age>3</age>
   </pets>
   <pets>
     <gender>Male</gender>
@@ -415,13 +424,13 @@
     <age>4</age>
   </pets>
   <pets>
-    <gender>male</gender>
-    <color>red</color>
-    <species>dog</species>
-    <price>1000.0</price>
-    <name>roll</name>
-    <comment>bad</comment>
-    <age>4</age>
+    <gender>Female</gender>
+    <color>White</color>
+    <species>Dog</species>
+    <price>500.0</price>
+    <name>Angel</name>
+    <comment>Gentle and sweet</comment>
+    <age>3</age>
   </pets>
   <pets>
     <gender>Male</gender>
@@ -586,12 +595,21 @@
     <age>2</age>
   </pets>
   <pets>
-    <gender>male</gender>
-    <color>red</color>
-    <species>dog</species>
-    <price>1000.0</price>
-    <name>roll</name>
-    <comment>good</comment>
-    <age>4</age>
+    <gender>Male</gender>
+    <color>Brown</color>
+    <species>Dog</species>
+    <price>440.0</price>
+    <name>Cooper</name>
+    <comment>Protective and playful</comment>
+    <age>3</age>
+  </pets>
+  <pets>
+    <gender>nm</gender>
+    <color>jjj</color>
+    <species>k</species>
+    <price>7777.0</price>
+    <name>hghg</name>
+    <comment>njkj</comment>
+    <age>6</age>
   </pets>
 </PetList>

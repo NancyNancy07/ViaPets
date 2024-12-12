@@ -142,35 +142,6 @@ public class ViaPetsModelManager
     return pets;
   }
 
-  public void removeCustomer(int index) throws ParserException
-  {
-    CustomerList allCustomers = readCustomers();
-    if (index >= 0 && index < allCustomers.getAllNumberOfCustomers())
-    {
-      Customer removeCustomer = allCustomers.getCustomer(index);
-      if (removeCustomer != null)
-      {
-        //        System.out.println(removeCustomer);
-        allCustomers.removeCustomer(removeCustomer);
-        saveCustomerList(allCustomers);
-      }
-    }
-  }
-
-  public void removePet(int index) throws ParserException
-  {
-    PetList allPets = readPets();
-    if (index >= 0 && index < allPets.getNumberOfPets())
-    {
-      Pet removePet = allPets.getPet(index);
-      if (removePet != null)
-      {
-        allPets.removePet(removePet);
-        savePetList(allPets);
-      }
-    }
-  }
-
   public void saveCustomerList(CustomerList allCustomers) throws ParserException
   {
     System.out.println("new list");
