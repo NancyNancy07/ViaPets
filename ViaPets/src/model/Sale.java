@@ -10,8 +10,6 @@ public class Sale
   private Pet pet;
   private MyDate date;
   private String time;
-  private String customerName;
-  private String petName;
 
   public Sale(double finalPrice, Customer customer, Pet pet, MyDate date)
   {
@@ -20,19 +18,6 @@ public class Sale
     this.pet = pet;
     this.date = date.copy();
 
-    LocalDateTime now = LocalDateTime.now();
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-    this.time = now.format(formatter);
-  }
-
-  public Sale(double finalPrice, String customer, String pet, MyDate date)
-  {
-    this.finalPrice = finalPrice;
-    this.date = date.copy();
-    this.customerName = customer;
-    this.petName = pet;
-    this.customer = new Customer();
-    this.pet = new Pet();
     LocalDateTime now = LocalDateTime.now();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     this.time = now.format(formatter);
@@ -51,20 +36,6 @@ public class Sale
   public String getTime()
   {
     return time;
-  }
-
-  public String getCustomerName()
-  {
-    if (customerName != null)
-    {
-      return customerName;
-    }
-    return null;
-  }
-
-  public String getPetName()
-  {
-    return petName;
   }
 
   public Customer getCustomer()

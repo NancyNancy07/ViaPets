@@ -72,12 +72,6 @@ public class CustomerList implements Serializable
     return customers.size();
   }
 
-  //  need this as an array list to show the customers
-  public Customer[] getAllCustomers()
-  {
-    return customers.toArray(new Customer[customers.size()]);
-  }
-
   public String toString()
   {
     String rtnString = "";
