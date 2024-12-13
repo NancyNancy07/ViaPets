@@ -612,4 +612,13 @@
     <comment>Protective and playful</comment>
     <age>3</age>
   </pets>
+  <pets>
+    <gender>male</gender>
+    <color>white</color>
+    <species>dog</species>
+    <price>1200.0</price>
+    <name>bruno</name>
+    <comment>good </comment>
+    <age>1</age>
+  </pets>
 </PetList>

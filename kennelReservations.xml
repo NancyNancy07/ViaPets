@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<SaleList>
-  <saleList>
-    <date>
-      <month>3</month>
-      <year>2024</year>
-      <day>1</day>
-    </date>
-    <finalPrice>1000.0</finalPrice>
-    <time>14:58:35</time>
+<KennelReservationList>
+  <kennelReservations>
+    <endDate>
+      <month>5</month>
+      <year>2025</year>
+      <day>5</day>
+    </endDate>
+    <price>100.0</price>
     <pet>
       <gender>Male</gender>
       <color>Brown</color>
@@ -17,20 +16,24 @@
       <comment>Very energetic and playful</comment>
       <age>2</age>
     </pet>
+    <startDate>
+      <month>3</month>
+      <year>2025</year>
+      <day>5</day>
+    </startDate>
     <customer>
       <emailAddress>555-1234</emailAddress>
       <phoneNumber>123 Elm Street</phoneNumber>
       <name>John Doe</name>
     </customer>
-  </saleList>
-  <saleList>
-    <date>
-      <month>3</month>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
       <year>2024</year>
-      <day>1</day>
-    </date>
-    <finalPrice>400.0</finalPrice>
-    <time>14:58:35</time>
+      <day>30</day>
+    </endDate>
+    <price>100.0</price>
     <pet>
       <gender>Female</gender>
       <color>White</color>
@@ -40,20 +43,24 @@
       <comment>Loves cuddling and napping</comment>
       <age>3</age>
     </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>9</day>
+    </startDate>
     <customer>
       <emailAddress>555-5678</emailAddress>
       <phoneNumber>456 Oak Avenue</phoneNumber>
       <name>Jane Smith</name>
     </customer>
-  </saleList>
-  <saleList>
-    <date>
-      <month>3</month>
-      <year>2024</year>
-      <day>1</day>
-    </date>
-    <finalPrice>600.0</finalPrice>
-    <time>14:58:35</time>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>4</month>
+      <year>2025</year>
+      <day>30</day>
+    </endDate>
+    <price>100.0</price>
     <pet>
       <gender>Male</gender>
       <color>Grey</color>
@@ -63,20 +70,24 @@
       <comment>Curious and loves carrots</comment>
       <age>1</age>
     </pet>
+    <startDate>
+      <month>4</month>
+      <year>2025</year>
+      <day>12</day>
+    </startDate>
     <customer>
       <emailAddress>555-9101</emailAddress>
       <phoneNumber>789 Pine Lane</phoneNumber>
       <name>Sam Green</name>
     </customer>
-  </saleList>
-  <saleList>
-    <date>
-      <month>3</month>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
       <year>2024</year>
-      <day>1</day>
-    </date>
-    <finalPrice>800.0</finalPrice>
-    <time>14:58:35</time>
+      <day>30</day>
+    </endDate>
+    <price>100.0</price>
     <pet>
       <gender>Female</gender>
       <color>Green</color>
@@ -86,20 +97,24 @@
       <comment>Likes to mimic sounds</comment>
       <age>4</age>
     </pet>
+    <startDate>
+      <month>11</month>
+      <year>2024</year>
+      <day>30</day>
+    </startDate>
     <customer>
       <emailAddress>555-1122</emailAddress>
       <phoneNumber>321 Maple Drive</phoneNumber>
       <name>Emma White</name>
     </customer>
-  </saleList>
-  <saleList>
-    <date>
-      <month>3</month>
-      <year>2024</year>
-      <day>1</day>
-    </date>
-    <finalPrice>300.0</finalPrice>
-    <time>14:58:35</time>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2025</year>
+      <day>16</day>
+    </endDate>
+    <price>100.0</price>
     <pet>
       <gender>Male</gender>
       <color>Black</color>
@@ -109,33 +124,16 @@
       <comment>Loyal and friendly</comment>
       <age>5</age>
     </pet>
+    <startDate>
+      <month>10</month>
+      <year>2025</year>
+      <day>16</day>
+    </startDate>
     <customer>
       <emailAddress>555-3344</emailAddress>
       <phoneNumber>654 Birch Blvd</phoneNumber>
       <name>Liam Brown</name>
     </customer>
-  </saleList>
-  <saleList>
-    <date>
-      <month>12</month>
-      <year>2024</year>
-      <day>27</day>
-    </date>
-    <finalPrice>66.8</finalPrice>
-    <time>15:28:39</time>
-    <pet>
-      <gender>Female</gender>
-      <color>Golden</color>
-      <species>Dog</species>
-      <price>500.0</price>
-      <name>Lucy</name>
-      <comment>Very affectionate</comment>
-      <age>3</age>
-    </pet>
-    <customer>
-      <emailAddress>henryg@email.com</emailAddress>
-      <phoneNumber>012-345-6789</phoneNumber>
-      <name>Henry Gray</name>
-    </customer>
-  </saleList>
-</SaleList>
+  </kennelReservations>
+  <currentNumberOfReservations>5</currentNumberOfReservations>
+</KennelReservationList>
