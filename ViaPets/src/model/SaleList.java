@@ -5,16 +5,27 @@ import java.util.ArrayList;
 public class SaleList
 {
   private ArrayList<Sale> saleList;
+
+  /**
+   * Constructor initializing the SaleList
+   */
   public SaleList()
   {
     saleList = new ArrayList<Sale>();
   }
-
+  /**
+   * Adds a sale to the SaleList
+   * @param sale the sale to be added
+   */
   public void addSale(Sale sale)
   {
     saleList.add(sale);
   }
 
+  /**
+   * Removes a sale from the SaleList
+   * @param index the index of the sale to be removed
+   */
   public void removeSale(int index)
   {
     if(index < 0 || index >= saleList.size())
@@ -28,11 +39,20 @@ public class SaleList
     }
   }
 
+  /**
+   * Returns the number of sales in the SaleList
+   * @return the number of sales in the SaleList
+   */
   public int getNumberOfSales()
   {
     return saleList.size();
   }
 
+  /**
+   * Sets a sale at a specific index in the SaleList
+   * @param sale the sale to be set
+   * @param index the index of the sale to be set
+   */
   public void setSale(Sale sale, int index)
   {
     if(index < 0 || index >= saleList.size())
@@ -46,6 +66,11 @@ public class SaleList
     }
   }
 
+  /**
+   * Returns a sale at a specific index in the SaleList
+   * @param index the index of the sale to be returned
+   * @return the sale at the specified index
+   */
   public Sale getSale(int index)
   {
     if(index < 0 || index >= saleList.size())
@@ -60,11 +85,19 @@ public class SaleList
     }
   }
 
+  /**
+   * Returns the number of all sales in the SaleList
+   * @return the number of all sales in the SaleList
+   */
   public int getAllNumberOfSales()
   {
     return saleList.size();
   }
 
+  /**
+   * Returns a string representation of the SaleList
+   * @return a string representation of the SaleList
+   */
   public String toString()
   {
     String output = "";
@@ -75,6 +108,11 @@ public class SaleList
     return output;
   }
 
+  /**
+   * Compares the SaleList to another object
+   * @param obj the object to compare to
+   * @return true if the object is equal to the SaleList, false if it is not
+   */
   public boolean equals(Object obj)
   {
     if(obj == null || obj.getClass() != getClass())

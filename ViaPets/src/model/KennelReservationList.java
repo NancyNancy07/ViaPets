@@ -7,6 +7,11 @@ public class KennelReservationList
   private int currentNumberOfReservations;
   private ArrayList<KennelReservation> kennelReservations;
 
+  // Constructor
+  /**
+   * Constructor initializing the current number of reservations and the kennel reservations
+   * @param maxNumberOfReservations the maximum number of reservations
+   */
   public KennelReservationList(int maxNumberOfReservations)
   {
     this.currentNumberOfReservations = 0;
@@ -14,6 +19,10 @@ public class KennelReservationList
   }
 
   // Methods
+  /**
+   * Adds a kennel reservation to the list
+   * @param reservation the kennel reservation to be added
+   */
   public void addKennelReservation(KennelReservation reservation)
   {
     if (kennelReservations.size() > currentNumberOfReservations)
@@ -27,6 +36,10 @@ public class KennelReservationList
     }
   }
 
+  /**
+   * Removes a kennel reservation from the list
+   * @param index the index of the reservation to be removed
+   */
   public void removeReservation(int index)
   {
     if (index >= 0 && index < kennelReservations.size())
@@ -39,6 +52,11 @@ public class KennelReservationList
     }
   }
 
+  /**
+   * Sets a kennel reservation at a specific index in the list
+   * @param index the index of the reservation to be set
+   * @param reservation the reservation to be set
+   */
   public void setKennelReservation(int index, KennelReservation reservation)
   {
     if (index >= 0 && index < kennelReservations.size())
@@ -51,12 +69,21 @@ public class KennelReservationList
     }
   }
 
+  /**
+   * Returns the number of kennel reservations
+   * @return the number of kennel reservations
+   */
   public int getAllNumberOfKennelReservations()
   {
     return kennelReservations.size();
   }
 
 
+  /**
+   * Returns a kennel reservation at a specific index in the list
+   * @param index the index of the reservation to be returned
+   * @return the kennel reservation at the specified index
+   */
   public KennelReservation getKennelReservation(int index)
   {
     if (index >= 0 && index < kennelReservations.size())
@@ -71,11 +98,19 @@ public class KennelReservationList
   }
 
 
+  /**
+   * Returns all kennel reservations
+   * @return all kennel reservations
+   */
   public KennelReservation[] getAllKennelReservations()
   {
     return kennelReservations.toArray(new KennelReservation[currentNumberOfReservations]);
   }
 
+  /**
+   * Returns a string representation of the kennel reservations
+   * @return a string representation of the kennel reservations
+   */
   public String toString()
   {
     String str = "";
@@ -86,6 +121,11 @@ public class KennelReservationList
     return str;
   }
 
+  /**
+   * Checks if the kennel reservation list is equal to another object
+   * @param obj the object to compare to
+   * @return true if the object is equal to the kennel reservation list, false if it is not
+   */
    public boolean equals(Object obj) {
     if (obj == null || getClass() != obj.getClass()) return false;
 
