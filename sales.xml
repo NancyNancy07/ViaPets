@@ -7,7 +7,7 @@
       <day>1</day>
     </date>
     <finalPrice>1000.0</finalPrice>
-    <time>14:58:35</time>
+    <time>22:47:24</time>
     <pet>
       <gender>Male</gender>
       <color>Brown</color>
@@ -30,7 +30,7 @@
       <day>1</day>
     </date>
     <finalPrice>400.0</finalPrice>
-    <time>14:58:35</time>
+    <time>22:47:24</time>
     <pet>
       <gender>Female</gender>
       <color>White</color>
@@ -53,7 +53,7 @@
       <day>1</day>
     </date>
     <finalPrice>600.0</finalPrice>
-    <time>14:58:35</time>
+    <time>22:47:24</time>
     <pet>
       <gender>Male</gender>
       <color>Grey</color>
@@ -76,7 +76,7 @@
       <day>1</day>
     </date>
     <finalPrice>800.0</finalPrice>
-    <time>14:58:35</time>
+    <time>22:47:24</time>
     <pet>
       <gender>Female</gender>
       <color>Green</color>
@@ -99,7 +99,7 @@
       <day>1</day>
     </date>
     <finalPrice>300.0</finalPrice>
-    <time>14:58:35</time>
+    <time>22:47:24</time>
     <pet>
       <gender>Male</gender>
       <color>Black</color>
@@ -113,29 +113,6 @@
       <emailAddress>555-3344</emailAddress>
       <phoneNumber>654 Birch Blvd</phoneNumber>
       <name>Liam Brown</name>
-    </customer>
-  </saleList>
-  <saleList>
-    <date>
-      <month>12</month>
-      <year>2024</year>
-      <day>27</day>
-    </date>
-    <finalPrice>66.8</finalPrice>
-    <time>15:28:39</time>
-    <pet>
-      <gender>Female</gender>
-      <color>Golden</color>
-      <species>Dog</species>
-      <price>500.0</price>
-      <name>Lucy</name>
-      <comment>Very affectionate</comment>
-      <age>3</age>
-    </pet>
-    <customer>
-      <emailAddress>henryg@email.com</emailAddress>
-      <phoneNumber>012-345-6789</phoneNumber>
-      <name>Henry Gray</name>
     </customer>
   </saleList>
 </SaleList>

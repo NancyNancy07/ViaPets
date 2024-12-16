@@ -135,5 +135,140 @@
       <name>Liam Brown</name>
     </customer>
   </kennelReservations>
-  <currentNumberOfReservations>5</currentNumberOfReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>22</day>
+    </endDate>
+    <price>20.0</price>
+    <pet>
+      <gender>Female</gender>
+      <color>Green</color>
+      <species>Parrot</species>
+      <price>200.0</price>
+      <name>Polly</name>
+      <comment>Likes to mimic sounds</comment>
+      <age>4</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>8</day>
+    </startDate>
+    <customer>
+      <emailAddress>alicej@email.com</emailAddress>
+      <phoneNumber>345-678-9012</phoneNumber>
+      <name>Alice Johnson</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>28</day>
+    </endDate>
+    <price>21.9</price>
+    <pet>
+      <gender>Female</gender>
+      <color>Golden</color>
+      <species>Dog</species>
+      <price>500.0</price>
+      <name>Lucy</name>
+      <comment>Very affectionate</comment>
+      <age>3</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>21</day>
+    </startDate>
+    <customer>
+      <emailAddress>gracer@email.com</emailAddress>
+      <phoneNumber>901-234-5678</phoneNumber>
+      <name>Grace Red</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>13</day>
+    </endDate>
+    <price>30.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>White</color>
+      <species>Hamster</species>
+      <price>50.0</price>
+      <name>Peanut</name>
+      <comment>Loves running on the wheel</comment>
+      <age>1</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>10</day>
+    </startDate>
+    <customer>
+      <emailAddress>frankb@email.com</emailAddress>
+      <phoneNumber>890-123-4567</phoneNumber>
+      <name>Frank Blue</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>1</month>
+      <year>2025</year>
+      <day>5</day>
+    </endDate>
+    <price>200.0</price>
+    <pet>
+      <gender>Female</gender>
+      <color>White</color>
+      <species>Cat</species>
+      <price>300.0</price>
+      <name>Whiskers</name>
+      <comment>Loves cuddling and napping</comment>
+      <age>3</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>31</day>
+    </startDate>
+    <customer>
+      <emailAddress>frankb@email.com</emailAddress>
+      <phoneNumber>890-123-4567</phoneNumber>
+      <name>Frank Blue</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>16</day>
+    </endDate>
+    <price>211.9</price>
+    <pet>
+      <gender>Female</gender>
+      <color>Golden</color>
+      <species>Dog</species>
+      <price>500.0</price>
+      <name>Lucy</name>
+      <comment>Very affectionate</comment>
+      <age>3</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>9</day>
+    </startDate>
+    <customer>
+      <emailAddress>davidg@email.com</emailAddress>
+      <phoneNumber>678-901-2345</phoneNumber>
+      <name>David Green</name>
+    </customer>
+  </kennelReservations>
+  <currentNumberOfReservations>10</currentNumberOfReservations>
 </KennelReservationList>

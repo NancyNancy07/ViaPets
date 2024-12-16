@@ -42,7 +42,7 @@
                                         </TableView>
                                     </content>
                                 </Tab>
-                                <Tab text="Add a Pet">
+                                <Tab onSelectionChanged="#initialize" text="Add a Pet">
                                     <content>
                                         <Pane prefHeight="200.0" prefWidth="200.0">
                                             <children>
@@ -150,7 +150,7 @@
                                  </children></AnchorPane>
                                     </content>
                                 </Tab>
-                                <Tab text="Add a Reservation">
+                                <Tab onSelectionChanged="#initialize" text="Add a Reservation">
                            <content>
                               <Pane prefHeight="200.0" prefWidth="200.0">
                                  <children>
@@ -339,7 +339,7 @@
                                         </TableView>
                                     </content>
                                 </Tab>
-                                <Tab onSelectionChanged="#updateSaleBox" text="Add a Sale">
+                                <Tab onSelectionChanged="#initialize" text="Add a Sale">
                                     <content>
                                         <Pane prefHeight="200.0" prefWidth="200.0">
                                             <children>

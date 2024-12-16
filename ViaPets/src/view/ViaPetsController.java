@@ -221,13 +221,17 @@ public class ViaPetsController
     Customer newCustomer = new Customer(name, phone, email);
     System.out.println(newCustomer);
 
-    if ((!name.equals(" ")) && (!phone.equals(" ")) && (!email.equals(" ")))
+    if (name.isEmpty() || phone.isEmpty() || email.isEmpty())
     {
-      modelManager.addCustomer(newCustomer);
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Missing Fields");
+      alert.setHeaderText(null);
+      alert.setContentText("Please fill all the fields to add a customer.");
+      alert.showAndWait();
     }
     else
     {
-      System.out.println("Fill the all fields.");
+      modelManager.addCustomer(newCustomer);
     }
     newCName.clear();
     newCPhone.clear();
@@ -383,24 +387,30 @@ public class ViaPetsController
   {
     String name = newPetName.getText();
     String species = newPetSpecies.getText();
-    int age = Integer.parseInt(newPetAge.getText());
+    String ageText = newPetAge.getText();
     String gender = newGenderField.getText();
     String color = newColorField.getText();
-    double price = Double.parseDouble(newPriceField.getText());
+    String priceText = newPriceField.getText();
     String comment = newCommentsField.getText();
 
-    Pet newPet = new Pet(species, age, gender, color, name, comment, price);
-
-    if ((!name.equals(" ")) && (!species.equals(" ")) && (age != -1)
-        && (!gender.equals(" ")) && (!color.equals(" ")) && (price != -1)
-        && (!comment.equals(" ")))
+    if (name.isEmpty() || species.isEmpty() || ageText.isEmpty()
+        || gender.isEmpty() || color.isEmpty() || priceText.isEmpty()
+        || comment.isEmpty())
     {
-      modelManager.addPet(newPet);
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Missing Fields");
+      alert.setHeaderText(null);
+      alert.setContentText("Please fill all the fields to add a pet.");
+      alert.showAndWait();
     }
     else
     {
-      System.out.println("Fill all fields");
+      int age = Integer.parseInt(ageText);
+      double price = Double.parseDouble(priceText);
+      Pet newPet = new Pet(species, age, gender, color, name, comment, price);
+      modelManager.addPet(newPet);
     }
+
     newPetName.clear();
     newPetSpecies.clear();
     newPetAge.clear();
@@ -469,6 +479,16 @@ public class ViaPetsController
     String phone = saleNewCustomerPhone.getText();
     String email = saleNewCustomerEmail.getText();
 
+    if (name.isEmpty() || phone.isEmpty() || email.isEmpty())
+    {
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Missing Fields");
+      alert.setHeaderText(null);
+      alert.setContentText("Please fill out all fields to add a customer.");
+      alert.showAndWait();
+      return;
+    }
+
     Customer customer = new Customer(name, phone, email);
 
     Customer existingCustomer = null;
@@ -491,13 +511,39 @@ public class ViaPetsController
     }
     else
     {
-      System.out.println("Customer already exists");
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Duplicate Customer");
+      alert.setHeaderText(null);
+      alert.setContentText("A customer with the same details already exists.");
+      alert.showAndWait();
+
+      saleNewCustomerName.clear();
+      saleNewCustomerPhone.clear();
+      saleNewCustomerEmail.clear();
     }
   }
 
   public void addSale() throws ParserException
   {
     String customerName = customerComboBox.getValue();
+    String petName = petComboBox.getValue();
+    String priceText = finalPrice.getText();
+    LocalDate sellDate = date.getValue();
+
+    if (customerName == null || customerName.isEmpty() || petName == null
+        || petName.isEmpty() || priceText == null || priceText.isEmpty()
+        || sellDate == null)
+    {
+
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Missing Fields");
+      alert.setHeaderText(null);
+      alert.setContentText(
+          "Please select a customer, pet, enter a price, and choose a date.");
+      alert.showAndWait();
+      return;
+    }
+
     CustomerList allCustomers = modelManager.readCustomers();
     Customer saleCustomer = null;
     for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
@@ -507,7 +553,6 @@ public class ViaPetsController
         saleCustomer = allCustomers.getCustomer(i);
       }
     }
-    String petName = petComboBox.getValue();
     PetList allPets = modelManager.readPets();
     Pet salePet = null;
     for (int i = 0; i < allPets.getNumberOfPets(); i++)
@@ -517,13 +562,7 @@ public class ViaPetsController
         salePet = allPets.getPet(i);
       }
     }
-    String priceText = finalPrice.getText();
-    double sellPrice = 0.0;
-    if (priceText != null && !priceText.isEmpty())
-    {
-      sellPrice = Double.parseDouble(priceText);
-    }
-    LocalDate sellDate;
+    double sellPrice = Double.parseDouble(priceText);
     MyDate myDate = null;
 
     if (date != null)
@@ -616,6 +655,15 @@ public class ViaPetsController
     String phone = reservationNewCustomerPhone.getText();
     String email = reservationNewCustomerEmail.getText();
 
+    if (name.isEmpty() || phone.isEmpty() || email.isEmpty())
+    {
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Missing Fields");
+      alert.setHeaderText(null);
+      alert.setContentText("Please fill all the fields to add a customer.");
+      alert.showAndWait();
+      return;
+    }
     Customer customer = new Customer(name, phone, email);
 
     Customer existingCustomer = null;
@@ -629,16 +677,19 @@ public class ViaPetsController
       updateCustomerBox();
       updateKennelBox();
       updateSaleBox();
-      reservationNewCustomerName.clear();
-      reservationNewCustomerPhone.clear();
-      reservationNewCustomerEmail.clear();
-      reservationNewCustomerDialog.setVisible(false);
-
     }
     else
     {
-      System.out.println("Customer already exists");
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Duplicate Customer");
+      alert.setHeaderText(null);
+      alert.setContentText("A customer with the same details already exists.");
+      alert.showAndWait();
     }
+    reservationNewCustomerName.clear();
+    reservationNewCustomerPhone.clear();
+    reservationNewCustomerEmail.clear();
+    reservationNewCustomerDialog.setVisible(false);
 
   }
 
@@ -675,7 +726,6 @@ public class ViaPetsController
       reservationNewPetColor.clear();
       reservationNewPetPrice.clear();
       reservationNewPetDialog.setVisible(false);
-
     }
     else
     {
@@ -686,72 +736,91 @@ public class ViaPetsController
 
   public void addReservation() throws ParserException
   {
-    String customerName = reservationCustomerComboBox.getValue();
-    CustomerList allCustomers = modelManager.readCustomers();
-    Customer reservationCustomer = null;
-    for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
+
+    KennelReservationList allReservations = modelManager.readKennelReservations();
+
+    if (allReservations.getAllNumberOfKennelReservations() >= 10)
     {
-      if (customerName.equals(allCustomers.getCustomer(i).getName()))
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Capacity Full");
+      alert.setHeaderText(null);
+      alert.setContentText("No more kennel reservations can make.");
+      alert.showAndWait();
+    }
+    else
+    {
+      String customerName = reservationCustomerComboBox.getValue();
+      CustomerList allCustomers = modelManager.readCustomers();
+      Customer reservationCustomer = null;
+      for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
       {
-        reservationCustomer = allCustomers.getCustomer(i);
+        if (customerName.equals(allCustomers.getCustomer(i).getName()))
+        {
+          reservationCustomer = allCustomers.getCustomer(i);
+        }
       }
-    }
-    String petName = reservationPetComboBox.getValue();
-    PetList allPets = modelManager.readPets();
-    Pet reservationPet = null;
-    for (int i = 0; i < allPets.getNumberOfPets(); i++)
-    {
-      if (petName.equals(allPets.getPet(i).getName()))
+      String petName = reservationPetComboBox.getValue();
+      PetList allPets = modelManager.readPets();
+      Pet reservationPet = null;
+      for (int i = 0; i < allPets.getNumberOfPets(); i++)
       {
-        reservationPet = allPets.getPet(i);
+        if (petName.equals(allPets.getPet(i).getName()))
+        {
+          reservationPet = allPets.getPet(i);
+        }
       }
-    }
-    String priceText = reservationFieldPrice.getText();
-    double kennelPrice = 0.0;
-    if (priceText != null && !priceText.isEmpty())
-    {
-      kennelPrice = Double.parseDouble(priceText);
-    }
+      String priceText = reservationFieldPrice.getText();
+      double kennelPrice = 0.0;
+      if (priceText != null && !priceText.isEmpty())
+      {
+        kennelPrice = Double.parseDouble(priceText);
+      }
 
-    LocalDate newStartDate;
-    MyDate myStartDate = null;
+      LocalDate newStartDate = null;
+      MyDate myStartDate = null;
 
-    if (startDate != null)
-    {
-      newStartDate = startDate.getValue();
-      myStartDate = new MyDate(newStartDate.getDayOfMonth(),
-          newStartDate.getMonthValue(), newStartDate.getYear());
-    }
+      if (startDate != null && startDate.getValue() != null)
+      {
+        newStartDate = startDate.getValue();
+        myStartDate = new MyDate(newStartDate.getDayOfMonth(),
+            newStartDate.getMonthValue(), newStartDate.getYear());
+      }
 
-    LocalDate newEndDate;
-    MyDate myEndDate = null;
+      LocalDate newEndDate = null;
+      MyDate myEndDate = null;
 
-    if (endDate != null)
-    {
-      newEndDate = endDate.getValue();
-      myEndDate = new MyDate(newEndDate.getDayOfMonth(),
-          newEndDate.getMonthValue(), newEndDate.getYear());
-    }
-    if (reservationPet != null && reservationCustomer != null
-        && myStartDate != null && myEndDate != null)
-    {
+      if (endDate != null && endDate.getValue() != null)
+      {
+        newEndDate = endDate.getValue();
+        myEndDate = new MyDate(newEndDate.getDayOfMonth(),
+            newEndDate.getMonthValue(), newEndDate.getYear());
+      }
 
-      KennelReservation reservation = new KennelReservation(kennelPrice,
-          reservationPet, reservationCustomer, myStartDate, myEndDate);
-      modelManager.addKennelReservation(reservation);
-      updateKennelBox();
-      //      addSaleToTable(sale);
+      if (customerName == null || customerName.isEmpty() || petName == null
+          || petName.isEmpty() || priceText == null || priceText.isEmpty()
+          || newStartDate == null || newEndDate == null)
+      {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Missing Fields");
+        alert.setHeaderText(null);
+        alert.setContentText(
+            "Please fill all the fields to add a reservation.");
+        alert.showAndWait();
+      }
 
-      //      customerComboBox.getItems().clear();
-      //      petComboBox.getItems().clear();
+      else if (reservationPet != null && reservationCustomer != null)
+      {
 
-      //      customerComboBox.setValue("Select Customer");
-      //      petComboBox.setValue("Select Pet");
+        KennelReservation reservation = new KennelReservation(kennelPrice,
+            reservationPet, reservationCustomer, myStartDate, myEndDate);
+        modelManager.addKennelReservation(reservation);
+        updateKennelBox();
 
-      reservationFieldPrice.clear();
-      startDate.setValue(null);
-      endDate.setValue(null);
-      System.out.println("reservation added");
+        reservationFieldPrice.clear();
+        startDate.setValue(null);
+        endDate.setValue(null);
+        System.out.println("reservation added");
+      }
     }
   }
 
