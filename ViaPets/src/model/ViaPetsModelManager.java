@@ -19,11 +19,24 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * A class containing of SaleList object.
+ * @author Nancy, Bence Antal Orbán
+ * @version 1.0
+ */
 public class ViaPetsModelManager
 {
   private String customerFileName, petFileName, saleFileName, kennelReservationFileName;
   private ViaPetsShop viaPetsShop;
 
+  /**
+   * Five-argument constructor
+   * @param customerFileName the name of the file containing the customers
+   * @param petFileName the name of the file containing the pets
+   * @param saleFileName the name of the file containing the sales
+   * @param kennelReservationFileName the name of the file containing the kennel reservations
+   * @param viaPetsShop the ViaPetsShop object
+   */
   public ViaPetsModelManager(String customerFileName, String petFileName,
       String saleFileName, String kennelReservationFileName,
       ViaPetsShop viaPetsShop)
@@ -35,6 +48,13 @@ public class ViaPetsModelManager
     this.viaPetsShop = viaPetsShop;
   }
 
+  /**
+   * Four-argument constructor
+   * @param customerFileName the name of the file containing the customers
+   * @param petFileName the name of the file containing the pets
+   * @param saleFileName the name of the file containing the sales
+   * @param kennelReservationFileName the name of the file containing the kennel reservations
+   */
   public ViaPetsModelManager(String customerFileName, String petFileName,
       String saleFileName, String kennelReservationFileName)
   {
@@ -44,6 +64,11 @@ public class ViaPetsModelManager
     this.kennelReservationFileName = kennelReservationFileName;
   }
 
+  /**
+   * Getter for the CustomerList from the ViaPetsShop
+   * @return the CustomerList from the ViaPetsShop
+   * @throws ParserException if an error occurs
+   */
   public CustomerList getAllCustomers() throws ParserException
   {
     if (viaPetsShop != null)
@@ -59,6 +84,11 @@ public class ViaPetsModelManager
     }
   }
 
+  /**
+   * Getter for the PetList from the ViaPetsShop
+   * @return the PetList from the ViaPetsShop
+   * @throws ParserException if an error occurs
+   */
   public PetList getAllPets() throws ParserException
   {
     if (viaPetsShop != null)
@@ -73,6 +103,11 @@ public class ViaPetsModelManager
     }
   }
 
+  /**
+   * Getter for the SaleList from the ViaPetsShop
+   * @return the SaleList from the ViaPetsShop
+   * @throws ParserException if an error occurs
+   */
   public SaleList getAllSales() throws ParserException
   {
     if (viaPetsShop != null)
@@ -87,6 +122,11 @@ public class ViaPetsModelManager
     }
   }
 
+  /**
+   * Getter for the KennelReservationList from the ViaPetsShop
+   * @return the KennelReservationList from the ViaPetsShop
+   * @throws ParserException if an error occurs
+   */
   public KennelReservationList getAllKennelReservations() throws ParserException
   {
     if (viaPetsShop != null)
@@ -101,6 +141,10 @@ public class ViaPetsModelManager
     }
   }
 
+  /**
+   * Writes the customers to an XML file
+   * @throws ParserException if an error occurs
+   */
   public void writeCustomers() throws ParserException
   {
 
@@ -119,6 +163,10 @@ public class ViaPetsModelManager
     System.out.println("Wrote customers data to XML file");
   }
 
+  /**
+   * Writes the pets to an XML file
+   * @throws ParserException if an error occurs
+   */
   public void writePets() throws ParserException
   {
     PetList allPets = getAllPets();
@@ -137,6 +185,10 @@ public class ViaPetsModelManager
     System.out.println("Wrote pets data to XML file");
   }
 
+  /**
+   * Writes the sales to an XML file
+   * @throws ParserException if an error occurs
+   */
   public void writeSales() throws ParserException
   {
     SaleList allSales = getAllSales();
@@ -155,6 +207,10 @@ public class ViaPetsModelManager
     System.out.println("Wrote sales data to XML file");
   }
 
+  /**
+   * Writes the kennel reservations to an XML file
+   * @throws ParserException if an error occurs
+   */
   public void writeKennelReservations() throws ParserException
   {
     KennelReservationList allKennelReservations = getAllKennelReservations();
@@ -174,6 +230,11 @@ public class ViaPetsModelManager
     System.out.println("Wrote kennel reservations data to XML file");
   }
 
+  /**
+   * Reads the customers from an XML file
+   * @return the CustomerList read from the XML file
+   * @throws ParserException if an error occurs
+   */
   public CustomerList readCustomers() throws ParserException
   {
     XmlJsonParser parser = new XmlJsonParser();
@@ -191,6 +252,11 @@ public class ViaPetsModelManager
     return customers;
   }
 
+  /**
+   * Reads the pets from an XML file
+   * @return the PetList read from the XML file
+   * @throws ParserException if an error occurs
+   */
   public PetList readPets() throws ParserException
   {
     XmlJsonParser parser = new XmlJsonParser();
@@ -207,6 +273,11 @@ public class ViaPetsModelManager
     return pets;
   }
 
+  /**
+   * Reads the sales from an XML file
+   * @return the SaleList read from the XML file
+   * @throws ParserException if an error occurs
+   */
   public SaleList readSales() throws ParserException
   {
     XmlJsonParser parser = new XmlJsonParser();
@@ -223,6 +294,11 @@ public class ViaPetsModelManager
     return sales;
   }
 
+  /**
+   * Reads the kennel reservations from an XML file
+   * @return the KennelReservationList read from the XML file
+   * @throws ParserException if an error occurs
+   */
   public KennelReservationList readKennelReservations() throws ParserException
   {
     XmlJsonParser parser = new XmlJsonParser();
@@ -241,6 +317,11 @@ public class ViaPetsModelManager
     return kennelReservations;
   }
 
+  /**
+   * Saves the CustomerList to an XML file
+   * @param allCustomers the CustomerList to be saved
+   * @throws ParserException if an error occurs
+   */
   public void saveCustomerList(CustomerList allCustomers) throws ParserException
   {
     System.out.println("new list");
@@ -248,6 +329,11 @@ public class ViaPetsModelManager
     File customers = parser.toXml(allCustomers, "customers.xml");
   }
 
+  /**
+   * Saves the PetList to an XML file
+   * @param allPets the PetList to be saved
+   * @throws ParserException if an error occurs
+   */
   public void savePetList(PetList allPets) throws ParserException
   {
     System.out.println("new list");
@@ -255,6 +341,11 @@ public class ViaPetsModelManager
     File pets = parser.toXml(allPets, "pets.xml");
   }
 
+  /**
+   * Saves the SaleList to an XML file
+   * @param allSales the SaleList to be saved
+   * @throws ParserException if an error occurs
+   */
   public void saveSaleList(SaleList allSales) throws ParserException
   {
     System.out.println("new list");
@@ -262,6 +353,11 @@ public class ViaPetsModelManager
     File sales = parser.toXml(allSales, "sales.xml");
   }
 
+  /**
+   * Saves the KennelReservationList to an XML file
+   * @param allKennelReservations the KennelReservationList to be saved
+   * @throws ParserException if an error occurs
+   */
   public void saveKennelReservationList(KennelReservationList allKennelReservations)
       throws ParserException
   {
@@ -271,6 +367,11 @@ public class ViaPetsModelManager
         "kennelReservations.xml");
   }
 
+  /**
+   * Updates a customer from the CustomerList
+   * @param index the index of the customer to be updated
+   * @throws ParserException if an error occurs
+   */
   public void updateCustomer(int index, Customer updatedCustomer)
       throws ParserException
   {
@@ -288,6 +389,11 @@ public class ViaPetsModelManager
     }
   }
 
+  /**
+   * Updates a pet from the PetList
+   * @param index the index of the pet to be updated
+   * @throws ParserException if an error occurs
+   */
   public void updatePet(int index, Pet updatedPet) throws ParserException
   {
     PetList allPets = readPets();
@@ -304,6 +410,11 @@ public class ViaPetsModelManager
     }
   }
 
+  /**
+   * Updates a sale from the SaleList
+   * @param index the index of the sale to be updated
+   * @throws ParserException if an error occurs
+   */
   public void updateSale(int index, Sale updatedSale) throws ParserException
   {
     SaleList allSales = readSales();
@@ -320,6 +431,11 @@ public class ViaPetsModelManager
     }
   }
 
+  /**
+   * Updates a kennel reservation from the KennelReservationList
+   * @param index the index of the kennel reservation to be updated
+   * @throws ParserException if an error occurs
+   */
   public void updateKennelReservation(int index, KennelReservation updatedKennelReservation)
       throws ParserException
   {
@@ -337,6 +453,11 @@ public class ViaPetsModelManager
     }
   }
 
+  /**
+   * Adds a customer to the CustomerList
+   * @param customer the customer to be added
+   * @throws ParserException if an error occurs
+   */
   public void addCustomer(Customer customer) throws ParserException
   {
     CustomerList allCustomers = readCustomers();
@@ -351,6 +472,11 @@ public class ViaPetsModelManager
 
   }
 
+  /**
+   * Adds a pet to the PetList
+   * @param pet the pet to be added
+   * @throws ParserException if an error occurs
+   */
   public void addPet(Pet pet) throws ParserException
   {
     PetList allPets = readPets();
@@ -365,6 +491,11 @@ public class ViaPetsModelManager
 
   }
 
+  /**
+   * Adds a sale to the SaleList
+   * @param sale the sale to be added
+   * @throws ParserException if an error occurs
+   */
   public void addSale(Sale sale) throws ParserException
   {
     SaleList allSales = readSales();
@@ -379,6 +510,11 @@ public class ViaPetsModelManager
 
   }
 
+  /**
+   * Adds a kennel reservation to the KennelReservationList
+   * @param kennelReservation the kennel reservation to be added
+   * @throws ParserException if an error occurs
+   */
   public void addKennelReservation(KennelReservation kennelReservation) throws ParserException
   {
     KennelReservationList allKennelReservations = readKennelReservations();

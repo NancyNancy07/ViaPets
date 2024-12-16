@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * A class containing of SaleList object.
+ * @author Bence Antal Orbán
+ * @version 1.0
+ */
 public class ViaPetsShop
  {
 

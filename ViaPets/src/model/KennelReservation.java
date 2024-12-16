@@ -2,6 +2,11 @@ package model;
 
 import java.util.Objects;
 
+/**
+ * A class containing of KennelReservation object.
+ * @author Harshit Sharma
+ * @version 1.0
+ */
 public class KennelReservation
 {
   private double price;
@@ -10,6 +15,14 @@ public class KennelReservation
   private MyDate startDate, endDate;
 
   // Constructor
+  /**
+   * Constructs a new KennelReservation object with specified details including the price, pet, customer, start date and end date.
+   * @param price the price of the reservation
+   * @param pet the pet object
+   * @param customer the customer object
+   * @param startDate the start date of the reservation
+   * @param endDate the end date of the reservation
+   */
   public KennelReservation(double price, Pet pet, Customer customer,
       MyDate startDate, MyDate endDate)
   {
@@ -21,62 +34,111 @@ public class KennelReservation
   }
 
   // Getters and Setters
+  /**
+   * Gets the price of the reservation.
+   * @return the price of the reservation
+   */
   public double getPrice()
   {
     return price;
   }
 
+  /**
+   * Sets the price of the reservation.
+   * @param price the price of the reservation
+   */
   public void setPrice(double price)
   {
     this.price = price;
   }
 
+  /**
+   * Gets the pet object.
+   * @return the pet object
+   */
   public Pet getPet()
   {
     return pet;
   }
 
+  /**
+   * Sets the pet object.
+   * @param pet the pet object
+   */
   public void setPet(Pet pet)
   {
     this.pet = pet;
   }
 
+  /**
+   * Gets the customer object.
+   * @return the customer object
+   */
   public Customer getCustomer()
   {
     return customer;
   }
 
+  /**
+   * Sets the customer object.
+   * @param customer the customer object
+   */
   public void setCustomer(Customer customer)
   {
     this.customer = customer;
   }
 
+  /**
+   * Gets the start date of the reservation.
+   * @return the start date of the reservation
+   */
   public MyDate getStartDate()
   {
     return startDate;
   }
 
+  /**
+   * Gets the end date of the reservation.
+   * @return the end date of the reservation
+   */
   public MyDate getEndDate()
   {
     return endDate;
   }
 
+  /**
+   * Sets the start date of the reservation.
+   * @param startDate the start date of the reservation
+   */
   public void setStartDate(MyDate startDate)
   {
     this.startDate = startDate;
   }
 
+  /**
+   * Sets the end date of the reservation.
+   * @param endDate the end date of the reservation
+   */
   public void setEndDate(MyDate endDate)
   {
     this.endDate = endDate;
   }
 
+  /**
+   * Returns a string representation of the KennelReservation object.
+   * @return a string representation of the KennelReservation object
+   */
   public String toString()
   {
     return "KennelReservation: \nPrice: " + price + "\n" + pet + "\n" + customer
         + "\nStart Date: " + startDate + ", End Date: " + endDate;
   }
 
+  /**
+   * Compares the KennelReservation object with another object for equality.
+   * @param obj the object to compare with
+   * @return true if the objects are equal, false if they are not
+   */
   public boolean equals(Object obj)
   {
     if (obj == null || getClass() != obj.getClass())

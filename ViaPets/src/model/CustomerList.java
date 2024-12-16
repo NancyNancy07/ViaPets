@@ -2,7 +2,11 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-
+/**
+ * A class containing of CustomerList object.
+ * @author Nancy
+ * @version 1.0
+ */
 public class CustomerList implements Serializable
 {
   ArrayList<Customer> customers;
