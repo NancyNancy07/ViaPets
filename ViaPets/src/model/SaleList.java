@@ -28,11 +28,6 @@ public class SaleList
     }
   }
 
-  public int getNumberOfSales()
-  {
-    return saleList.size();
-  }
-
   public void setSale(Sale sale, int index)
   {
     if(index < 0 || index >= saleList.size())

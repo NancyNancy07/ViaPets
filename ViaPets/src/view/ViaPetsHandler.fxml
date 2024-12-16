@@ -42,7 +42,7 @@
                                         </TableView>
                                     </content>
                                 </Tab>
-                                <Tab text="Add a Pet">
+                                <Tab onSelectionChanged="#initialize" text="Add a Pet">
                                     <content>
                                         <Pane prefHeight="200.0" prefWidth="200.0">
                                             <children>
@@ -130,19 +130,194 @@
                         </TabPane>
                     </content>
                 </Tab>
-                <Tab fx:id="kennelReservationTab" text="Kennel Reservations">
+                <Tab fx:id="kennelReservationTab" onSelectionChanged="#tabChanged" text="Kennel Reservations">
                     <content>
                         <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
                             <tabs>
                                 <Tab text="All Reservations">
                                     <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="kennelReservationTable" prefHeight="343.0" prefWidth="600.0">
+                                      <columns>
+                                        <TableColumn fx:id="reservationPetName" prefWidth="103.33334600925446" text="Pet" />
+                                        <TableColumn fx:id="reservationCustomerName" prefWidth="158.66666412353516" text="Customer" />
+                                          <TableColumn fx:id="reservationPrice" prefWidth="83.33331298828125" text="Price" />
+                                          <TableColumn fx:id="reservationStartDate" prefWidth="126.0" text="Start Date" />
+                                          <TableColumn fx:id="reservationEndDate" prefWidth="128.66665649414062" text="End Date" />
+                                      </columns>
+                                    </TableView>
+                                 </children></AnchorPane>
                                     </content>
                                 </Tab>
-                                <Tab text="Add a Reservation">
-                                    <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
+                                <Tab onSelectionChanged="#initialize" text="Add a Reservation">
+                           <content>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox alignment="BASELINE_CENTER" layoutX="16.0" layoutY="35.0" prefHeight="17.0" prefWidth="568.0">
+                                       <children>
+                                          <Label text="Customer:" />
+                                          <ComboBox fx:id="reservationCustomerComboBox" prefHeight="25.0" prefWidth="245.0">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <Button mnemonicParsing="false" onAction="#reservationAddCustomerButton" prefHeight="43.0" prefWidth="102.0" text="Add a Customer">
+                                             <HBox.margin>
+                                                <Insets left="25.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="BASELINE_CENTER" layoutX="16.0" layoutY="94.0" prefHeight="17.0" prefWidth="568.0">
+                                       <children>
+                                          <Label text="Pet:" translateX="11.0" />
+                                          <ComboBox fx:id="reservationPetComboBox" layoutX="7.0" prefHeight="25.0" prefWidth="245.0" translateX="18.0">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <Button mnemonicParsing="false" onAction="#reservationAddPetButton" prefHeight="43.0" prefWidth="102.0" text="Add a Pet" translateX="18.0">
+                                             <HBox.margin>
+                                                <Insets left="25.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="BASELINE_CENTER" layoutX="36.0" layoutY="145.0" prefHeight="25.0" prefWidth="388.0">
+                                       <children>
+                                          <Label text="Start Date:" />
+                                          <DatePicker fx:id="startDate" prefHeight="25.0" prefWidth="247.0" translateX="7.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="BASELINE_CENTER" layoutX="23.0" layoutY="240.0" prefHeight="25.0" prefWidth="401.0">
+                                       <children>
+                                          <Label text="Kennel Price:" />
+                                          <TextField fx:id="reservationFieldPrice" prefHeight="25.0" prefWidth="247.0" translateX="9.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="BASELINE_CENTER" layoutX="36.0" layoutY="193.0" prefHeight="25.0" prefWidth="388.0">
+                                       <children>
+                                          <Label text="End Date:" />
+                                          <DatePicker fx:id="endDate" prefHeight="25.0" prefWidth="247.0" translateX="7.0" />
+                                       </children>
+                                    </HBox>
+                                    <Button layoutX="249.0" layoutY="290.0" mnemonicParsing="false" onAction="#addReservation" text="Add Reservation" />
+                                    <AnchorPane fx:id="reservationNewCustomerDialog" layoutX="3.0" layoutY="-4.0" prefHeight="320.0" prefWidth="595.0" visible="false">
+                                       <children>
+                                          <TextArea editable="false" prefHeight="321.0" prefWidth="594.0" />
+                                          <Label alignment="BASELINE_CENTER" layoutX="1.0" layoutY="36.0" prefHeight="35.0" prefWidth="594.0" text="Customer Details">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox alignment="BASELINE_CENTER" layoutY="84.0" prefHeight="25.0" prefWidth="594.0">
+                                             <children>
+                                                <Label text="Name:" />
+                                                <TextField fx:id="reservationNewCustomerName">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BASELINE_CENTER" layoutY="158.0" prefHeight="25.0" prefWidth="594.0">
+                                             <children>
+                                                <Label text="Email:" />
+                                                <TextField fx:id="reservationNewCustomerEmail">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BASELINE_CENTER" layoutY="121.0" prefHeight="25.0" prefWidth="594.0">
+                                             <children>
+                                                <Label text="Phone:" translateX="-8.0" />
+                                                <TextField fx:id="reservationNewCustomerPhone" translateX="4.0" />
+                                             </children>
+                                          </HBox>
+                                          <Button layoutX="251.0" layoutY="216.0" mnemonicParsing="false" onAction="#addReservationCustomer" text="Add Customer" />
+                                          <Button layoutX="557.0" layoutY="14.0" mnemonicParsing="false" onAction="#setCloseButton" text="X" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="reservationNewPetDialog" layoutX="3.0" layoutY="10.0" prefHeight="320.0" prefWidth="595.0" visible="false">
+                                       <children>
+                                          <TextArea editable="false" prefHeight="321.0" prefWidth="594.0" />
+                                          <Label alignment="BASELINE_CENTER" layoutX="1.0" layoutY="36.0" prefHeight="35.0" prefWidth="594.0" text="Pet Details">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox alignment="BASELINE_CENTER" layoutX="49.0" layoutY="83.0" prefHeight="25.0" prefWidth="218.0">
+                                             <children>
+                                                <Label text="Name:" />
+                                                <TextField fx:id="reservationNewPetName">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BASELINE_CENTER" layoutX="51.0" layoutY="161.0" prefHeight="25.0" prefWidth="223.0">
+                                             <children>
+                                                <Label text="Age:" />
+                                                <TextField fx:id="reservationNewPetAge">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BASELINE_CENTER" layoutX="45.0" layoutY="121.0" prefHeight="25.0" prefWidth="221.0">
+                                             <children>
+                                                <Label text="Species:" translateX="-8.0" />
+                                                <TextField fx:id="reservationNewPetSpecies" translateX="4.0" />
+                                             </children>
+                                          </HBox>
+                                          <Button layoutX="268.0" layoutY="258.0" mnemonicParsing="false" onAction="#addReservationPet" text="Add Pet" />
+                                          <Button layoutX="557.0" layoutY="14.0" mnemonicParsing="false" onAction="#setCloseButton" text="X" />
+                                          <HBox alignment="BASELINE_CENTER" layoutX="327.0" layoutY="81.0" prefHeight="25.0" prefWidth="218.0">
+                                             <children>
+                                                <Label text="Gender:" />
+                                                <TextField fx:id="reservationNewPetGender">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BASELINE_CENTER" layoutX="330.0" layoutY="160.0" prefHeight="25.0" prefWidth="223.0">
+                                             <children>
+                                                <Label text="Price:" />
+                                                <TextField fx:id="reservationNewPetPrice">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BASELINE_CENTER" layoutX="332.0" layoutY="119.0" prefHeight="25.0" prefWidth="221.0">
+                                             <children>
+                                                <Label text="Color:" translateX="-8.0" />
+                                                <TextField fx:id="reservationNewPetColor" translateX="4.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BASELINE_CENTER" layoutX="51.0" layoutY="214.0" prefHeight="25.0" prefWidth="489.0">
+                                             <children>
+                                                <Label prefHeight="17.0" prefWidth="75.0" text="Comments:" />
+                                                <TextField fx:id="reservationNewPetComments" prefHeight="25.0" prefWidth="428.0">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </Pane>
+                           </content>
                                 </Tab>
                             </tabs>
                         </TabPane>
@@ -164,7 +339,7 @@
                                         </TableView>
                                     </content>
                                 </Tab>
-                                <Tab onSelectionChanged="#updateSaleBox" text="Add a Sale">
+                                <Tab onSelectionChanged="#initialize" text="Add a Sale">
                                     <content>
                                         <Pane prefHeight="200.0" prefWidth="200.0">
                                             <children>
@@ -246,6 +421,7 @@
                                                             </children>
                                                         </HBox>
                                                         <Button fx:id="" layoutX="251.0" layoutY="216.0" mnemonicParsing="false" onAction="#addSaleCustomer" text="Add Customer" />
+                                          <Button layoutX="557.0" layoutY="14.0" mnemonicParsing="false" onAction="#setCloseButton" text="X" />
                                                     </children>
                                                 </AnchorPane>
                                             </children>
@@ -380,7 +556,7 @@
                         <Font size="19.0" />
                     </font>
                 </Label>
-                <Button fx:id="closeButton2" layoutX="525.0" layoutY="19.0" mnemonicParsing="false" onAction="#setCloseButton" text="X" />
+                <Button layoutX="525.0" layoutY="19.0" mnemonicParsing="false" onAction="#setCloseButton" text="X" />
                 <HBox alignment="BOTTOM_CENTER" layoutX="42.0" layoutY="76.0" prefHeight="28.0" prefWidth="199.0">
                     <children>
                         <Label text="Name:" />
@@ -467,44 +643,5 @@
                 </HBox>
             </children>
         </Pane>
-        <Pane fx:id="saleCustomerDataDisplay" layoutX="4.0" layoutY="31.0" prefHeight="266.0" prefWidth="594.0" visible="false">
-            <children>
-                <TabPane prefHeight="266.0" prefWidth="594.0" tabClosingPolicy="UNAVAILABLE">
-                    <tabs>
-                        <Tab text="All Customers">
-                            <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                    <children>
-                                        <TableView fx:id="saleListCustomerTable" prefHeight="234.0" prefWidth="594.0">
-                                            <columns>
-                                                <TableColumn fx:id="saleListCustomerName" prefWidth="182.00002527236938" text="Name" />
-                                                <TableColumn fx:id="saleListCustomerPhone" prefWidth="210.6666717529297" text="Phone" />
-                                                <TableColumn fx:id="saleListCustomerEmail" prefWidth="201.99996948242188" text="Email" />
-                                            </columns>
-                                        </TableView>
-                                    </children>
-                                </AnchorPane>
-                            </content>
-                        </Tab>
-                        <Tab text="Add a Customer">
-                            <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                            </content>
-                        </Tab>
-                    </tabs>
-                </TabPane>
-            </children>
-        </Pane>
-        <TableView fx:id="saleTable" prefHeight="117.0" prefWidth="600.0" visible="false">
-            <columns>
-                <TableColumn fx:id="salePetName" prefWidth="75.0" text="Name" />
-                <TableColumn fx:id="salePetSpecies" prefWidth="88.66667938232422" text="Species" />
-                <TableColumn fx:id="salePetAge" prefWidth="79.99996948242188" text="Age" />
-                <TableColumn fx:id="salePetGender" prefWidth="90.00007629394531" text="Gender" />
-                <TableColumn fx:id="salePetColor" prefWidth="96.66668701171875" text="Color" />
-                <TableColumn fx:id="salePetComments" prefWidth="78.0" text="Comments" />
-                <TableColumn fx:id="salePetPrice" prefWidth="88.66665649414062" text="Price" />
-            </columns>
-        </TableView>
     </children>
 </Pane>

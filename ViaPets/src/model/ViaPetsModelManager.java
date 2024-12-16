@@ -145,7 +145,7 @@ public class ViaPetsModelManager
       System.out.println("Sale list is null");
     }
 
-    if (allSales.getNumberOfSales() == 0)
+    if (allSales.getAllNumberOfSales() == 0)
     {
       System.out.println("No sale to write");
     }
@@ -307,7 +307,7 @@ public class ViaPetsModelManager
   public void updateSale(int index, Sale updatedSale) throws ParserException
   {
     SaleList allSales = readSales();
-    if (index >= 0 && index < allSales.getNumberOfSales())
+    if (index >= 0 && index < allSales.getAllNumberOfSales())
     {
       allSales.setSale(updatedSale, index);
       saveSaleList(allSales);

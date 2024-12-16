@@ -7,7 +7,7 @@
       <day>1</day>
     </date>
     <finalPrice>1000.0</finalPrice>
-    <time>00:03:07</time>
+    <time>22:47:24</time>
     <pet>
       <gender>Male</gender>
       <color>Brown</color>
@@ -30,7 +30,7 @@
       <day>1</day>
     </date>
     <finalPrice>400.0</finalPrice>
-    <time>00:03:07</time>
+    <time>22:47:24</time>
     <pet>
       <gender>Female</gender>
       <color>White</color>
@@ -53,7 +53,7 @@
       <day>1</day>
     </date>
     <finalPrice>600.0</finalPrice>
-    <time>00:03:07</time>
+    <time>22:47:24</time>
     <pet>
       <gender>Male</gender>
       <color>Grey</color>
@@ -76,7 +76,7 @@
       <day>1</day>
     </date>
     <finalPrice>800.0</finalPrice>
-    <time>00:03:07</time>
+    <time>22:47:24</time>
     <pet>
       <gender>Female</gender>
       <color>Green</color>
@@ -99,7 +99,7 @@
       <day>1</day>
     </date>
     <finalPrice>300.0</finalPrice>
-    <time>00:03:07</time>
+    <time>22:47:24</time>
     <pet>
       <gender>Male</gender>
       <color>Black</color>
@@ -113,29 +113,6 @@
       <emailAddress>555-3344</emailAddress>
       <phoneNumber>654 Birch Blvd</phoneNumber>
       <name>Liam Brown</name>
-    </customer>
-  </saleList>
-  <saleList>
-    <date>
-      <month>12</month>
-      <year>2024</year>
-      <day>14</day>
-    </date>
-    <finalPrice>123.66</finalPrice>
-    <time>00:03:28</time>
-    <pet>
-      <gender>Female</gender>
-      <color>Ginger</color>
-      <species>Cat</species>
-      <price>320.0</price>
-      <name>Mittens</name>
-      <comment>Adventurous and curious</comment>
-      <age>2</age>
-    </pet>
-    <customer>
-      <emailAddress>bobbrown@email.com</emailAddress>
-      <phoneNumber>456-789-0123</phoneNumber>
-      <name>Bob Brown</name>
     </customer>
   </saleList>
 </SaleList>

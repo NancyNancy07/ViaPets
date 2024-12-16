@@ -10,15 +10,17 @@ public class KennelReservationList
   public KennelReservationList(int maxNumberOfReservations)
   {
     this.currentNumberOfReservations = 0;
-    this.kennelReservations = new ArrayList<KennelReservation>(maxNumberOfReservations);
+    this.kennelReservations = new ArrayList<KennelReservation>(
+        maxNumberOfReservations);
   }
 
   // Methods
   public void addKennelReservation(KennelReservation reservation)
   {
-    if (kennelReservations.size() > currentNumberOfReservations)
+    if (kennelReservations.size() < 10)
     {
       kennelReservations.add(reservation);
+      currentNumberOfReservations++;
     }
     else
     {
@@ -56,7 +58,6 @@ public class KennelReservationList
     return kennelReservations.size();
   }
 
-
   public KennelReservation getKennelReservation(int index)
   {
     if (index >= 0 && index < kennelReservations.size())
@@ -70,10 +71,10 @@ public class KennelReservationList
     }
   }
 
-
   public KennelReservation[] getAllKennelReservations()
   {
-    return kennelReservations.toArray(new KennelReservation[currentNumberOfReservations]);
+    return kennelReservations.toArray(
+        new KennelReservation[currentNumberOfReservations]);
   }
 
   public String toString()
@@ -86,17 +87,20 @@ public class KennelReservationList
     return str;
   }
 
-   public boolean equals(Object obj) {
-    if (obj == null || getClass() != obj.getClass()) return false;
+  public boolean equals(Object obj)
+  {
+    if (obj == null || getClass() != obj.getClass())
+      return false;
 
     KennelReservationList other = (KennelReservationList) obj;
 
+    if (this.currentNumberOfReservations != other.currentNumberOfReservations)
+      return false;
 
-    if (this.currentNumberOfReservations != other.currentNumberOfReservations) return false;
-
-
-    for (int i = 0; i < currentNumberOfReservations; i++) {
-      if (!kennelReservations.get(i).equals(other.kennelReservations.get(i))) return false;
+    for (int i = 0; i < currentNumberOfReservations; i++)
+    {
+      if (!kennelReservations.get(i).equals(other.kennelReservations.get(i)))
+        return false;
     }
     return true;
   }
