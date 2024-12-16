@@ -57,19 +57,7 @@ public class Pet implements Serializable
     this.color = color;
     this.comment = comment;
     this.price = price;
-  }
-
-  /**
-   * A No-argument constructor initializing the Pet.
-   */
-  public Pet()
-  {
-    this.species = "";
-    this.age = -1;
-    this.gender = "";
-    this.color = "";
-    this.comment = "";
-    this.price = -0.0;
+    this.name = "";
   }
 
   /**
