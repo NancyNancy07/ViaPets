@@ -60,6 +60,37 @@ public class LoadInitialData
     sales.addSale(sale4);
     sales.addSale(sale5);
 
+    MyDate startDate1 = new MyDate(5, 3, 2025);
+    MyDate startDate2 = new MyDate(9, 12, 2024);
+    MyDate startDate3 = new MyDate(12, 4, 2025);
+    MyDate startDate4 = new MyDate(30, 11, 2024);
+    MyDate startDate5 = new MyDate(16, 10, 2025);
+
+    MyDate endDate1 = new MyDate(5, 5, 2025);
+    MyDate endDate2 = new MyDate(30, 12, 2024);
+    MyDate endDate3 = new MyDate(30, 4, 2025);
+    MyDate endDate4 = new MyDate(30, 12, 2024);
+    MyDate endDate5 = new MyDate(16, 12, 2025);
+    //    kennel data
+    KennelReservation reservation1 = new KennelReservation(100.0, pet1,
+        customer1, startDate1, endDate1);
+    KennelReservation reservation2 = new KennelReservation(100.0, pet2,
+        customer2, startDate2, endDate2);
+    KennelReservation reservation3 = new KennelReservation(100.0, pet3,
+        customer3, startDate3, endDate3);
+    KennelReservation reservation4 = new KennelReservation(100.0, pet4,
+        customer4, startDate4, endDate4);
+    KennelReservation reservation5 = new KennelReservation(100.0, pet5,
+        customer5, startDate5, endDate5);
+
+    KennelReservationList reservations = new KennelReservationList(10);
+
+    reservations.addKennelReservation(reservation1);
+    reservations.addKennelReservation(reservation2);
+    reservations.addKennelReservation(reservation3);
+    reservations.addKennelReservation(reservation4);
+    reservations.addKennelReservation(reservation5);
+
     try
     {
       customerArr = (String[]) MyFileHandler.readArrayFromTextFile(
@@ -109,6 +140,7 @@ public class LoadInitialData
       MyFileHandler.writeToBinaryFile("customers.bin", customers);
       MyFileHandler.writeToBinaryFile("pets.bin", pets);
       MyFileHandler.writeToBinaryFile("sales.bin", sales);
+      MyFileHandler.writeToBinaryFile("reservations.bin", sales);
     }
     catch (FileNotFoundException e)
     {
@@ -123,16 +155,19 @@ public class LoadInitialData
     viaPetsShop.setCustomerList(customers);
     viaPetsShop.setPetList(pets);
     viaPetsShop.setSaleList(sales);
+    viaPetsShop.setKennelReservationList(reservations);
 
     ViaPetsModelManager modelManager = new ViaPetsModelManager("customers.xml",
-        "pets.xml", "sales.xml", "kennelReservations.bin", viaPetsShop);
+        "pets.xml", "sales.xml", "kennelReservations.xml", viaPetsShop);
     modelManager.writeCustomers();
     modelManager.writePets();
     modelManager.writeSales();
+    modelManager.writeKennelReservations();
     CustomerList customersFromFile = modelManager.readCustomers();
     PetList petsFromFile = modelManager.readPets();
     SaleList saleFromFile = modelManager.readSales();
-    //      System.out.println(saleFromFile);
+    KennelReservationList reservationsFromFile = modelManager.readKennelReservations();
+//    System.out.println(reservationsFromFile);
     System.out.println("Done");
   }
 }

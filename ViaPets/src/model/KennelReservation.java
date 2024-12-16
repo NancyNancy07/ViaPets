@@ -10,7 +10,8 @@ public class KennelReservation
   private MyDate startDate, endDate;
 
   // Constructor
-  public KennelReservation(double price, Pet pet, Customer customer, MyDate startDate, MyDate endDate)
+  public KennelReservation(double price, Pet pet, Customer customer,
+      MyDate startDate, MyDate endDate)
   {
     this.price = price;
     this.pet = pet;
@@ -72,8 +73,8 @@ public class KennelReservation
 
   public String toString()
   {
-    return "KennelReservation{" + "price=" + price + ", pet=" + pet
-        + ", customer=" + customer + '}' + "Start Date: " + startDate + "End Date: " + endDate;
+    return "KennelReservation: \nPrice: " + price + "\n" + pet + "\n" + customer
+        + "\nStart Date: " + startDate + ", End Date: " + endDate;
   }
 
   public boolean equals(Object obj)

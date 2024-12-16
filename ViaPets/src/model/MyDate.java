@@ -28,11 +28,6 @@ public class MyDate
     return year;
   }
 
-  public MyDate getDate()
-  {
-    return this;
-  }
-
   public void setDay(int day)
   {
     this.day = day;

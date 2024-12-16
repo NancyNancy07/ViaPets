@@ -1,0 +1,5 @@
+Buddy, Alice Johnson, 150.0, 01/05/2024, 01/07/2024
+Whiskers, Bob Smith, 200.0, 01/07/2024,01/08/2024
+Charlie, Cathy Brown, 175.0, 01/09/2024, 01/10/2024
+Bella, David Lee, 220.0,01/10/2024,01/11/2024
+Max, Eva Green, 180.0,01/12/2024,10/12/2024
