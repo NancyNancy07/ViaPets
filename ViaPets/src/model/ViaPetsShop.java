@@ -7,6 +7,7 @@ public class ViaPetsShop
   private SaleList saleList;
   private CustomerList customerList;
   private PetList petList;
+  private boolean test;
 
   // Constructor
 
@@ -18,9 +19,10 @@ public class ViaPetsShop
     this.saleList = new SaleList();
     this.customerList = new CustomerList();
     this.petList = new PetList();
+    this.test = false;
   }
 
-  // Getters
+  //Getters
    /**
     * Getter for the kennel reservation list
     * @return the kennel reservation list
