@@ -83,7 +83,7 @@ public class LoadInitialData
     KennelReservation reservation5 = new KennelReservation(100.0, pet5,
         customer5, startDate5, endDate5);
 
-    KennelReservationList reservations = new KennelReservationList(10);
+    KennelReservationList reservations = new KennelReservationList();
 
     reservations.addKennelReservation(reservation1);
     reservations.addKennelReservation(reservation2);

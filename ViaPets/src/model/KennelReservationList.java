@@ -9,19 +9,17 @@ import java.util.ArrayList;
  */
 public class KennelReservationList
 {
-  private int currentNumberOfReservations;
+  private int availableKennels;
   private ArrayList<KennelReservation> kennelReservations;
 
   // Constructor
   /**
    * Constructs a new KennelReservationList object with specified details including the maximum number of reservations.
-   * @param maxNumberOfReservations the maximum number of reservations
    */
-  public KennelReservationList(int maxNumberOfReservations)
+  public KennelReservationList()
   {
-    this.currentNumberOfReservations = 0;
-    this.kennelReservations = new ArrayList<KennelReservation>(
-        maxNumberOfReservations);
+    this.availableKennels = 10;
+    this.kennelReservations = new ArrayList<KennelReservation>();
   }
 
   // Methods
@@ -31,10 +29,10 @@ public class KennelReservationList
    */
   public void addKennelReservation(KennelReservation reservation)
   {
-    if (kennelReservations.size() < 10)
+    if (availableKennels > 0)
     {
       kennelReservations.add(reservation);
-      currentNumberOfReservations++;
+      availableKennels--;
     }
     else
     {
@@ -52,6 +50,7 @@ public class KennelReservationList
     if (index >= 0 && index < kennelReservations.size())
     {
       kennelReservations.remove(index);
+      availableKennels++;
     }
     else
     {
@@ -110,7 +109,7 @@ public class KennelReservationList
   public KennelReservation[] getAllKennelReservations()
   {
     return kennelReservations.toArray(
-        new KennelReservation[currentNumberOfReservations]);
+        new KennelReservation[kennelReservations.size()]);
   }
 
   /**
@@ -120,7 +119,7 @@ public class KennelReservationList
   public String toString()
   {
     String str = "";
-    for (int i = 0; i < currentNumberOfReservations; i++)
+    for (int i = 0; i < kennelReservations.size(); i++)
     {
       str += kennelReservations.get(i) + "\n";
     }
@@ -139,10 +138,10 @@ public class KennelReservationList
 
     KennelReservationList other = (KennelReservationList) obj;
 
-    if (this.currentNumberOfReservations != other.currentNumberOfReservations)
+    if (this.kennelReservations.size() != other.kennelReservations.size())
       return false;
 
-    for (int i = 0; i < currentNumberOfReservations; i++)
+    for (int i = 0; i < kennelReservations.size(); i++)
     {
       if (!kennelReservations.get(i).equals(other.kennelReservations.get(i)))
         return false;
