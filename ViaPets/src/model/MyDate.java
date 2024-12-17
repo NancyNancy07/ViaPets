@@ -113,5 +113,83 @@ public class MyDate
     MyDate other = (MyDate) obj;
     return day == other.day && month == other.month && year == other.year;
   }
+
+  public boolean isLeapYear()
+  {
+    return (year % 4 == 0 && (year % 400 == 0 || year % 100 != 0));
+  }
+
+  public int daysInMonth(int month)
+  {
+    if (isLeapYear())
+    {
+      if (month == 2)
+      {
+        return 29;
+      }
+    }
+    else
+    {
+      if (month == 2)
+      {
+        return 28;
+      }
+    }
+    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8
+        || month == 10 || month == 12)
+    {
+      return 31;
+    }
+    else if (month == 4 || month == 6 || month == 9 || month == 11)
+    {
+      return 30;
+    }
+    return 0;
+  }
+
+  public int dayCounter()
+  {
+    int days = 0;
+    days += day;
+    //System.out.println("Days after adding days: " + days);
+    for (int i = month; i >= 0; i--)
+    {
+      days += daysInMonth(i);
+      //System.out.println(days);
+    }
+    //System.out.println("Days after adding months: " + days);
+    if (isLeapYear())
+    {
+      //System.out.println("Is Leap year!");
+      days += ((year / 4) * 365 * 3) + ((year / 4) * 366)
+          + 365; //there was never Year Zero
+    }
+    else if (year % 4 == 1)
+    {
+      //System.out.println("Is Leap year + 1");
+      days += (((year - 1) / 4) * 365 * 3) + ((year / 4) * 366) + (2 * 365);
+    }
+    else if (year % 4 == 2)
+    {
+      //System.out.println("Is Leap year + 2");
+      days += (((year - 2) / 4) * 365 * 3) + ((year / 4) * 366) + (3 * 365);
+    }
+    else if (year % 4 == 3)
+    {
+      //System.out.println("Is Leap year + 3");
+      days += (((year - 3) / 4) * 365 * 3) + ((year / 4) * 366) + (4 * 365);
+    }
+    //System.out.println("Final days: " + days);
+    return days;
+  }
+
+  public boolean isBefore(MyDate obj)
+  {
+    if(dayCounter()>obj.dayCounter())
+    {
+      return true;
+    }
+    return false;
+  }
 }
 

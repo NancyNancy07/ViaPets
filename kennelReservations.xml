@@ -2,8 +2,8 @@
 <KennelReservationList>
   <kennelReservations>
     <endDate>
-      <month>5</month>
-      <year>2025</year>
+      <month>12</month>
+      <year>2024</year>
       <day>5</day>
     </endDate>
     <price>100.0</price>
@@ -17,8 +17,8 @@
       <age>2</age>
     </pet>
     <startDate>
-      <month>3</month>
-      <year>2025</year>
+      <month>12</month>
+      <year>2024</year>
       <day>5</day>
     </startDate>
     <customer>
@@ -46,7 +46,7 @@
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>9</day>
+      <day>5</day>
     </startDate>
     <customer>
       <emailAddress>555-5678</emailAddress>
@@ -71,9 +71,9 @@
       <age>1</age>
     </pet>
     <startDate>
-      <month>4</month>
-      <year>2025</year>
-      <day>12</day>
+      <month>12</month>
+      <year>2024</year>
+      <day>5</day>
     </startDate>
     <customer>
       <emailAddress>555-9101</emailAddress>
@@ -98,9 +98,9 @@
       <age>4</age>
     </pet>
     <startDate>
-      <month>11</month>
+      <month>12</month>
       <year>2024</year>
-      <day>30</day>
+      <day>5</day>
     </startDate>
     <customer>
       <emailAddress>555-1122</emailAddress>
@@ -125,9 +125,9 @@
       <age>5</age>
     </pet>
     <startDate>
-      <month>10</month>
-      <year>2025</year>
-      <day>16</day>
+      <month>12</month>
+      <year>2024</year>
+      <day>5</day>
     </startDate>
     <customer>
       <emailAddress>555-3344</emailAddress>
@@ -154,7 +154,7 @@
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>8</day>
+      <day>5</day>
     </startDate>
     <customer>
       <emailAddress>alicej@email.com</emailAddress>
@@ -181,7 +181,7 @@
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>21</day>
+      <day>5</day>
     </startDate>
     <customer>
       <emailAddress>gracer@email.com</emailAddress>
@@ -208,7 +208,7 @@
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>10</day>
+      <day>5</day>
     </startDate>
     <customer>
       <emailAddress>frankb@email.com</emailAddress>
@@ -235,7 +235,7 @@
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>31</day>
+      <day>5</day>
     </startDate>
     <customer>
       <emailAddress>frankb@email.com</emailAddress>
@@ -262,7 +262,7 @@
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>9</day>
+      <day>5</day>
     </startDate>
     <customer>
       <emailAddress>davidg@email.com</emailAddress>
@@ -270,5 +270,31 @@
       <name>David Green</name>
     </customer>
   </kennelReservations>
-  <currentNumberOfReservations>10</currentNumberOfReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>6</day>
+    </endDate>
+    <price>50.0</price>
+    <pet>
+      <gender>Female</gender>
+      <color>Orange</color>
+      <species>Fish</species>
+      <price>30.0</price>
+      <name>Nemo</name>
+      <comment>Calm and peaceful</comment>
+      <age>1</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>5</day>
+    </startDate>
+    <customer>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>567-890-1234</phoneNumber>
+      <name>Charlie White</name>
+    </customer>
+  </kennelReservations>
 </KennelReservationList>

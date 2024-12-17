@@ -739,15 +739,8 @@ public class ViaPetsController
 
     KennelReservationList allReservations = modelManager.readKennelReservations();
 
-    if (allReservations.getAllNumberOfKennelReservations() >= 10)
-    {
-      Alert alert = new Alert(Alert.AlertType.WARNING);
-      alert.setTitle("Capacity Full");
-      alert.setHeaderText(null);
-      alert.setContentText("No more kennel reservations can make.");
-      alert.showAndWait();
-    }
-    else
+
+    if(true)
     {
       String customerName = reservationCustomerComboBox.getValue();
       CustomerList allCustomers = modelManager.readCustomers();
@@ -813,6 +806,14 @@ public class ViaPetsController
 
         KennelReservation reservation = new KennelReservation(kennelPrice,
             reservationPet, reservationCustomer, myStartDate, myEndDate);
+        if (allReservations.dateChecker(reservation))
+        {
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+          alert.setTitle("Capacity Full");
+          alert.setHeaderText(null);
+          alert.setContentText("No more kennel reservations can make.");
+          alert.showAndWait();
+        }
         modelManager.addKennelReservation(reservation);
         updateKennelBox();
 

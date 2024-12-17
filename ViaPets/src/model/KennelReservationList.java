@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * A class containing of KennelReservation object.
@@ -9,7 +10,6 @@ import java.util.ArrayList;
  */
 public class KennelReservationList
 {
-  private int availableKennels;
   private ArrayList<KennelReservation> kennelReservations;
 
   // Constructor
@@ -18,21 +18,33 @@ public class KennelReservationList
    */
   public KennelReservationList()
   {
-    this.availableKennels = 10;
     this.kennelReservations = new ArrayList<KennelReservation>();
   }
 
   // Methods
+  public boolean dateChecker(KennelReservation reservation)
+  {
+    int availableKennelsOriginally = 10;
+
+    for (int i = 0; i < kennelReservations.size(); i++)
+    {
+      if (!reservation.getStartDate().isBefore(kennelReservations.get(i).getStartDate()) &&
+          reservation.getEndDate().isBefore(kennelReservations.get(i).getEndDate()))
+      {
+        availableKennelsOriginally--;
+      }
+    }
+    return availableKennelsOriginally != 0;
+  }
   /**
    * Adds a new reservation to the list.
    * @param reservation the reservation object
    */
   public void addKennelReservation(KennelReservation reservation)
   {
-    if (availableKennels > 0)
+    if (dateChecker(reservation))
     {
       kennelReservations.add(reservation);
-      availableKennels--;
     }
     else
     {
@@ -50,7 +62,6 @@ public class KennelReservationList
     if (index >= 0 && index < kennelReservations.size())
     {
       kennelReservations.remove(index);
-      availableKennels++;
     }
     else
     {
