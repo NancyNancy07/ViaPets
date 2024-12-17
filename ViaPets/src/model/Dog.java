@@ -112,4 +112,9 @@ public class Dog extends Pet implements Serializable
         other.breeder);
   }
 
+  public String getAdditionalInformation()
+  {
+    return breed +"|"+ breeder;
+  }
+
 }

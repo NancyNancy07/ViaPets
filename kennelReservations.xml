@@ -12,8 +12,11 @@
       <color>Brown</color>
       <species>Dog</species>
       <price>0.0</price>
+      <typeOfAnimal>Dog</typeOfAnimal>
+      <breeder>John's Breeder</breeder>
       <name>Buddy</name>
       <comment>Very energetic and playful</comment>
+      <breed>Labrador</breed>
       <age>2</age>
     </pet>
     <startDate>
@@ -39,8 +42,11 @@
       <color>White</color>
       <species>Cat</species>
       <price>0.0</price>
+      <typeOfAnimal>Cat</typeOfAnimal>
+      <breeder>New Breeder</breeder>
       <name>Whiskers</name>
       <comment>Loves cuddling and napping</comment>
+      <breed>Persian</breed>
       <age>3</age>
     </pet>
     <startDate>
@@ -62,10 +68,12 @@
     </endDate>
     <price>100.0</price>
     <pet>
+      <isAggressive>false</isAggressive>
       <gender>Male</gender>
       <color>Grey</color>
       <species>Rabbit</species>
       <price>0.0</price>
+      <typeOfAnimal>Rodent</typeOfAnimal>
       <name>Thumper</name>
       <comment>Curious and loves carrots</comment>
       <age>1</age>
@@ -93,8 +101,10 @@
       <color>Green</color>
       <species>Parrot</species>
       <price>0.0</price>
+      <typeOfAnimal>Bird</typeOfAnimal>
       <name>Polly</name>
       <comment>Likes to mimic sounds</comment>
+      <preferredFood>Chilli</preferredFood>
       <age>4</age>
     </pet>
     <startDate>
@@ -120,8 +130,11 @@
       <color>Black</color>
       <species>Dog</species>
       <price>0.0</price>
+      <typeOfAnimal>Dog</typeOfAnimal>
+      <breeder>Best Breeder</breeder>
       <name>Rex</name>
       <comment>Loyal and friendly</comment>
+      <breed>German Shepherd</breed>
       <age>5</age>
     </pet>
     <startDate>

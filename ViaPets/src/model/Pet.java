@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author Kamin Khan Rahmany
  * @version 1.0
  */
-public class Pet implements Serializable
+public abstract class Pet implements Serializable
 {
   private String species;
   private int age;
@@ -17,6 +17,7 @@ public class Pet implements Serializable
   private String name;
   private String comment;
   private double price;
+  private String typeOfAnimal;
 
   /**
    * Constructs a new Pet with specified attributes.
@@ -36,6 +37,7 @@ public class Pet implements Serializable
     {
       throw new IllegalArgumentException();
     }
+    this.typeOfAnimal = getClass().getSimpleName();
     this.species = species;
 
     this.age = age;
@@ -66,6 +68,12 @@ public class Pet implements Serializable
     this.comment = comment;
     this.price = price;
     this.name = "";
+    this.typeOfAnimal = getClass().getSimpleName();
+  }
+
+  public String getTypeOfAnimal()
+  {
+    return typeOfAnimal;
   }
 
   /**
@@ -232,4 +240,5 @@ public class Pet implements Serializable
         && price == other.price;
   }
 
+  public abstract String getAdditionalInformation();
 }

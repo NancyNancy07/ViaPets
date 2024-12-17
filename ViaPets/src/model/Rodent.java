@@ -95,4 +95,9 @@ public class Rodent extends Pet implements Serializable
     Rodent other = (Rodent) obj;
     return super.equals(other) && isAggressive == other.isAggressive;
   }
+
+  public String getAdditionalInformation()
+  {
+    return isAggressive ? "Aggressive" : "Not aggressive";
+  }
 }

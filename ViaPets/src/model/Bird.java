@@ -90,4 +90,9 @@ public class Bird extends Pet implements Serializable
     Bird other = (Bird) obj;
     return super.equals(other) && preferredFood.equals(other.preferredFood);
   }
+
+  public String getAdditionalInformation()
+  {
+    return preferredFood;
+  }
 }

@@ -111,4 +111,9 @@ public class Cat extends Pet implements Serializable
     return super.equals(other) && breed.equals(other.breed) && breeder.equals(
         other.breeder);
   }
+
+  public String getAdditionalInformation()
+  {
+    return breed + "|" + breeder;
+  }
 }

@@ -55,4 +55,9 @@ public class Various extends Pet implements Serializable
     Various other = (Various) obj;
     return super.equals(other);
   }
+
+  public String getAdditionalInformation()
+  {
+    return "";
+  }
 }

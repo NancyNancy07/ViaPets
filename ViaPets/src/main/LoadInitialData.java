@@ -19,7 +19,7 @@ public class LoadInitialData
     //    Pet Data
     PetList pets = new PetList();
 
-    Dog pet1 = new Dog("Dog", 2, "Male", "Brown", "Buddy",
+    Dog pet1 = new Dog("Dog", 2, "Male", "Brown", "Hubby",
         "Very energetic and playful", 600.0, "Labrador", "John's Breeder");
     Pet pet2 = new Cat("Cat", 3, "Female", "White", "Whiskers",
         "Loves cuddling and napping", 500.0, "Persian", "New Breeder");
@@ -83,16 +83,16 @@ public class LoadInitialData
     pets.addPet(pet20);
 
     //    sale data
-    Pet newPet1 = new Pet("Dog", 2, "Male", "Brown", "Buddy",
-        "Very energetic and playful", 600.0);
-    Pet newPet2 = new Pet("Cat", 3, "Female", "White", "Whiskers",
-        "Loves cuddling and napping", 500.0);
-    Pet newPet3 = new Pet("Rabbit", 1, "Male", "Grey", "Thumper",
-        "Curious and loves carrots", 900.0);
-    Pet newPet4 = new Pet("Parrot", 4, "Female", "Green", "Polly",
-        "Likes to mimic sounds", 1000.0);
-    Pet newPet5 = new Pet("Dog", 5, "Male", "Black", "Rex",
-        "Loyal and friendly", 500.0);
+    Dog newPet1 = new Dog("Dog", 2, "Male", "Brown", "Buddy",
+        "Very energetic and playful", 600.0, "Labrador", "John's Breeder");
+    Cat newPet2 = new Cat("Cat", 3, "Female", "White", "Whiskers",
+        "Loves cuddling and napping", 500.0, "Persian", "New Breeder");
+    Rodent newPet3 = new Rodent("Rabbit", 1, "Male", "Grey", "Thumper",
+        "Curious and loves carrots", 900.0, false);
+    Bird newPet4 = new Bird("Parrot", 4, "Female", "Green", "Polly",
+        "Likes to mimic sounds", 1000.0, "Chilli");
+    Dog newPet5 = new Dog("Dog", 5, "Male", "Black", "Rex",
+        "Loyal and friendly", 500.0, "German Shepherd", "Best Breeder");
 
     Customer customer1 = new Customer("John Doe", "12345678",
         "johndoe@email.com");
@@ -164,25 +164,47 @@ public class LoadInitialData
       reservation.getPet().setPrice(0);
     }
 
-    try
-    {
-      customerArr = (String[]) MyFileHandler.readArrayFromTextFile(
-          "customers.txt");
-      for (int i = 0; i < customerArr.length; i++)
-      {
-        String temp = customerArr[i];
-        String[] tempArr = temp.split(",");
-        String name = tempArr[0];
-        String phone = tempArr[1];
-        String email = tempArr[2];
+    Customer customer11 = new Customer("John Doe", "12345678", "johndoe@email.com");
+    Customer customer12 = new Customer("Jane Smith", "23456789", "janesmith@email.com");
+    Customer customer13 = new Customer("Alice Johnson", "34678012", "janesmith@email.com");
+    Customer customer14 = new Customer("Bob Brown", "45689123", "janesmith@email.com");
+    Customer customer15 = new Customer("Charlie White", "56790234", "janesmith@email.com");
+    Customer customer16 = new Customer("David Green", "67801345", "janesmith@email.com");
+    Customer customer17 = new Customer("Eva Black", "78912456", "janesmith@email.com");
+    Customer customer18 = new Customer("Frank Blue", "89023567", "janesmith@email.com");
+    Customer customer19 = new Customer("Grace Red", "90134678", "janesmith@email.com");
+    Customer customer110 = new Customer("Henry Gray", "10245789", "janesmith@email.com");
 
-        customers.addCustomer(new Customer(name, phone, email));
-      }
-    }
-    catch (FileNotFoundException e)
-    {
-      System.out.println("File was not found, or could not be opened");
-    }
+    customers.addCustomer(customer11);
+    customers.addCustomer(customer12);
+    customers.addCustomer(customer13);
+    customers.addCustomer(customer14);
+    customers.addCustomer(customer15);
+    customers.addCustomer(customer16);
+    customers.addCustomer(customer17);
+    customers.addCustomer(customer18);
+    customers.addCustomer(customer19);
+    customers.addCustomer(customer110);
+
+//    try
+//    {
+//      customerArr = (String[]) MyFileHandler.readArrayFromTextFile(
+//          "customers.txt");
+//      for (int i = 0; i < customerArr.length; i++)
+//      {
+//        String temp = customerArr[i];
+//        String[] tempArr = temp.split(",");
+//        String name = tempArr[0];
+//        String phone = tempArr[1];
+//        String email = tempArr[2];
+//
+//        customers.addCustomer(new Customer(name, phone, email));
+//      }
+//    }
+//    catch (FileNotFoundException e)
+//    {
+//      System.out.println("File was not found, or could not be opened");
+//    }
 
 //    try
 //    {
@@ -210,10 +232,12 @@ public class LoadInitialData
         "pets.xml", "sales.xml", "kennelReservations.xml", viaPetsShop);
     modelManager.writeCustomers();
     modelManager.writePets();
+    PetList petsFromFile = modelManager.readPets();
+//    System.out.println(petsFromFile);
     modelManager.writeSales();
     modelManager.writeKennelReservations();
     CustomerList customersFromFile = modelManager.readCustomers();
-    PetList petsFromFile = modelManager.readPets();
+
     SaleList saleFromFile = modelManager.readSales();
     KennelReservationList reservationsFromFile = modelManager.readKennelReservations();
 //   System.out.println(petsFromFile);

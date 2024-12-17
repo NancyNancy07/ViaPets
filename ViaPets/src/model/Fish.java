@@ -122,4 +122,28 @@ public class Fish extends Pet implements Serializable
     return super.equals(other) && isPredator == other.isPredator
         && isFreshWater == other.isFreshWater;
   }
+
+  public String getAdditionalInformation()
+  {
+    String toReturn = "";
+
+    if (isFreshWater)
+    {
+      toReturn += "Freshwater|";
+    }
+    else
+    {
+      toReturn += "Saltwater|";
+    }
+
+    if (isPredator)
+    {
+      toReturn += "Predator";
+    }
+    else
+    {
+      toReturn += "Peaceful";
+    }
+    return toReturn;
+  }
 }

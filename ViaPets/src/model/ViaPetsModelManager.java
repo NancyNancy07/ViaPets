@@ -171,7 +171,7 @@ public class ViaPetsModelManager
   public void writePets() throws ParserException
   {
     PetList allPets = getAllPets();
-    System.out.println("model manager 174"+allPets.getPet(0));
+    System.out.println(allPets);
     if (allPets == null)
     {
       System.out.println("Pet list is null");
@@ -278,21 +278,22 @@ public class ViaPetsModelManager
    * @return the PetList read from the XML file
    * @throws ParserException if an error occurs
    */
-  public PetList readPets() throws ParserException
-  {
-    XmlJsonParser parser = new XmlJsonParser();
-    PetList pets = parser.fromXml("pets.xml", PetList.class);
-
-    try
-    {
-      pets = parser.fromXml("pets.xml", PetList.class);
-    }
-    catch (ParserException e)
-    {
-      System.err.println("Error parsing XML: " + e.getMessage());
-    }
-    return pets;
-  }
+//  public PetList readPets() throws ParserException
+//  {
+//    XmlJsonParser parser = new XmlJsonParser();
+//
+//    PetList pets = parser.fromXml("pets.xml", PetList.class);
+//
+//    try
+//    {
+//      pets = parser.fromXml("pets.xml", PetList.class);
+//    }
+//    catch (ParserException e)
+//    {
+//      System.err.println("Error parsing XML: " + e.getMessage());
+//    }
+//    return pets;
+//  }
 
   /**
    * Reads the sales from an XML file
@@ -639,7 +640,7 @@ public class ViaPetsModelManager
     }
   }*/
 
-/*  public PetList readPets()
+  public PetList readPets()
   {
     PetList pets = new PetList();
     DocumentBuilder builder2 = null;
@@ -671,7 +672,7 @@ public class ViaPetsModelManager
       System.exit(1);
     }
 
-    NodeList rootList = doc2.getElementsByTagName("pet");
+    NodeList rootList = doc2.getElementsByTagName("PetList");
 
     for (int i = 0; i < rootList.getLength(); i++)
     {
@@ -685,6 +686,8 @@ public class ViaPetsModelManager
       String color = "";
       String comment = "";
       String price = "";
+      String additionalInformation = "";
+      String typeOfAnimal = "";
 
       for (int j = 0; j < subNodes.getLength(); j++)
       {
@@ -717,13 +720,84 @@ public class ViaPetsModelManager
         {
           price = subNode.getTextContent();
         }
+        else if (subNode.getNodeName().equals("typeOfAnimal"))
+        {
+          typeOfAnimal = subNode.getTextContent();
+        }
+        else if (subNode.getNodeName().equals("breed"))
+        {
+          additionalInformation = subNode.getTextContent();
+        }
+        else if (subNode.getNodeName().equals("breeder"))
+        {
+          additionalInformation = subNode.getTextContent();
+        }
+        else if (subNode.getNodeName().equals("isPredator"))
+        {
+          additionalInformation = subNode.getTextContent();
+        }
+        else if (subNode.getNodeName().equals("isFreshWater"))
+        {
+          additionalInformation = subNode.getTextContent();
+        }
+        else if (subNode.getNodeName().equals("preferredFood"))
+        {
+          additionalInformation = subNode.getTextContent();
+        }
+        else if (subNode.getNodeName().equals("isAggressive"))
+        {
+          additionalInformation = subNode.getTextContent();
+        }
       }
-      pets.addPet(
-          new Pet(species, Integer.parseInt(age), gender, color, name, comment,
-              Double.parseDouble(price)));
+
+      switch (typeOfAnimal)
+      {
+        case "Dog":
+          pets.addPet(
+              new Dog(species, Integer.parseInt(age), gender, color, name,
+                  comment, Double.parseDouble(price),
+                  additionalInformation.split("|")[1],
+                  additionalInformation.split("|")[0]));
+          break;
+        case "Cat":
+          pets.addPet(
+              new Cat(species, Integer.parseInt(age), gender, color, name,
+                  comment, Double.parseDouble(price),
+                  additionalInformation.split("|")[1],
+                  additionalInformation.split("|")[0]));
+          break;
+        case "Fish":
+          pets.addPet(
+              new Fish(species, Integer.parseInt(age), gender, color, name,
+                  comment, Double.parseDouble(price),
+                  Boolean.parseBoolean(additionalInformation.split("|")[1]),
+                  Boolean.parseBoolean(additionalInformation.split("|")[0])));
+          break;
+        case "Bird":
+          pets.addPet(
+              new Bird(species, Integer.parseInt(age), gender, color, name,
+                  comment, Double.parseDouble(price), additionalInformation));
+          break;
+        case "Rodent":
+          pets.addPet(
+              new Rodent(species, Integer.parseInt(age), gender, color, name,
+                  comment, Double.parseDouble(price),
+                  Boolean.parseBoolean(additionalInformation)));
+        case "Various":
+          pets.addPet(
+              new Various(species, Integer.parseInt(age), gender, color, name,
+                  comment, Double.parseDouble(price)));
+          break;
+        default:
+          System.out.println("Invalid type of animal");
+          break;
+      }
+
     }
     return pets;
-  }*/
+  }
+}
+
 
 /*  public void writeKennelReservations()
   {
@@ -797,4 +871,3 @@ public class ViaPetsModelManager
     return null;
   }*/
 
-}

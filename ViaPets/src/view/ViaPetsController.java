@@ -531,8 +531,37 @@ public class ViaPetsController
           return;
         }
 
-        Pet newPet = new Pet(species, age, gender, color, name, comment, price);
-        modelManager.addPet(newPet);
+        Pet pet = null;
+        switch(species)
+        {
+          case "Dog":
+            pet = new Dog(species, age, gender, color, name, comment,
+                price, "Always same breed", "Always same breeder");
+            break;
+          case "Cat":
+            pet = new Cat(species, age, gender, color, name, comment,
+                price, "Always same breed", "Always same breeder");
+            break;
+          case "Bird":
+            pet = new Bird(species, age, gender, color, name, comment,
+                price, "Same food");
+            break;
+          case "Rodent":
+            pet = new Rodent(species, age, gender, color, name,
+                comment, price, true);
+            break;
+          case "Fish":
+            pet = new Fish(species, age, gender, color, name, comment,
+                price, true, true);
+            break;
+          case "Various":
+            pet = new Various(species, age, gender, color, name,
+                comment, price);
+            break;
+          default:
+            break;
+        }
+        modelManager.addPet(pet);
       }
       catch (NumberFormatException e)
       {
@@ -942,9 +971,41 @@ public class ViaPetsController
           return;
         }
 
-        Pet pet = new Pet(species, age, gender, color, petName, comment, price);
-
-        selectedReservation.setPet(pet);
+        switch(species)
+        {
+          case "Dog":
+            Dog newDog = new Dog(species, age, gender, color, name, comment,
+                price, "Always same breed", "Always same breeder");
+            selectedReservation.setPet(newDog);
+            break;
+          case "Cat":
+            Cat newCat = new Cat(species, age, gender, color, name, comment,
+                price, "Always same breed", "Always same breeder");
+            selectedReservation.setPet(newCat);
+            break;
+          case "Bird":
+            Bird newBird = new Bird(species, age, gender, color, name, comment,
+                price, "Same food");
+            selectedReservation.setPet(newBird);
+            break;
+          case "Rodent":
+            Rodent newRodent = new Rodent(species, age, gender, color, name,
+                comment, price, true);
+            selectedReservation.setPet(newRodent);
+            break;
+          case "Fish":
+            Fish newFish = new Fish(species, age, gender, color, name, comment,
+                price, true, true);
+            selectedReservation.setPet(newFish);
+            break;
+          case "Various":
+            Various newVarious = new Various(species, age, gender, color, name,
+                comment, price);
+            selectedReservation.setPet(newVarious);
+            break;
+          default:
+            break;
+        }
       }
       catch (NumberFormatException e)
       {
@@ -1077,7 +1138,36 @@ public class ViaPetsController
     double price = Double.parseDouble(reservationNewPetPrice.getText());
     String comments = reservationNewPetComments.getText();
 
-    Pet pet = new Pet(species, age, gender, color, name, comments, price);
+    Pet pet = null;
+    switch(species)
+    {
+      case "Dog":
+        pet = new Dog(species, age, gender, color, name, comments,
+            price, "Always same breed", "Always same breeder");
+        break;
+      case "Cat":
+        pet = new Cat(species, age, gender, color, name, comments,
+            price, "Always same breed", "Always same breeder");
+        break;
+      case "Bird":
+        pet = new Bird(species, age, gender, color, name, comments,
+            price, "Same food");
+        break;
+      case "Rodent":
+        pet = new Rodent(species, age, gender, color, name,
+            comments, price, true);
+        break;
+      case "Fish":
+        pet = new Fish(species, age, gender, color, name, comments,
+            price, true, true);
+        break;
+      case "Various":
+        pet = new Various(species, age, gender, color, name,
+            comments, price);
+        break;
+      default:
+        break;
+    }
 
     boolean petExists = false;
 
