@@ -32,14 +32,16 @@ public class LoadInitialData
     Pet pet5 = new Pet("Dog", 5, "Male", "Black", "Rex", "Loyal and friendly",
         500.0);
 
-    Customer customer1 = new Customer("John Doe", "123 Elm Street", "555-1234");
-    Customer customer2 = new Customer("Jane Smith", "456 Oak Avenue",
-        "555-5678");
-    Customer customer3 = new Customer("Sam Green", "789 Pine Lane", "555-9101");
-    Customer customer4 = new Customer("Emma White", "321 Maple Drive",
-        "555-1122");
-    Customer customer5 = new Customer("Liam Brown", "654 Birch Blvd",
-        "555-3344");
+    Customer customer1 = new Customer("John Doe", "12345678",
+        "johndoe@email.com");
+    Customer customer2 = new Customer("Jane Smith", "23456789",
+        "janesmith@email.com");
+    Customer customer3 = new Customer("Bob Brown", "45689123",
+        "bobbrown@email.com");
+    Customer customer4 = new Customer("Charlie White", "56790234",
+        "charliew@email.com");
+    Customer customer5 = new Customer("David Green", "67801345",
+        "davidg@email.com");
 
     MyDate saleDate1 = new MyDate(1, 3, 2024);
     MyDate saleDate2 = new MyDate(1, 3, 2024);
@@ -90,6 +92,12 @@ public class LoadInitialData
     reservations.addKennelReservation(reservation3);
     reservations.addKennelReservation(reservation4);
     reservations.addKennelReservation(reservation5);
+
+    for (int i = 0; i < reservations.getAllNumberOfKennelReservations(); i++)
+    {
+      KennelReservation reservation = reservations.getKennelReservation(i);
+      reservation.getPet().setPrice(0);
+    }
 
     try
     {
@@ -167,7 +175,7 @@ public class LoadInitialData
     PetList petsFromFile = modelManager.readPets();
     SaleList saleFromFile = modelManager.readSales();
     KennelReservationList reservationsFromFile = modelManager.readKennelReservations();
-//    System.out.println(reservationsFromFile);
+//      System.out.println(reservationsFromFile);
     System.out.println("Done");
   }
 }

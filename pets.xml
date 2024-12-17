@@ -1,51 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <PetList>
   <pets>
-    <gender>Male</gender>
-    <color>Brown</color>
-    <species>Dog</species>
-    <price>450.0</price>
-    <name>Buddy</name>
-    <comment>Very energetic and playful</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>White</color>
-    <species>Cat</species>
-    <price>300.0</price>
-    <name>Whiskers</name>
-    <comment>Loves cuddling and napping</comment>
-    <age>3</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Grey</color>
-    <species>Rabbit</species>
-    <price>120.0</price>
-    <name>Thumper</name>
-    <comment>Curious and loves carrots</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Green</color>
-    <species>Parrot</species>
-    <price>200.0</price>
-    <name>Polly</name>
-    <comment>Likes to mimic sounds</comment>
-    <age>4</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Black</color>
-    <species>Dog</species>
-    <price>400.0</price>
-    <name>Rex</name>
-    <comment>Loyal and friendly</comment>
-    <age>5</age>
-  </pets>
-  <pets>
     <gender>Female</gender>
     <color>Ginger</color>
     <species>Cat</species>
@@ -65,30 +20,12 @@
   </pets>
   <pets>
     <gender>Female</gender>
-    <color>Orange</color>
-    <species>Fish</species>
-    <price>30.0</price>
-    <name>Nemo</name>
-    <comment>Calm and peaceful</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
     <color>Golden</color>
     <species>Dog</species>
     <price>500.0</price>
     <name>Lucy</name>
     <comment>Very affectionate</comment>
     <age>3</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Black</color>
-    <species>Cat</species>
-    <price>350.0</price>
-    <name>Shadow</name>
-    <comment>Independent and quiet</comment>
-    <age>4</age>
   </pets>
   <pets>
     <gender>Female</gender>
@@ -103,7 +40,7 @@
     <gender>Male</gender>
     <color>Green</color>
     <species>Snake</species>
-    <price>250.0</price>
+    <price>0.0</price>
     <name>Slither</name>
     <comment>Smooth and exotic</comment>
     <age>3</age>
@@ -611,5 +548,41 @@
     <name>Cooper</name>
     <comment>Protective and playful</comment>
     <age>3</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
+    <color>Brown</color>
+    <species>Dog</species>
+    <price>0.0</price>
+    <name>Buddy</name>
+    <comment>Very energetic and playful</comment>
+    <age>2</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
+    <color>Grey</color>
+    <species>Rabbit</species>
+    <price>0.0</price>
+    <name>Thumper</name>
+    <comment>Curious and loves carrots</comment>
+    <age>1</age>
+  </pets>
+  <pets>
+    <gender>Female</gender>
+    <color>Green</color>
+    <species>Parrot</species>
+    <price>0.0</price>
+    <name>Polly</name>
+    <comment>Likes to mimic sounds</comment>
+    <age>4</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
+    <color>Black</color>
+    <species>Dog</species>
+    <price>0.0</price>
+    <name>Rex</name>
+    <comment>Loyal and friendly</comment>
+    <age>5</age>
   </pets>
 </PetList>

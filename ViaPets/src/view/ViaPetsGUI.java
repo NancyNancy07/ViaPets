@@ -22,11 +22,10 @@ import javafx.stage.Stage;
 
 public class ViaPetsGUI extends Application
 {
-  private VBox mainPane;
-
   public void start(Stage window) throws Exception
   {
     window.setTitle("ViaPets Shop Management System");
+    window.setResizable(true);
     FXMLLoader loader = new FXMLLoader();
     loader.setLocation(getClass().getResource("ViaPetsHandler.fxml"));
     Scene scene = new Scene(loader.load());

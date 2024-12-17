@@ -91,7 +91,8 @@ public class ViaPetsModelManager
   {
     if (viaPetsShop != null)
     {
-      KennelReservationList allKennelReservations = new KennelReservationList(10);
+      KennelReservationList allKennelReservations = new KennelReservationList(
+          10);
       allKennelReservations = viaPetsShop.getKennelReservationList();
       return allKennelReservations;
     }
@@ -155,22 +156,40 @@ public class ViaPetsModelManager
     System.out.println("Wrote sales data to XML file");
   }
 
-  public void writeKennelReservations() throws ParserException
-  {
+  public void writeKennelReservations() throws ParserException {
     KennelReservationList allKennelReservations = getAllKennelReservations();
-    if (allKennelReservations == null)
-    {
-      System.out.println("Kennel reservation list is null");
-    }
 
-    if (allKennelReservations.getAllNumberOfKennelReservations() == 0)
-    {
+    if (allKennelReservations == null || allKennelReservations.getAllNumberOfKennelReservations() == 0) {
       System.out.println("No kennel reservation to write");
+      return;
     }
 
+    PetList allPets = readPets();
+
+    for (int i = 0; i < allKennelReservations.getAllNumberOfKennelReservations(); i++) {
+      KennelReservation reservation = allKennelReservations.getKennelReservation(i);
+      Pet reservationPet = reservation.getPet();
+
+      boolean petExists = false;
+      for (int j = 0; j < allPets.getNumberOfPets(); j++) {
+        if (allPets.getPet(j).equals(reservationPet)) {
+          petExists = true;
+          break;
+        }
+      }
+
+      if (!petExists) {
+        allPets.addPet(reservationPet);
+
+        XmlJsonParser parser = new XmlJsonParser();
+        File petsFile = parser.toXml(allPets, "pets.xml");
+        System.out.println("Wrote new kennel pet data to pets.xml");
+      }
+    }
+
+    // Write updated kennel reservations
     XmlJsonParser parser = new XmlJsonParser();
-    File kennelReservations = parser.toXml(allKennelReservations,
-        "kennelReservations.xml");
+    File kennelReservationsFile = parser.toXml(allKennelReservations, "kennelReservations.xml");
     System.out.println("Wrote kennel reservations data to XML file");
   }
 
@@ -262,8 +281,8 @@ public class ViaPetsModelManager
     File sales = parser.toXml(allSales, "sales.xml");
   }
 
-  public void saveKennelReservationList(KennelReservationList allKennelReservations)
-      throws ParserException
+  public void saveKennelReservationList(
+      KennelReservationList allKennelReservations) throws ParserException
   {
     System.out.println("new list");
     XmlJsonParser parser = new XmlJsonParser();
@@ -320,13 +339,15 @@ public class ViaPetsModelManager
     }
   }
 
-  public void updateKennelReservation(int index, KennelReservation updatedKennelReservation)
-      throws ParserException
+  public void updateKennelReservation(int index,
+      KennelReservation updatedKennelReservation) throws ParserException
   {
     KennelReservationList allKennelReservations = readKennelReservations();
-    if (index >= 0 && index < allKennelReservations.getAllNumberOfKennelReservations())
+    if (index >= 0
+        && index < allKennelReservations.getAllNumberOfKennelReservations())
     {
-      allKennelReservations.setKennelReservation(index, updatedKennelReservation);
+      allKennelReservations.setKennelReservation(index,
+          updatedKennelReservation);
       saveKennelReservationList(allKennelReservations);
 
       System.out.println("Updated kennel reservation and saved to XML file.");
@@ -379,7 +400,8 @@ public class ViaPetsModelManager
 
   }
 
-  public void addKennelReservation(KennelReservation kennelReservation) throws ParserException
+  public void addKennelReservation(KennelReservation kennelReservation)
+      throws ParserException
   {
     KennelReservationList allKennelReservations = readKennelReservations();
     if (kennelReservation != null)

@@ -28,6 +28,10 @@ public class KennelReservation
 
   public void setPrice(double price)
   {
+    if (price < 0)
+    {
+      throw new IllegalArgumentException("Price cannot be negative");
+    }
     this.price = price;
   }
 
@@ -38,7 +42,11 @@ public class KennelReservation
 
   public void setPet(Pet pet)
   {
-    this.pet = pet;
+
+    if (pet != null)
+    {
+      this.pet = pet;
+    }
   }
 
   public Customer getCustomer()
@@ -48,7 +56,10 @@ public class KennelReservation
 
   public void setCustomer(Customer customer)
   {
-    this.customer = customer;
+    if (customer != null)
+    {
+      this.customer = customer;
+    }
   }
 
   public MyDate getStartDate()

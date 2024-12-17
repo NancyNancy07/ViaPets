@@ -1,8 +1,3 @@
-Dog,2,Male,Brown,Buddy,Very energetic and playful,450.0
-Cat,3,Female,White,Whiskers,Loves cuddling and napping,300.0
-Rabbit,1,Male,Grey,Thumper,Curious and loves carrots,120.0
-Parrot,4,Female,Green,Polly,Likes to mimic sounds,200.0
-Dog,5,Male,Black,Rex,Loyal and friendly,400.0
 Cat,2,Female,Ginger,Mittens,Adventurous and curious,320.0
 Hamster,1,Male,White,Peanut,Loves running on the wheel,50.0
 Fish,1,Female,Orange,Nemo,Calm and peaceful,30.0

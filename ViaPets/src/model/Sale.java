@@ -30,6 +30,10 @@ public class Sale
 
   public void setFinalPrice(double finalPrice)
   {
+    if (finalPrice < 0)
+    {
+      throw new IllegalArgumentException("Price cannot be negative");
+    }
     this.finalPrice = finalPrice;
   }
 

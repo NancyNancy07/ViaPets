@@ -7,19 +7,19 @@
       <day>1</day>
     </date>
     <finalPrice>1000.0</finalPrice>
-    <time>22:47:24</time>
+    <time>00:15:53</time>
     <pet>
       <gender>Male</gender>
       <color>Brown</color>
       <species>Dog</species>
-      <price>600.0</price>
+      <price>0.0</price>
       <name>Buddy</name>
       <comment>Very energetic and playful</comment>
       <age>2</age>
     </pet>
     <customer>
-      <emailAddress>555-1234</emailAddress>
-      <phoneNumber>123 Elm Street</phoneNumber>
+      <emailAddress>johndoe@email.com</emailAddress>
+      <phoneNumber>12345678</phoneNumber>
       <name>John Doe</name>
     </customer>
   </saleList>
@@ -30,19 +30,19 @@
       <day>1</day>
     </date>
     <finalPrice>400.0</finalPrice>
-    <time>22:47:24</time>
+    <time>00:15:53</time>
     <pet>
       <gender>Female</gender>
       <color>White</color>
       <species>Cat</species>
-      <price>500.0</price>
+      <price>0.0</price>
       <name>Whiskers</name>
       <comment>Loves cuddling and napping</comment>
       <age>3</age>
     </pet>
     <customer>
-      <emailAddress>555-5678</emailAddress>
-      <phoneNumber>456 Oak Avenue</phoneNumber>
+      <emailAddress>janesmith@email.com</emailAddress>
+      <phoneNumber>23456789</phoneNumber>
       <name>Jane Smith</name>
     </customer>
   </saleList>
@@ -53,20 +53,20 @@
       <day>1</day>
     </date>
     <finalPrice>600.0</finalPrice>
-    <time>22:47:24</time>
+    <time>00:15:53</time>
     <pet>
       <gender>Male</gender>
       <color>Grey</color>
       <species>Rabbit</species>
-      <price>900.0</price>
+      <price>0.0</price>
       <name>Thumper</name>
       <comment>Curious and loves carrots</comment>
       <age>1</age>
     </pet>
     <customer>
-      <emailAddress>555-9101</emailAddress>
-      <phoneNumber>789 Pine Lane</phoneNumber>
-      <name>Sam Green</name>
+      <emailAddress>bobbrown@email.com</emailAddress>
+      <phoneNumber>45689123</phoneNumber>
+      <name>Bob Brown</name>
     </customer>
   </saleList>
   <saleList>
@@ -76,20 +76,20 @@
       <day>1</day>
     </date>
     <finalPrice>800.0</finalPrice>
-    <time>22:47:24</time>
+    <time>00:15:53</time>
     <pet>
       <gender>Female</gender>
       <color>Green</color>
       <species>Parrot</species>
-      <price>1000.0</price>
+      <price>0.0</price>
       <name>Polly</name>
       <comment>Likes to mimic sounds</comment>
       <age>4</age>
     </pet>
     <customer>
-      <emailAddress>555-1122</emailAddress>
-      <phoneNumber>321 Maple Drive</phoneNumber>
-      <name>Emma White</name>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
     </customer>
   </saleList>
   <saleList>
@@ -99,20 +99,89 @@
       <day>1</day>
     </date>
     <finalPrice>300.0</finalPrice>
-    <time>22:47:24</time>
+    <time>00:15:53</time>
     <pet>
       <gender>Male</gender>
       <color>Black</color>
       <species>Dog</species>
-      <price>500.0</price>
+      <price>0.0</price>
       <name>Rex</name>
       <comment>Loyal and friendly</comment>
       <age>5</age>
     </pet>
     <customer>
-      <emailAddress>555-3344</emailAddress>
-      <phoneNumber>654 Birch Blvd</phoneNumber>
-      <name>Liam Brown</name>
+      <emailAddress>davidg@email.com</emailAddress>
+      <phoneNumber>67801345</phoneNumber>
+      <name>David Green</name>
+    </customer>
+  </saleList>
+  <saleList>
+    <date>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </date>
+    <finalPrice>-99.0</finalPrice>
+    <time>00:35:36</time>
+    <pet>
+      <gender>Male</gender>
+      <color>Green</color>
+      <species>Turtle</species>
+      <price>60.0</price>
+      <name>Speedy</name>
+      <comment>Slow but steady</comment>
+      <age>10</age>
+    </pet>
+    <customer>
+      <emailAddress>gracer@email.com</emailAddress>
+      <phoneNumber>90134678</phoneNumber>
+      <name>Grace Red</name>
+    </customer>
+  </saleList>
+  <saleList>
+    <date>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </date>
+    <finalPrice>-88.0</finalPrice>
+    <time>00:40:26</time>
+    <pet>
+      <gender>Female</gender>
+      <color>Golden</color>
+      <species>Dog</species>
+      <price>500.0</price>
+      <name>Lucy</name>
+      <comment>Very affectionate</comment>
+      <age>3</age>
+    </pet>
+    <customer>
+      <emailAddress>evab@email.com</emailAddress>
+      <phoneNumber>78912456</phoneNumber>
+      <name>Eva Black</name>
+    </customer>
+  </saleList>
+  <saleList>
+    <date>
+      <month>12</month>
+      <year>2024</year>
+      <day>25</day>
+    </date>
+    <finalPrice>66.0</finalPrice>
+    <time>00:44:27</time>
+    <pet>
+      <gender>Male</gender>
+      <color>Green</color>
+      <species>Bird</species>
+      <price>200.0</price>
+      <name>Paco</name>
+      <comment>Sings melodiously</comment>
+      <age>3</age>
+    </pet>
+    <customer>
+      <emailAddress>gracer@email.com</emailAddress>
+      <phoneNumber>90134678</phoneNumber>
+      <name>Grace Red</name>
     </customer>
   </saleList>
 </SaleList>

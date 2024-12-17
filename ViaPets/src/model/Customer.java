@@ -37,12 +37,29 @@ public class Customer implements Serializable
 
   public void setPhoneNumber(String phoneNumber)
   {
-    this.phoneNumber = phoneNumber;
+    if (phoneNumber != null && !phoneNumber.startsWith("-"))
+    {
+      this.phoneNumber = phoneNumber;
+    }
+    else
+    {
+      throw new IllegalArgumentException(
+          "Phone number cannot be negative or null.");
+    }
   }
 
   public void setEmailAddress(String emailAddress)
   {
-    this.emailAddress = emailAddress;
+    if (emailAddress != null && emailAddress.contains("@")
+        && emailAddress.contains("."))
+    {
+      this.emailAddress = emailAddress;
+    }
+    else
+    {
+      throw new IllegalArgumentException(
+          "Invalid email address format. Make sure it contains '@' and '.'");
+    }
   }
 
   public String toString()

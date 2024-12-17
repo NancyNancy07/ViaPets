@@ -41,6 +41,14 @@ public class KennelReservationList
     }
   }
 
+  public void removeReservation(KennelReservation reservation)
+  {
+    if (reservation != null)
+    {
+      kennelReservations.remove(reservation);
+    }
+  }
+
   public void setKennelReservation(int index, KennelReservation reservation)
   {
     if (index >= 0 && index < kennelReservations.size())

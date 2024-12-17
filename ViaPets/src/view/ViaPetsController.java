@@ -33,12 +33,13 @@ public class ViaPetsController
   @FXML private Button editPetButton;
   @FXML private Button updatePetButton;
   @FXML private TextField newPetName;
-  @FXML private TextField newPetSpecies;
+  @FXML private ComboBox<String> newPetSpeciesComboBox;
   @FXML private TextField newPetAge;
   @FXML private TextField newGenderField;
   @FXML private TextField newColorField;
   @FXML private TextField newCommentsField;
   @FXML private TextField newPriceField;
+  @FXML private ComboBox<String> newPetSpeciesComboBox2;
 
   @FXML private Tab kennelReservationTab;
   @FXML private TableView<KennelReservation> kennelReservationTable;
@@ -64,10 +65,26 @@ public class ViaPetsController
   @FXML private TextField reservationFieldPrice;
   @FXML private DatePicker startDate;
   @FXML private DatePicker endDate;
+  @FXML private Pane reservationDataDisplay;
+  @FXML private TextField petNameFieldReservation;
+  @FXML private TextField speciesFieldReservation;
+  @FXML private TextField ageFieldReservation;
+  @FXML private TextField genderFieldReservation;
+  @FXML private TextField colorFieldReservation;
+  @FXML private TextField commentsFieldReservation;
+  @FXML private TextField priceFieldReservation;
+  @FXML private TextField nameFieldReservation;
+  @FXML private TextField phoneFieldReservation;
+  @FXML private TextField emailFieldReservation;
+  @FXML private TextField startDateReservation;
+  @FXML private TextField endDateReservation;
+  @FXML private TextField priceReservation;
+  @FXML private Button updateButton2;
+  @FXML private Button editButton2;
+  @FXML private Button removeButton2;
 
   @FXML private Tab saleTab;
   @FXML private Button removeButton1;
-  @FXML private Button saleCustomer;
   @FXML private TableView<Sale> saleListTable;
   @FXML private TableColumn<Sale, String> salePetDetails;
   @FXML private TableColumn<Sale, String> saleCustomerDetails;
@@ -106,10 +123,11 @@ public class ViaPetsController
     updatePetBox();
     customerDataDisplay.setVisible(false);
     petDataDisplay.setVisible(false);
+    reservationDataDisplay.setVisible(false);
     updateButton.setVisible(false);
     updatePetButton.setVisible(false);
-    saleCustomer.setVisible(false);
-
+    updateButton2.setVisible(false);
+    petSpecies();
   }
 
   public void updateCustomerBox() throws ParserException
@@ -194,15 +212,27 @@ public class ViaPetsController
       int currentIndex = customerTable.getSelectionModel().getSelectedIndex();
       if (currentIndex >= 0)
       {
-        Customer selectedCustomer = customerTable.getItems()
-            .remove(currentIndex);
-        if (selectedCustomer != null)
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Remove Customer");
+        confirmationAlert.setHeaderText(
+            "Are you sure you want to remove this customer?");
+        confirmationAlert.setContentText("This action cannot be undone.");
+
+        ButtonType result = confirmationAlert.showAndWait()
+            .orElse(ButtonType.CANCEL);
+
+        if (result == ButtonType.OK)
         {
-          CustomerList allCustomers = modelManager.readCustomers();
-          allCustomers.removeCustomer(selectedCustomer);
-          modelManager.saveCustomerList(allCustomers);
-          customerDataDisplay.setVisible(false);
-          System.out.println("Customer removed.");
+          Customer selectedCustomer = customerTable.getItems()
+              .remove(currentIndex);
+          if (selectedCustomer != null)
+          {
+            CustomerList allCustomers = modelManager.readCustomers();
+            allCustomers.removeCustomer(selectedCustomer);
+            modelManager.saveCustomerList(allCustomers);
+            customerDataDisplay.setVisible(false);
+            System.out.println("Customer removed.");
+          }
         }
       }
       else
@@ -274,7 +304,6 @@ public class ViaPetsController
           .addListener((old, current, newP) -> {
             if (newP != null)
             {
-              //              System.out.println(newP);
               showPetData(newP);
             }
           });
@@ -306,7 +335,6 @@ public class ViaPetsController
     }
     else if (selectedPet != null && saleTab.isSelected())
     {
-      saleCustomer.setVisible(true);
       petDataDisplay.setVisible(true);
       editPetButton.setVisible(false);
       updatePetButton.setVisible(false);
@@ -348,11 +376,45 @@ public class ViaPetsController
     {
       Pet selectedPet = petTable.getSelectionModel().getSelectedItem();
       selectedPet.setName(petNameField.getText());
-      //        selectedPet.setSpecies(speciesField.getText());
-      selectedPet.setAge(Integer.parseInt(ageField.getText()));
       selectedPet.setComment(commentsField.getText());
-      selectedPet.setPrice(Double.parseDouble(priceField.getText()));
 
+      String ageText = newPetAge.getText();
+      String priceText = newPriceField.getText();
+      try
+      {
+        int age = Integer.parseInt(ageText);
+        double price = Double.parseDouble(priceText);
+        if (age < 0)
+        {
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+          alert.setTitle("Invalid Age");
+          alert.setHeaderText(null);
+          alert.setContentText("Cannot be negative.");
+          alert.showAndWait();
+          return;
+        }
+        selectedPet.setAge(age);
+
+        if (price < 0)
+        {
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+          alert.setTitle("Invalid Price");
+          alert.setHeaderText(null);
+          alert.setContentText("Cannot be negative.");
+          alert.showAndWait();
+          return;
+        }
+        selectedPet.setPrice(price);
+
+      }
+      catch (NumberFormatException e)
+      {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Invalid Format");
+        alert.setHeaderText(null);
+        alert.setContentText("Please enter a valid number(non-negative)");
+        alert.showAndWait();
+      }
       modelManager.updatePet(currentIndex, selectedPet);
       setCloseButton();
       updatePetBox();
@@ -366,14 +428,44 @@ public class ViaPetsController
       int currentIndex = petTable.getSelectionModel().getSelectedIndex();
       if (currentIndex >= 0)
       {
-        Pet selectedPet = petTable.getItems().remove(currentIndex);
-        if (selectedPet != null)
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Remove Pet");
+        confirmationAlert.setHeaderText(
+            "Are you sure you want to remove this pet?");
+        confirmationAlert.setContentText("This action cannot be undone.");
+
+        ButtonType result = confirmationAlert.showAndWait()
+            .orElse(ButtonType.CANCEL);
+
+        if (result == ButtonType.OK)
         {
-          PetList allPets = modelManager.readPets();
-          allPets.removePet(selectedPet);
-          modelManager.savePetList(allPets);
-          petDataDisplay.setVisible(false);
-          System.out.println("Pet removed.");
+          Pet selectedPet = petTable.getItems().remove(currentIndex);
+          KennelReservationList allReservations = modelManager.readKennelReservations();
+          for (int i = 0;
+               i < allReservations.getAllNumberOfKennelReservations(); i++)
+          {
+            if (selectedPet.equals(
+                allReservations.getKennelReservation(i).getPet()))
+            {
+
+              Alert alert = new Alert(Alert.AlertType.WARNING);
+              alert.setTitle("Kennel Pet");
+              alert.setHeaderText(null);
+              alert.setContentText(
+                  "Cannot remove Kennel pet. Remove from Kennel Reservation");
+              alert.showAndWait();
+              return;
+            }
+          }
+
+          if (selectedPet != null)
+          {
+            PetList allPets = modelManager.readPets();
+            allPets.removePet(selectedPet);
+            modelManager.savePetList(allPets);
+            petDataDisplay.setVisible(false);
+            System.out.println("Pet removed.");
+          }
         }
       }
       else
@@ -386,7 +478,7 @@ public class ViaPetsController
   public void addPet() throws ParserException
   {
     String name = newPetName.getText();
-    String species = newPetSpecies.getText();
+    String species = newPetSpeciesComboBox.getValue();
     String ageText = newPetAge.getText();
     String gender = newGenderField.getText();
     String color = newColorField.getText();
@@ -405,21 +497,67 @@ public class ViaPetsController
     }
     else
     {
-      int age = Integer.parseInt(ageText);
-      double price = Double.parseDouble(priceText);
-      Pet newPet = new Pet(species, age, gender, color, name, comment, price);
-      modelManager.addPet(newPet);
+      try
+      {
+        int age = Integer.parseInt(ageText);
+        double price = Double.parseDouble(priceText);
+
+        if (age < 0 || price < 0)
+        {
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+          alert.setTitle("Invalid Value");
+          alert.setHeaderText(null);
+          alert.setContentText("Cannot be negative.");
+          alert.showAndWait();
+          return;
+        }
+
+        Pet newPet = new Pet(species, age, gender, color, name, comment, price);
+        modelManager.addPet(newPet);
+      }
+      catch (NumberFormatException e)
+      {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Invalid Input");
+        alert.setHeaderText(null);
+        alert.setContentText(
+            "Please enter valid numeric values for age and price.");
+        alert.showAndWait();
+        return;
+      }
     }
 
     newPetName.clear();
-    newPetSpecies.clear();
+    newPetSpeciesComboBox.getItems().clear();
+    newPetSpeciesComboBox.setValue("Select Species");
     newPetAge.clear();
     newGenderField.clear();
     newColorField.clear();
     newPriceField.clear();
     newCommentsField.clear();
-
     updatePetBox();
+  }
+
+  public void petSpecies()
+  {
+    if (modelManager != null)
+    {
+      if (petTab.isSelected())
+      {
+        newPetSpeciesComboBox.getItems().clear();
+        newPetSpeciesComboBox.getItems()
+            .addAll("Dog", "Cat", "Bird", "Rodent", "Fish", "Various");
+        newPetSpeciesComboBox.setPromptText("Select Species");
+      }
+      else if (kennelReservationTab.isSelected())
+      {
+        newPetSpeciesComboBox2.getItems().clear();
+        newPetSpeciesComboBox2.getItems()
+            .addAll("Dog", "Cat", "Bird", "Rodent", "Fish", "Various");
+        newPetSpeciesComboBox2.setPromptText("Select Species");
+      }
+
+    }
   }
 
   public void updateSaleBox() throws ParserException
@@ -553,6 +691,7 @@ public class ViaPetsController
         saleCustomer = allCustomers.getCustomer(i);
       }
     }
+
     PetList allPets = modelManager.readPets();
     Pet salePet = null;
     for (int i = 0; i < allPets.getNumberOfPets(); i++)
@@ -563,6 +702,17 @@ public class ViaPetsController
       }
     }
     double sellPrice = Double.parseDouble(priceText);
+    if (sellPrice < 0)
+    {
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Invalid Price");
+      alert.setHeaderText(null);
+      alert.setContentText("Price cannot be negative.");
+      alert.showAndWait();
+      finalPrice.clear();
+      return;
+    }
+
     MyDate myDate = null;
 
     if (date != null)
@@ -574,6 +724,21 @@ public class ViaPetsController
 
     if (salePet != null && saleCustomer != null && myDate != null)
     {
+      if (salePet.getPrice() == 0)
+      {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Kennel Pet Selected");
+        alert.setHeaderText(null);
+        alert.setContentText("This pet is from Kennel and cannot be sold.");
+        alert.showAndWait();
+        customerComboBox.setValue("Select Customer");
+        petComboBox.setValue("Select Pet");
+
+        finalPrice.clear();
+        date.setValue(null);
+        return;
+      }
+
       Sale sale = new Sale(sellPrice, saleCustomer, salePet, myDate);
       modelManager.addSale(sale);
       updateSaleBox();
@@ -633,6 +798,193 @@ public class ViaPetsController
       {
         String name = allPets.getPet(i).getName();
         reservationPetComboBox.getItems().add(name);
+      }
+
+      //      adding listener to know which reservation is selected
+      kennelReservationTable.getSelectionModel().selectedItemProperty()
+          .addListener((old, current, newK) -> {
+            if (newK != null)
+            {
+              showReservationData(newK);
+            }
+          });
+
+    }
+  }
+
+  public void showReservationData(KennelReservation selectedReservation)
+  {
+    if (selectedReservation != null)
+    {
+      //      System.out.println(selectedReservation);
+      //      customer
+      reservationDataDisplay.setVisible(true);
+      nameFieldReservation.setText(selectedReservation.getCustomer().getName());
+      phoneFieldReservation.setText(
+          selectedReservation.getCustomer().getPhoneNumber());
+      emailFieldReservation.setText(
+          selectedReservation.getCustomer().getEmailAddress());
+
+      //      pet
+      petNameFieldReservation.setText(selectedReservation.getPet().getName());
+      speciesFieldReservation.setText(
+          selectedReservation.getPet().getSpecies());
+      ageFieldReservation.setText(
+          String.valueOf(selectedReservation.getPet().getAge()));
+      genderFieldReservation.setText(selectedReservation.getPet().getGender());
+      colorFieldReservation.setText(selectedReservation.getPet().getColor());
+      commentsFieldReservation.setText(
+          selectedReservation.getPet().getComment());
+      priceFieldReservation.setText(
+          String.valueOf(selectedReservation.getPet().getPrice()));
+
+      startDateReservation.setText(
+          String.valueOf(selectedReservation.getStartDate()));
+      endDateReservation.setText(
+          String.valueOf(selectedReservation.getEndDate()));
+      priceReservation.setText(String.valueOf(selectedReservation.getPrice()));
+
+      nameFieldReservation.setEditable(false);
+      phoneFieldReservation.setEditable(false);
+      emailFieldReservation.setEditable(false);
+      petNameFieldReservation.setEditable(false);
+      speciesFieldReservation.setEditable(false);
+      ageFieldReservation.setEditable(false);
+      genderFieldReservation.setEditable(false);
+      colorFieldReservation.setEditable(false);
+      commentsFieldReservation.setEditable(false);
+      priceFieldReservation.setEditable(false);
+    }
+  }
+
+  public void editReservationData()
+  {
+    editButton2.setVisible(false);
+    updateButton2.setVisible(true);
+
+    nameFieldReservation.setEditable(true);
+    phoneFieldReservation.setEditable(true);
+    emailFieldReservation.setEditable(true);
+    petNameFieldReservation.setEditable(true);
+    speciesFieldReservation.setEditable(false);
+    ageFieldReservation.setEditable(true);
+    genderFieldReservation.setEditable(false);
+    colorFieldReservation.setEditable(false);
+    commentsFieldReservation.setEditable(true);
+    priceFieldReservation.setEditable(false);
+  }
+
+  public void UpdateReservationData() throws ParserException
+  {
+    int currentIndex = kennelReservationTable.getSelectionModel()
+        .getSelectedIndex();
+    if (currentIndex != -1)
+    {
+      KennelReservation selectedReservation = kennelReservationTable.getSelectionModel()
+          .getSelectedItem();
+
+      String name = nameFieldReservation.getText();
+      String phone = phoneFieldReservation.getText();
+      String email = emailFieldReservation.getText();
+      Customer customer = new Customer(name, phone, email);
+      selectedReservation.setCustomer(customer);
+
+      String petName = petNameFieldReservation.getText();
+      String species = newPetSpeciesComboBox2.getValue();
+      String gender = genderFieldReservation.getText();
+      String color = colorFieldReservation.getText();
+      ;
+      String comment = commentsFieldReservation.getText();
+
+      String ageText = ageFieldReservation.getText();
+      String priceText = priceFieldReservation.getText();
+      try
+      {
+        int age = Integer.parseInt(ageText);
+        double price = Double.parseDouble(priceText);
+        if (age < 0)
+        {
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+          alert.setTitle("Invalid Age");
+          alert.setHeaderText(null);
+          alert.setContentText("Cannot be negative.");
+          alert.showAndWait();
+          return;
+        }
+
+        if (price < 0)
+        {
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+          alert.setTitle("Invalid Price");
+          alert.setHeaderText(null);
+          alert.setContentText("Cannot be negative.");
+          alert.showAndWait();
+          return;
+        }
+
+        Pet pet = new Pet(species, age, gender, color, petName, comment, price);
+
+        selectedReservation.setPet(pet);
+      }
+      catch (NumberFormatException e)
+      {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Invalid Format");
+        alert.setHeaderText(null);
+        alert.setContentText("Please enter a valid number(non-negative)");
+        alert.showAndWait();
+      }
+      modelManager.updateKennelReservation(currentIndex, selectedReservation);
+      setCloseButton();
+      updateButton2.setVisible(false);
+      editButton2.setVisible(true);
+      updateKennelBox();
+      updateCustomerBox();
+    }
+  }
+
+  public void removeReservation() throws ParserException
+  {
+    if (modelManager != null)
+    {
+      int currentIndex = kennelReservationTable.getSelectionModel()
+          .getSelectedIndex();
+      if (currentIndex >= 0)
+      {
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Remove Reservation");
+        confirmationAlert.setHeaderText(
+            "Are you sure you want to remove this reservation?");
+        confirmationAlert.setContentText("This action cannot be undone.");
+
+        ButtonType result = confirmationAlert.showAndWait()
+            .orElse(ButtonType.CANCEL);
+
+        if (result == ButtonType.OK)
+        {
+          KennelReservation selectedReservation = kennelReservationTable.getItems()
+              .remove(currentIndex);
+          Pet reservationPet = selectedReservation.getPet();
+          Customer reservationCustomer = selectedReservation.getCustomer();
+          if (selectedReservation != null)
+          {
+            KennelReservationList allReservations = modelManager.readKennelReservations();
+            PetList allPets = modelManager.readPets();
+            CustomerList allCustomers = modelManager.readCustomers();
+            allReservations.removeReservation(selectedReservation);
+            allPets.removePet(reservationPet);
+            allCustomers.removeCustomer(reservationCustomer);
+            modelManager.saveKennelReservationList(allReservations);
+            modelManager.savePetList(allPets);
+            modelManager.saveCustomerList(allCustomers);
+            reservationDataDisplay.setVisible(false);
+            System.out.println("Reservation removed.");
+          }
+        }
+      }
+      else
+      {
+        System.out.println("No reservation selected for removal.");
       }
     }
   }
@@ -707,38 +1059,48 @@ public class ViaPetsController
 
     Pet pet = new Pet(species, age, gender, color, name, comments, price);
 
-    Pet existingPet = null;
+    boolean petExists = false;
+
     for (int i = 0; i < allPets.getNumberOfPets(); i++)
     {
-      existingPet = allPets.getPet(i);
+      Pet existingPet = allPets.getPet(i);
+      if (pet.equals(existingPet))
+      {
+        petExists = true;
+        break;
+      }
     }
-    if (!pet.equals(existingPet))
+    if (!petExists)
     {
       modelManager.addPet(pet);
       updateKennelBox();
       updateSaleBox();
       updatePetBox();
-      reservationNewPetName.clear();
-      reservationNewPetSpecies.clear();
-      reservationNewPetAge.clear();
-      reservationNewPetGender.clear();
-      reservationNewPetComments.clear();
-      reservationNewPetColor.clear();
-      reservationNewPetPrice.clear();
-      reservationNewPetDialog.setVisible(false);
     }
     else
     {
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Duplicate Pet");
+      alert.setHeaderText(null);
+      alert.setContentText("This pet already exists in the system.");
+      alert.showAndWait();
       System.out.println("Pet already exists");
-    }
 
+    }
+    reservationNewPetName.clear();
+    reservationNewPetSpecies.clear();
+    reservationNewPetAge.clear();
+    reservationNewPetGender.clear();
+    reservationNewPetComments.clear();
+    reservationNewPetColor.clear();
+    reservationNewPetPrice.clear();
+    reservationNewPetDialog.setVisible(false);
   }
 
   public void addReservation() throws ParserException
   {
 
     KennelReservationList allReservations = modelManager.readKennelReservations();
-
     if (allReservations.getAllNumberOfKennelReservations() >= 10)
     {
       Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -766,14 +1128,39 @@ public class ViaPetsController
       {
         if (petName.equals(allPets.getPet(i).getName()))
         {
+          allPets.getPet(i).setPrice(0);
           reservationPet = allPets.getPet(i);
         }
       }
+      modelManager.savePetList(allPets);
+      updatePetBox();
+
       String priceText = reservationFieldPrice.getText();
       double kennelPrice = 0.0;
       if (priceText != null && !priceText.isEmpty())
       {
-        kennelPrice = Double.parseDouble(priceText);
+        try
+        {
+          kennelPrice = Double.parseDouble(priceText);
+          if (kennelPrice < 0)
+          {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Invalid Price");
+            alert.setHeaderText(null);
+            alert.setContentText("Cannot be negative.");
+            alert.showAndWait();
+            return;
+          }
+        }
+        catch (NumberFormatException e)
+        {
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+          alert.setTitle("Invalid Price");
+          alert.setHeaderText(null);
+          alert.setContentText("Cannot be negative.");
+          alert.showAndWait();
+          return;
+        }
       }
 
       LocalDate newStartDate = null;
@@ -810,7 +1197,6 @@ public class ViaPetsController
 
       else if (reservationPet != null && reservationCustomer != null)
       {
-
         KennelReservation reservation = new KennelReservation(kennelPrice,
             reservationPet, reservationCustomer, myStartDate, myEndDate);
         modelManager.addKennelReservation(reservation);
@@ -826,8 +1212,18 @@ public class ViaPetsController
 
   public void setCloseButton()
   {
-    customerDataDisplay.setVisible(false);
-    petDataDisplay.setVisible(false);
+    if (customerTab.isSelected())
+    {
+      customerDataDisplay.setVisible(false);
+    }
+    else if (kennelReservationTab.isSelected())
+    {
+      reservationDataDisplay.setVisible(false);
+    }
+    else if (petTab.isSelected())
+    {
+      petDataDisplay.setVisible(false);
+    }
     editButton.setVisible(true);
     updateButton.setVisible(false);
     editPetButton.setVisible(true);
