@@ -577,10 +577,10 @@ public class ViaPetsController
         saleListTable.getItems().add(saleData);
       }
 
-      salePetDetails.setCellValueFactory(
-          data -> new SimpleStringProperty(data.getValue().getPet().getName()));
+      salePetDetails.setCellValueFactory(data -> new SimpleStringProperty(
+          data.getValue().getPet().toString()));
       saleCustomerDetails.setCellValueFactory(data -> new SimpleStringProperty(
-          data.getValue().getCustomer().getName()));
+          data.getValue().getCustomer().toString()));
       saleDateDetails.setCellValueFactory(data -> new SimpleStringProperty(
           data.getValue().getDate().toString()));
       salePriceDetails.setCellValueFactory(data -> new SimpleStringProperty(
@@ -594,14 +594,14 @@ public class ViaPetsController
 
       for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
       {
-        String name = allCustomers.getCustomer(i).getName();
-        customerComboBox.getItems().add(name);
+        String customer = allCustomers.getCustomer(i).toString();
+        customerComboBox.getItems().add(customer);
       }
 
       for (int i = 0; i < allPets.getNumberOfPets(); i++)
       {
-        String name = allPets.getPet(i).getName();
-        petComboBox.getItems().add(name);
+        String pet = allPets.getPet(i).toString();
+        petComboBox.getItems().add(pet);
       }
     }
   }
@@ -667,6 +667,7 @@ public class ViaPetsController
   {
     String customerName = customerComboBox.getValue();
     String petName = petComboBox.getValue();
+
     String priceText = finalPrice.getText();
     LocalDate sellDate = date.getValue();
 
@@ -674,7 +675,6 @@ public class ViaPetsController
         || petName.isEmpty() || priceText == null || priceText.isEmpty()
         || sellDate == null)
     {
-
       Alert alert = new Alert(Alert.AlertType.WARNING);
       alert.setTitle("Missing Fields");
       alert.setHeaderText(null);
@@ -688,7 +688,7 @@ public class ViaPetsController
     Customer saleCustomer = null;
     for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
     {
-      if (customerName.equals(allCustomers.getCustomer(i).getName()))
+      if (customerName.equals(allCustomers.getCustomer(i).toString()))
       {
         saleCustomer = allCustomers.getCustomer(i);
       }
@@ -696,9 +696,10 @@ public class ViaPetsController
 
     PetList allPets = modelManager.readPets();
     Pet salePet = null;
+
     for (int i = 0; i < allPets.getNumberOfPets(); i++)
     {
-      if (petName.equals(allPets.getPet(i).getName()))
+      if (petName.equals(allPets.getPet(i).toString()))
       {
         salePet = allPets.getPet(i);
       }

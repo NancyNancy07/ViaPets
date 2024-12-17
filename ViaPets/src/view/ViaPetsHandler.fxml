@@ -334,9 +334,9 @@
                                                 <TableView fx:id="saleListTable" prefHeight="200.0" prefWidth="200.0">
                                                     <columns>
                                                         <TableColumn fx:id="salePetDetails" prefWidth="211.9999898274741" text="Pet" />
-                                                        <TableColumn fx:id="saleCustomerDetails" prefWidth="203.99998474121094" text="Customer" />
-                                                        <TableColumn fx:id="saleDateDetails" prefWidth="193.33340454101562" text="Date" />
-                                                        <TableColumn fx:id="salePriceDetails" prefWidth="211.33331298828125" text="Final Price" />
+                                                        <TableColumn fx:id="saleCustomerDetails" prefWidth="329.99998474121094" text="Customer" />
+                                                        <TableColumn fx:id="saleDateDetails" prefWidth="142.66668701171875" text="Date" />
+                                                        <TableColumn fx:id="salePriceDetails" prefWidth="138.66668701171875" text="Final Price" />
                                                     </columns>
                                                 </TableView>
                                             </content>

@@ -207,9 +207,7 @@ public class Pet implements Serializable
    */
   public String toString()
   {
-    return "Pets Details: \n" + "Species: " + species + ", Age: " + age
-        + ", Gender: " + gender + ", Color: " + color + ", Name: " + name
-        + ", Comment: " + comment + ", Price: " + price;
+    return species + ", " + age + ", " + gender + ", " + color + ", " + name;
   }
 
   /**
