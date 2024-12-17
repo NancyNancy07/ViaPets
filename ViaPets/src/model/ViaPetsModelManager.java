@@ -171,6 +171,7 @@ public class ViaPetsModelManager
   public void writePets() throws ParserException
   {
     PetList allPets = getAllPets();
+    System.out.println("model manager 174"+allPets.getPet(0));
     if (allPets == null)
     {
       System.out.println("Pet list is null");

@@ -7,7 +7,7 @@
       <day>1</day>
     </date>
     <finalPrice>1000.0</finalPrice>
-    <time>13:30:46</time>
+    <time>15:58:39</time>
     <pet>
       <gender>Male</gender>
       <color>Brown</color>
@@ -30,7 +30,7 @@
       <day>1</day>
     </date>
     <finalPrice>400.0</finalPrice>
-    <time>13:30:46</time>
+    <time>15:58:39</time>
     <pet>
       <gender>Female</gender>
       <color>White</color>
@@ -53,7 +53,7 @@
       <day>1</day>
     </date>
     <finalPrice>600.0</finalPrice>
-    <time>13:30:46</time>
+    <time>15:58:39</time>
     <pet>
       <gender>Male</gender>
       <color>Grey</color>
@@ -76,7 +76,7 @@
       <day>1</day>
     </date>
     <finalPrice>800.0</finalPrice>
-    <time>13:30:46</time>
+    <time>15:58:39</time>
     <pet>
       <gender>Female</gender>
       <color>Green</color>
@@ -99,7 +99,7 @@
       <day>1</day>
     </date>
     <finalPrice>300.0</finalPrice>
-    <time>13:30:46</time>
+    <time>15:58:39</time>
     <pet>
       <gender>Male</gender>
       <color>Black</color>
@@ -113,75 +113,6 @@
       <emailAddress>davidg@email.com</emailAddress>
       <phoneNumber>67801345</phoneNumber>
       <name>David Green</name>
-    </customer>
-  </saleList>
-  <saleList>
-    <date>
-      <month>12</month>
-      <year>2024</year>
-      <day>21</day>
-    </date>
-    <finalPrice>9.0</finalPrice>
-    <time>14:21:17</time>
-    <pet>
-      <gender>Female</gender>
-      <color>Yellow</color>
-      <species>Bird</species>
-      <price>150.0</price>
-      <name>Sunny</name>
-      <comment>Chirpy and cheerful</comment>
-      <age>2</age>
-    </pet>
-    <customer>
-      <emailAddress>charliew@email.com</emailAddress>
-      <phoneNumber>56790234</phoneNumber>
-      <name>Charlie White</name>
-    </customer>
-  </saleList>
-  <saleList>
-    <date>
-      <month>1</month>
-      <year>2025</year>
-      <day>2</day>
-    </date>
-    <finalPrice>900.0</finalPrice>
-    <time>14:26:24</time>
-    <pet>
-      <gender>Male</gender>
-      <color>Green</color>
-      <species>Snake</species>
-      <price>250.0</price>
-      <name>Slither</name>
-      <comment>Smooth and exotic</comment>
-      <age>3</age>
-    </pet>
-    <customer>
-      <emailAddress>evab@email.com</emailAddress>
-      <phoneNumber>78912456</phoneNumber>
-      <name>Eva Black</name>
-    </customer>
-  </saleList>
-  <saleList>
-    <date>
-      <month>12</month>
-      <year>2024</year>
-      <day>7</day>
-    </date>
-    <finalPrice>999.0</finalPrice>
-    <time>14:29:40</time>
-    <pet>
-      <gender>Female</gender>
-      <color>Yellow</color>
-      <species>Bird</species>
-      <price>150.0</price>
-      <name>Sunny</name>
-      <comment>Chirpy and cheerful</comment>
-      <age>2</age>
-    </pet>
-    <customer>
-      <emailAddress>gracer@email.com</emailAddress>
-      <phoneNumber>90134678</phoneNumber>
-      <name>Grace Red</name>
     </customer>
   </saleList>
 </SaleList>

@@ -1,571 +1,184 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <PetList>
   <pets>
-    <gender>Female</gender>
-    <color>Ginger</color>
-    <species>Cat</species>
-    <price>320.0</price>
-    <name>Mittens</name>
-    <comment>Adventurous and curious</comment>
+    <gender>Male</gender>
+    <color>Brown</color>
+    <species>Dog</species>
+    <price>600.0</price>
+    <name>Buddy</name>
+    <comment>Very energetic and playful</comment>
     <age>2</age>
   </pets>
   <pets>
-    <gender>Male</gender>
+    <gender>Female</gender>
     <color>White</color>
-    <species>Hamster</species>
-    <price>50.0</price>
-    <name>Peanut</name>
-    <comment>Loves running on the wheel</comment>
+    <species>Cat</species>
+    <price>500.0</price>
+    <name>Whiskers</name>
+    <comment>Loves cuddling and napping</comment>
+    <age>3</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
+    <color>Grey</color>
+    <species>Rabbit</species>
+    <price>100.0</price>
+    <name>Thumper</name>
+    <comment>Curious and loves carrots</comment>
     <age>1</age>
   </pets>
   <pets>
     <gender>Female</gender>
+    <color>Green</color>
+    <species>Parrot</species>
+    <price>1000.0</price>
+    <name>Polly</name>
+    <comment>Likes to mimic sounds</comment>
+    <age>4</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
     <color>Orange</color>
-    <species>Fish</species>
-    <price>30.0</price>
-    <name>Nemo</name>
-    <comment>Calm and peaceful</comment>
+    <species>Goldfish</species>
+    <price>50.0</price>
+    <name>Bubbles</name>
+    <comment>Calm and graceful</comment>
     <age>1</age>
   </pets>
   <pets>
     <gender>Female</gender>
     <color>Golden</color>
-    <species>Dog</species>
-    <price>500.0</price>
-    <name>Lucy</name>
-    <comment>Very affectionate</comment>
-    <age>3</age>
+    <species>Hamster</species>
+    <price>20.0</price>
+    <name>Squeaky</name>
+    <comment>Likes to run in a wheel</comment>
+    <age>2</age>
   </pets>
   <pets>
     <gender>Male</gender>
     <color>Black</color>
+    <species>Dog</species>
+    <price>500.0</price>
+    <name>Rex</name>
+    <comment>Loyal and friendly</comment>
+    <age>5</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
+    <color>Gray</color>
     <species>Cat</species>
-    <price>350.0</price>
+    <price>400.0</price>
     <name>Shadow</name>
     <comment>Independent and quiet</comment>
     <age>4</age>
   </pets>
   <pets>
     <gender>Female</gender>
-    <color>Yellow</color>
-    <species>Bird</species>
-    <price>150.0</price>
-    <name>Sunny</name>
-    <comment>Chirpy and cheerful</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Green</color>
-    <species>Snake</species>
-    <price>250.0</price>
-    <name>Slither</name>
-    <comment>Smooth and exotic</comment>
-    <age>3</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Spotted</color>
-    <species>Dog</species>
-    <price>420.0</price>
-    <name>Daisy</name>
-    <comment>Loves the outdoors</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Grey</color>
-    <species>Cat</species>
-    <price>310.0</price>
-    <name>Smokey</name>
-    <comment>Clever and resourceful</comment>
-    <age>5</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Green</color>
-    <species>Turtle</species>
-    <price>60.0</price>
-    <name>Speedy</name>
-    <comment>Slow but steady</comment>
-    <age>10</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
     <color>Brown</color>
-    <species>Dog</species>
-    <price>470.0</price>
-    <name>Ruby</name>
-    <comment>Loyal and obedient</comment>
-    <age>4</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>White</color>
-    <species>Cat</species>
-    <price>340.0</price>
-    <name>Fluffy</name>
-    <comment>Loves lounging in the sun</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Brown</color>
-    <species>Rabbit</species>
-    <price>130.0</price>
-    <name>Hazel</name>
-    <comment>Loves hopping around</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Black</color>
-    <species>Dog</species>
-    <price>490.0</price>
-    <name>Max</name>
-    <comment>Calm and protective</comment>
-    <age>6</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Red</color>
-    <species>Parrot</species>
-    <price>220.0</price>
-    <name>Rio</name>
-    <comment>Beautiful and vibrant</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Grey</color>
-    <species>Hamster</species>
-    <price>40.0</price>
-    <name>Fuzzy</name>
-    <comment>Loves hiding in the bedding</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Blue</color>
-    <species>Fish</species>
-    <price>35.0</price>
-    <name>Glowy</name>
-    <comment>Quiet and graceful</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Spotted</color>
-    <species>Cat</species>
-    <price>330.0</price>
-    <name>Luna</name>
-    <comment>Mysterious and loving</comment>
-    <age>3</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Golden</color>
-    <species>Dog</species>
-    <price>410.0</price>
-    <name>Buster</name>
-    <comment>Playful and loyal</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Blue</color>
-    <species>Bird</species>
-    <price>180.0</price>
-    <name>Sky</name>
-    <comment>Lively and talkative</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Yellow</color>
-    <species>Snake</species>
-    <price>280.0</price>
-    <name>Viper</name>
-    <comment>Exotic and calm</comment>
-    <age>5</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>White</color>
-    <species>Rabbit</species>
-    <price>140.0</price>
-    <name>Snickers</name>
-    <comment>Sweet and gentle</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Spotted</color>
-    <species>Dog</species>
-    <price>430.0</price>
-    <name>Spot</name>
-    <comment>Playful and curious</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Ginger</color>
-    <species>Cat</species>
-    <price>360.0</price>
-    <name>Peaches</name>
-    <comment>Laid-back and affectionate</comment>
-    <age>4</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Green</color>
-    <species>Turtle</species>
-    <price>65.0</price>
-    <name>Tank</name>
-    <comment>Lives long and steady</comment>
-    <age>8</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Red</color>
-    <species>Fish</species>
+    <species>Gerbil</species>
     <price>30.0</price>
-    <name>Coral</name>
-    <comment>Swims gracefully</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Multicolored</color>
-    <species>Parrot</species>
-    <price>240.0</price>
-    <name>Chirpy</name>
-    <comment>Social and lively</comment>
-    <age>3</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Brown</color>
-    <species>Hamster</species>
-    <price>45.0</price>
     <name>Nibbles</name>
-    <comment>Enjoys exploring tunnels</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Golden</color>
-    <species>Dog</species>
-    <price>460.0</price>
-    <name>Charlie</name>
-    <comment>Loving and protective</comment>
-    <age>7</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Black</color>
-    <species>Cat</species>
-    <price>320.0</price>
-    <name>Midnight</name>
-    <comment>Playful at night</comment>
-    <age>3</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Grey</color>
-    <species>Rabbit</species>
-    <price>115.0</price>
-    <name>Bunbun</name>
-    <comment>Loves to nibble on lettuce</comment>
+    <comment>Likes to burrow</comment>
     <age>1</age>
   </pets>
   <pets>
-    <gender>Female</gender>
-    <color>White</color>
-    <species>Dog</species>
-    <price>500.0</price>
-    <name>Snowy</name>
-    <comment>Cheerful and energetic</comment>
-    <age>4</age>
-  </pets>
-  <pets>
     <gender>Male</gender>
-    <color>Spotted</color>
-    <species>Cat</species>
-    <price>300.0</price>
-    <name>Oscar</name>
-    <comment>Mature and wise</comment>
-    <age>5</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
     <color>Yellow</color>
-    <species>Bird</species>
-    <price>170.0</price>
-    <name>Goldie</name>
-    <comment>Beautiful chirper</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Brown</color>
-    <species>Snake</species>
-    <price>300.0</price>
-    <name>Cobra</name>
-    <comment>Exotic and unique</comment>
-    <age>4</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Golden</color>
-    <species>Dog</species>
-    <price>450.0</price>
-    <name>Bella</name>
-    <comment>Affectionate and playful</comment>
+    <species>Canary</species>
+    <price>80.0</price>
+    <name>Sunny</name>
+    <comment>Sings melodious tunes</comment>
     <age>3</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Grey</color>
-    <species>Cat</species>
-    <price>310.0</price>
-    <name>Stormy</name>
-    <comment>Very curious</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>White</color>
-    <species>Hamster</species>
-    <price>55.0</price>
-    <name>Coco</name>
-    <comment>Fast and active</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Brown</color>
-    <species>Rabbit</species>
-    <price>125.0</price>
-    <name>Mocha</name>
-    <comment>Cuddly and calm</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Black</color>
-    <species>Dog</species>
-    <price>480.0</price>
-    <name>Zeke</name>
-    <comment>Protective and loyal</comment>
-    <age>6</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Green</color>
-    <species>Parrot</species>
-    <price>230.0</price>
-    <name>Kiwi</name>
-    <comment>Colorful and chirpy</comment>
-    <age>5</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Purple</color>
-    <species>Fish</species>
-    <price>40.0</price>
-    <name>Splash</name>
-    <comment>Swims happily</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Orange</color>
-    <species>Cat</species>
-    <price>320.0</price>
-    <name>Tiger</name>
-    <comment>Friendly and playful</comment>
-    <age>4</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>White</color>
-    <species>Dog</species>
-    <price>500.0</price>
-    <name>Angel</name>
-    <comment>Gentle and sweet</comment>
-    <age>3</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Grey</color>
-    <species>Rabbit</species>
-    <price>110.0</price>
-    <name>Frosty</name>
-    <comment>Loves jumping around</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Brown</color>
-    <species>Dog</species>
-    <price>440.0</price>
-    <name>Lady</name>
-    <comment>Calm and affectionate</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Green</color>
-    <species>Snake</species>
-    <price>270.0</price>
-    <name>Jade</name>
-    <comment>Sleek and exotic</comment>
-    <age>3</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Spotted</color>
-    <species>Hamster</species>
-    <price>50.0</price>
-    <name>Biscuit</name>
-    <comment>Playful and curious</comment>
-    <age>2</age>
   </pets>
   <pets>
     <gender>Female</gender>
     <color>Blue</color>
-    <species>Bird</species>
-    <price>150.0</price>
-    <name>Feather</name>
-    <comment>Small and chirpy</comment>
-    <age>1</age>
+    <species>Betta</species>
+    <price>25.0</price>
+    <name>Finny</name>
+    <comment>Aggressive but beautiful</comment>
+    <age>2</age>
   </pets>
   <pets>
     <gender>Male</gender>
-    <color>Black</color>
-    <species>Dog</species>
-    <price>470.0</price>
-    <name>Diesel</name>
-    <comment>Strong and loyal</comment>
-    <age>5</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
     <color>White</color>
-    <species>Cat</species>
-    <price>330.0</price>
-    <name>Snowball</name>
-    <comment>Loves to cuddle</comment>
+    <species>Ferret</species>
+    <price>200.0</price>
+    <name>Zippy</name>
+    <comment>Energetic and curious</comment>
     <age>3</age>
   </pets>
   <pets>
     <gender>Female</gender>
-    <color>Yellow</color>
-    <species>Fish</species>
-    <price>35.0</price>
-    <name>Bubbles</name>
-    <comment>Glides smoothly</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
     <color>Brown</color>
-    <species>Rabbit</species>
-    <price>120.0</price>
-    <name>Benny</name>
-    <comment>Quiet and gentle</comment>
-    <age>2</age>
+    <species>Dog</species>
+    <price>700.0</price>
+    <name>Bella</name>
+    <comment>Friendly and protective</comment>
+    <age>6</age>
   </pets>
   <pets>
     <gender>Female</gender>
-    <color>Spotted</color>
-    <species>Dog</species>
-    <price>450.0</price>
-    <name>Lola</name>
-    <comment>Very friendly</comment>
-    <age>4</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Grey</color>
+    <color>Black</color>
     <species>Cat</species>
-    <price>305.0</price>
-    <name>Dusty</name>
-    <comment>Playful and active</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Red</color>
-    <species>Parrot</species>
-    <price>240.0</price>
-    <name>Phoenix</name>
-    <comment>Vibrant and lively</comment>
-    <age>4</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Yellow</color>
-    <species>Snake</species>
-    <price>260.0</price>
-    <name>Python</name>
-    <comment>Exotic and calm</comment>
-    <age>2</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Golden</color>
-    <species>Dog</species>
-    <price>420.0</price>
-    <name>Goldie</name>
-    <comment>Cheerful and loyal</comment>
-    <age>2</age>
+    <price>550.0</price>
+    <name>Midnight</name>
+    <comment>Quiet and graceful</comment>
+    <age>5</age>
   </pets>
   <pets>
     <gender>Male</gender>
     <color>White</color>
     <species>Hamster</species>
-    <price>45.0</price>
-    <name>Cloud</name>
-    <comment>Loves hiding</comment>
-    <age>1</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Grey</color>
-    <species>Rabbit</species>
-    <price>140.0</price>
-    <name>Pearl</name>
-    <comment>Sweet and calm</comment>
-    <age>3</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Green</color>
-    <species>Bird</species>
-    <price>200.0</price>
-    <name>Paco</name>
-    <comment>Sings melodiously</comment>
-    <age>3</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>Orange</color>
-    <species>Cat</species>
-    <price>310.0</price>
-    <name>Amber</name>
-    <comment>Adventurous and fun</comment>
+    <price>15.0</price>
+    <name>Fluffy</name>
+    <comment>Loves to run on wheels</comment>
     <age>2</age>
   </pets>
   <pets>
     <gender>Male</gender>
-    <color>Brown</color>
+    <color>White</color>
+    <species>Cockatoo</species>
+    <price>1200.0</price>
+    <name>Charlie</name>
+    <comment>Very vocal and playful</comment>
+    <age>2</age>
+  </pets>
+  <pets>
+    <gender>Female</gender>
+    <color>Silver</color>
+    <species>Tetra</species>
+    <price>15.0</price>
+    <name>Twinkle</name>
+    <comment>Peaceful community fish</comment>
+    <age>1</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
+    <color>Gray</color>
+    <species>Chinchilla</species>
+    <price>350.0</price>
+    <name>Dusty</name>
+    <comment>Loves dust baths</comment>
+    <age>1</age>
+  </pets>
+  <pets>
+    <gender>Female</gender>
+    <color>Spotted</color>
     <species>Dog</species>
-    <price>440.0</price>
-    <name>Cooper</name>
-    <comment>Protective and playful</comment>
-    <age>3</age>
+    <price>600.0</price>
+    <name>Daisy</name>
+    <comment>Loves running</comment>
+    <age>4</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
+    <color>Orange</color>
+    <species>Cat</species>
+    <price>450.0</price>
+    <name>Marmalade</name>
+    <comment>Affectionate and friendly</comment>
+    <age>6</age>
   </pets>
   <pets>
     <gender>Male</gender>

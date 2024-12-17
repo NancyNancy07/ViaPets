@@ -550,7 +550,7 @@
                         <Button fx:id="updateButton" layoutX="340.0" layoutY="259.0" mnemonicParsing="false" onAction="#updateCustomerData" text="Update" />
                     </children>
                 </Pane>
-                <Pane fx:id="petDataDisplay" prefHeight="289.0" prefWidth="568.0" visible="false" AnchorPane.bottomAnchor="41.33333333333337" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="77.33333333333337" AnchorPane.topAnchor="58.0">
+                <Pane fx:id="petDataDisplay" prefHeight="289.0" prefWidth="568.0" AnchorPane.bottomAnchor="41.33333333333337" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="77.33333333333337" AnchorPane.topAnchor="58.0">
                     <children>
                         <TextArea fx:id="customerTextArea1" editable="false" prefHeight="385.0" prefWidth="673.0" />
                         <Label alignment="BASELINE_CENTER" layoutX="52.0" layoutY="46.0" prefHeight="28.0" prefWidth="568.0" text="Pet Details:">
@@ -609,10 +609,10 @@
                                 </TextField>
                             </children>
                         </HBox>
-                        <HBox alignment="BASELINE_CENTER" layoutX="61.0" layoutY="187.0" prefHeight="25.0" prefWidth="549.0">
+                        <HBox alignment="BASELINE_CENTER" layoutX="70.0" layoutY="179.0" prefHeight="25.0" prefWidth="500.0" translateY="-3.0">
                             <children>
                                 <Label text="Comments:" />
-                                <TextField fx:id="commentsField" prefHeight="25.0" prefWidth="401.0">
+                                <TextField fx:id="commentsField" prefHeight="25.0" prefWidth="431.0">
                                     <HBox.margin>
                                         <Insets left="7.0" />
                                     </HBox.margin>
@@ -629,9 +629,29 @@
                                 </TextField>
                             </children>
                         </HBox>
-                        <Button fx:id="removeButton1" contentDisplay="RIGHT" layoutX="272.0" layoutY="233.0" mnemonicParsing="false" onAction="#removePet" text="Remove" />
-                        <Button fx:id="editPetButton" layoutX="345.0" layoutY="233.0" mnemonicParsing="false" onAction="#editPetData" text="Edit" />
-                        <Button fx:id="updatePetButton" layoutX="345.0" layoutY="233.0" mnemonicParsing="false" onAction="#UpdatePetData" text="Update" />
+                        <Button fx:id="removeButton1" contentDisplay="RIGHT" layoutX="272.0" layoutY="239.0" mnemonicParsing="false" onAction="#removePet" text="Remove" />
+                        <Button fx:id="editPetButton" layoutX="345.0" layoutY="239.0" mnemonicParsing="false" onAction="#editPetData" text="Edit" />
+                        <Button fx:id="updatePetButton" layoutX="345.0" layoutY="239.0" mnemonicParsing="false" onAction="#UpdatePetData" text="Update" />
+                  <HBox fx:id="specialInfo" alignment="BOTTOM_CENTER" layoutX="92.0" layoutY="204.0" prefHeight="28.0" prefWidth="199.0" translateY="-3.0" visible="false">
+                     <children>
+                        <Label fx:id="specialLabel" text="Breed:" />
+                        <TextField fx:id="specialField" translateX="2.0">
+                           <HBox.margin>
+                              <Insets left="6.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="specialInfo2" alignment="BOTTOM_CENTER" layoutX="371.0" layoutY="204.0" prefHeight="28.0" prefWidth="199.0" translateY="-3.0" visible="false">
+                     <children>
+                        <Label fx:id="specialLabel2" text="Breeder:" />
+                        <TextField fx:id="specialField2" translateX="-1.0">
+                           <HBox.margin>
+                              <Insets left="6.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
                     </children>
                 </Pane>
             <Pane fx:id="reservationDataDisplay" layoutX="80.0" layoutY="68.0" prefHeight="385.0" prefWidth="597.0" visible="false" AnchorPane.bottomAnchor="41.333333333333314" AnchorPane.leftAnchor="69.33333333333333" AnchorPane.rightAnchor="77.33333333333337" AnchorPane.topAnchor="57.333333333333336">

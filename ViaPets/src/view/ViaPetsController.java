@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import model.*;
 import parser.ParserException;
@@ -30,6 +31,12 @@ public class ViaPetsController
   @FXML private TextField colorField;
   @FXML private TextField commentsField;
   @FXML private TextField priceField;
+  @FXML private TextField specialField;
+  @FXML private TextField specialField2;
+  @FXML private Label specialLabel;
+  @FXML private Label specialLabel2;
+  @FXML private HBox specialInfo;
+  @FXML private HBox specialInfo2;
   @FXML private Button editPetButton;
   @FXML private Button updatePetButton;
   @FXML private TextField newPetName;
@@ -316,6 +323,16 @@ public class ViaPetsController
     if (selectedPet != null && petTab.isSelected())
     {
       petDataDisplay.setVisible(true);
+      if (selectedPet instanceof Dog)
+      {
+        System.out.println(selectedPet);
+
+        specialInfo.setVisible(true);
+        specialInfo2.setVisible(true);
+        specialField.setText(((Dog) selectedPet).getBreed());
+        specialField2.setText(((Dog) selectedPet).getBreeder());
+
+      }
       petNameField.setText(selectedPet.getName());
       speciesField.setText(selectedPet.getSpecies());
       ageField.setText(String.valueOf(selectedPet.getAge()));

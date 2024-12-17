@@ -1,63 +1,63 @@
-Cat,2,Female,Ginger,Mittens,Adventurous and curious,320.0
-Hamster,1,Male,White,Peanut,Loves running on the wheel,50.0
-Fish,1,Female,Orange,Nemo,Calm and peaceful,30.0
-Dog,3,Female,Golden,Lucy,Very affectionate,500.0
-Cat,4,Male,Black,Shadow,Independent and quiet,350.0
-Bird,2,Female,Yellow,Sunny,Chirpy and cheerful,150.0
-Snake,3,Male,Green,Slither,Smooth and exotic,250.0
-Dog,1,Female,Spotted,Daisy,Loves the outdoors,420.0
-Cat,5,Male,Grey,Smokey,Clever and resourceful,310.0
-Turtle,10,Male,Green,Speedy,Slow but steady,60.0
-Dog,4,Female,Brown,Ruby,Loyal and obedient,470.0
-Cat,2,Male,White,Fluffy,Loves lounging in the sun,340.0
-Rabbit,1,Female,Brown,Hazel,Loves hopping around,130.0
-Dog,6,Male,Black,Max,Calm and protective,490.0
-Parrot,2,Female,Red,Rio,Beautiful and vibrant,220.0
-Hamster,1,Male,Grey,Fuzzy,Loves hiding in the bedding,40.0
-Fish,1,Female,Blue,Glowy,Quiet and graceful,35.0
-Cat,3,Female,Spotted,Luna,Mysterious and loving,330.0
-Dog,2,Male,Golden,Buster,Playful and loyal,410.0
-Bird,2,Female,Blue,Sky,Lively and talkative,180.0
-Snake,5,Male,Yellow,Viper,Exotic and calm,280.0
-Rabbit,2,Female,White,Snickers,Sweet and gentle,140.0
-Dog,1,Male,Spotted,Spot,Playful and curious,430.0
-Cat,4,Female,Ginger,Peaches,Laid-back and affectionate,360.0
-Turtle,8,Male,Green,Tank,Lives long and steady,65.0
-Fish,1,Female,Red,Coral,Swims gracefully,30.0
-Parrot,3,Male,Multicolored,Chirpy,Social and lively,240.0
-Hamster,2,Female,Brown,Nibbles,Enjoys exploring tunnels,45.0
-Dog,7,Male,Golden,Charlie,Loving and protective,460.0
-Cat,3,Female,Black,Midnight,Playful at night,320.0
-Rabbit,1,Male,Grey,Bunbun,Loves to nibble on lettuce,115.0
-Dog,4,Female,White,Snowy,Cheerful and energetic,500.0
-Cat,5,Male,Spotted,Oscar,Mature and wise,300.0
-Bird,2,Female,Yellow,Goldie,Beautiful chirper,170.0
-Snake,4,Male,Brown,Cobra,Exotic and unique,300.0
-Dog,3,Female,Golden,Bella,Affectionate and playful,450.0
-Cat,2,Female,Grey,Stormy,Very curious,310.0
-Hamster,1,Male,White,Coco,Fast and active,55.0
-Rabbit,2,Female,Brown,Mocha,Cuddly and calm,125.0
-Dog,6,Male,Black,Zeke,Protective and loyal,480.0
-Parrot,5,Female,Green,Kiwi,Colorful and chirpy,230.0
-Fish,1,Female,Purple,Splash,Swims happily,40.0
-Cat,4,Male,Orange,Tiger,Friendly and playful,320.0
-Dog,3,Female,White,Angel,Gentle and sweet,500.0
-Rabbit,1,Male,Grey,Frosty,Loves jumping around,110.0
-Dog,2,Female,Brown,Lady,Calm and affectionate,440.0
-Snake,3,Male,Green,Jade,Sleek and exotic,270.0
-Hamster,2,Female,Spotted,Biscuit,Playful and curious,50.0
-Bird,1,Female,Blue,Feather,Small and chirpy,150.0
-Dog,5,Male,Black,Diesel,Strong and loyal,470.0
-Cat,3,Female,White,Snowball,Loves to cuddle,330.0
-Fish,1,Female,Yellow,Bubbles,Glides smoothly,35.0
-Rabbit,2,Male,Brown,Benny,Quiet and gentle,120.0
-Dog,4,Female,Spotted,Lola,Very friendly,450.0
-Cat,1,Male,Grey,Dusty,Playful and active,305.0
-Parrot,4,Female,Red,Phoenix,Vibrant and lively,240.0
-Snake,2,Male,Yellow,Python,Exotic and calm,260.0
-Dog,2,Female,Golden,Goldie,Cheerful and loyal,420.0
-Hamster,1,Male,White,Cloud,Loves hiding,45.0
-Rabbit,3,Female,Grey,Pearl,Sweet and calm,140.0
-Bird,3,Male,Green,Paco,Sings melodiously,200.0
-Cat,2,Female,Orange,Amber,Adventurous and fun,310.0
-Dog,3,Male,Brown,Cooper,Protective and playful,440.0
+Cat,2,Female,Ginger,Mittens,Adventurous and curious,320.0,Siamese,John Doe
+Hamster,1,Male,White,Peanut,Loves running on the wheel,50.0,,
+Fish,1,Female,Orange,Nemo,Calm and peaceful,30.0,,
+Dog,3,Female,Golden,Lucy,Very affectionate,500.0,Labrador,Jane Smith
+Cat,4,Male,Black,Shadow,Independent and quiet,350.0,Persian,Emily Adams
+Bird,2,Female,Yellow,Sunny,Chirpy and cheerful,150.0,,
+Snake,3,Male,Green,Slither,Smooth and exotic,250.0,,
+Dog,1,Female,Spotted,Daisy,Loves the outdoors,420.0,Beagle,Chris Johnson
+Cat,5,Male,Grey,Smokey,Clever and resourceful,310.0,Main Coon,Patricia Lee
+Turtle,10,Male,Green,Speedy,Slow but steady,60.0,,
+Dog,4,Female,Brown,Ruby,Loyal and obedient,470.0,Golden Retriever,George Taylor
+Cat,2,Male,White,Fluffy,Loves lounging in the sun,340.0,Siamese,John Doe
+Rabbit,1,Female,Brown,Hazel,Loves hopping around,130.0,,
+Dog,6,Male,Black,Max,Calm and protective,490.0,Boxer,Daniel Green
+Parrot,2,Female,Red,Rio,Beautiful and vibrant,220.0,,
+Hamster,1,Male,Grey,Fuzzy,Loves hiding in the bedding,40.0,,
+Fish,1,Female,Blue,Glowy,Quiet and graceful,35.0,,
+Cat,3,Female,Spotted,Luna,Mysterious and loving,330.0,Sphynx,Nina White
+Dog,2,Male,Golden,Buster,Playful and loyal,410.0,Labrador,Emma Wilson
+Bird,2,Female,Blue,Sky,Lively and talkative,180.0,,
+Snake,5,Male,Yellow,Viper,Exotic and calm,280.0,,
+Rabbit,2,Female,White,Snickers,Sweet and gentle,140.0,,
+Dog,1,Male,Spotted,Spot,Playful and curious,430.0,Beagle,Chris Johnson
+Cat,4,Female,Ginger,Peaches,Laid-back and affectionate,360.0,Persian,Emily Adams
+Turtle,8,Male,Green,Tank,Lives long and steady,65.0,,
+Fish,1,Female,Red,Coral,Swims gracefully,30.0,,
+Parrot,3,Male,Multicolored,Chirpy,Social and lively,240.0,,
+Hamster,2,Female,Brown,Nibbles,Enjoys exploring tunnels,45.0,,
+Dog,7,Male,Golden,Charlie,Loving and protective,460.0,Golden Retriever,George Taylor
+Cat,3,Female,Black,Midnight,Playful at night,320.0,Siamese,John Doe
+Rabbit,1,Male,Grey,Bunbun,Loves to nibble on lettuce,115.0,,
+Dog,4,Female,White,Snowy,Cheerful and energetic,500.0,Samoyed,Sarah King
+Cat,5,Male,Spotted,Oscar,Mature and wise,300.0,Main Coon,Patricia Lee
+Bird,2,Female,Yellow,Goldie,Beautiful chirper,170.0,,
+Snake,4,Male,Brown,Cobra,Exotic and unique,300.0,,
+Dog,3,Female,Golden,Bella,Affectionate and playful,450.0,Labrador,Jane Smith
+Cat,2,Female,Grey,Stormy,Very curious,310.0,Siamese,John Doe
+Hamster,1,Male,White,Coco,Fast and active,55.0,,
+Rabbit,2,Female,Brown,Mocha,Cuddly and calm,125.0,,
+Dog,6,Male,Black,Zeke,Protective and loyal,480.0,Boxer,Daniel Green
+Parrot,5,Female,Green,Kiwi,Colorful and chirpy,230.0,,
+Fish,1,Female,Purple,Splash,Swims happily,40.0,,
+Cat,4,Male,Orange,Tiger,Friendly and playful,320.0,Persian,Emily Adams
+Dog,3,Female,White,Angel,Gentle and sweet,500.0,Golden Retriever,George Taylor
+Rabbit,1,Male,Grey,Frosty,Loves jumping around,110.0,,
+Dog,2,Female,Brown,Lady,Calm and affectionate,440.0,Beagle,Chris Johnson
+Snake,3,Male,Green,Jade,Sleek and exotic,270.0,,
+Hamster,2,Female,Spotted,Biscuit,Playful and curious,50.0,,
+Bird,1,Female,Blue,Feather,Small and chirpy,150.0,,
+Dog,5,Male,Black,Diesel,Strong and loyal,470.0,Boxer,Daniel Green
+Cat,3,Female,White,Snowball,Loves to cuddle,330.0,Main Coon,Patricia Lee
+Fish,1,Female,Yellow,Bubbles,Glides smoothly,35.0,,
+Rabbit,2,Male,Brown,Benny,Quiet and gentle,120.0,,
+Dog,4,Female,Spotted,Lola,Very friendly,450.0,Beagle,Chris Johnson
+Cat,1,Male,Grey,Dusty,Playful and active,305.0,Persian,Emily Adams
+Parrot,4,Female,Red,Phoenix,Vibrant and lively,240.0,,
+Snake,2,Male,Yellow,Python,Exotic and calm,260.0,,
+Dog,2,Female,Golden,Goldie,Cheerful and loyal,420.0,Golden Retriever,George Taylor
+Hamster,1,Male,White,Cloud,Loves hiding,45.0,,
+Rabbit,3,Female,Grey,Pearl,Sweet and calm,140.0,,
+Bird,3,Male,Green,Paco,Sings melodiously,200.0,,
+Cat,2,Female,Orange,Amber,Adventurous and fun,310.0,Siamese,John Doe
+Dog,3,Male,Brown,Cooper,Protective and playful,440.0,Golden Retriever,George Taylor
