@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * A class containing of KennelReservation object.
+ *
  * @author Harshit Sharma
  * @version 1.0
  */
@@ -13,8 +14,10 @@ public class KennelReservationList
   private ArrayList<KennelReservation> kennelReservations;
 
   // Constructor
+
   /**
    * Constructs a new KennelReservationList object with specified details including the maximum number of reservations.
+   *
    * @param maxNumberOfReservations the maximum number of reservations
    */
   public KennelReservationList(int maxNumberOfReservations)
@@ -25,8 +28,10 @@ public class KennelReservationList
   }
 
   // Methods
+
   /**
    * Adds a new reservation to the list.
+   *
    * @param reservation the reservation object
    */
   public void addKennelReservation(KennelReservation reservation)
@@ -45,6 +50,7 @@ public class KennelReservationList
 
   /**
    * Removes a reservation from the list.
+   *
    * @param index the index of the reservation to be removed
    */
   public void removeReservation(int index)
@@ -61,17 +67,10 @@ public class KennelReservationList
 
   /**
    * Sets a reservation at a specific index.
-   * @param index the index of the reservation to be set
+   *
+   * @param index       the index of the reservation to be set
    * @param reservation the reservation object
    */
-  public void removeReservation(KennelReservation reservation)
-  {
-    if (reservation != null)
-    {
-      kennelReservations.remove(reservation);
-    }
-  }
-
   public void setKennelReservation(int index, KennelReservation reservation)
   {
     if (index >= 0 && index < kennelReservations.size())
@@ -84,8 +83,17 @@ public class KennelReservationList
     }
   }
 
+  public void removeReservation(KennelReservation reservation)
+  {
+    if (reservation != null)
+    {
+      kennelReservations.remove(reservation);
+    }
+  }
+
   /**
    * Gets the number of reservations in the list.
+   *
    * @return the number of reservations
    */
   public int getAllNumberOfKennelReservations()
@@ -95,6 +103,7 @@ public class KennelReservationList
 
   /**
    * Gets a reservation at a specific index.
+   *
    * @param index the index of the reservation
    * @return the reservation object
    */
@@ -113,6 +122,7 @@ public class KennelReservationList
 
   /**
    * Gets all reservations in the list.
+   *
    * @return an array of all reservations
    */
   public KennelReservation[] getAllKennelReservations()
@@ -123,6 +133,7 @@ public class KennelReservationList
 
   /**
    * Returns a string representation of this KennelReservationList, including information from all reservations.
+   *
    * @return a string description of the kennel reservation list
    */
   public String toString()
@@ -137,6 +148,7 @@ public class KennelReservationList
 
   /**
    * Compares this KennelReservationList with another object for equality.
+   *
    * @param obj the object to compare
    * @return true if the objects are equal, false otherwise
    */
