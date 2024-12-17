@@ -366,7 +366,9 @@ public class ViaPetsController
     petNameField.setEditable(true);
     ageField.setEditable(true);
     commentsField.setEditable(true);
-    priceField.setEditable(true);
+    speciesField.setDisable(true);
+    genderField.setDisable(true);
+    colorField.setDisable(true);
   }
 
   public void UpdatePetData() throws ParserException
@@ -378,8 +380,8 @@ public class ViaPetsController
       selectedPet.setName(petNameField.getText());
       selectedPet.setComment(commentsField.getText());
 
-      String ageText = newPetAge.getText();
-      String priceText = newPriceField.getText();
+      String ageText = ageField.getText();
+      String priceText = priceField.getText();
       try
       {
         int age = Integer.parseInt(ageText);
@@ -866,12 +868,12 @@ public class ViaPetsController
     phoneFieldReservation.setEditable(true);
     emailFieldReservation.setEditable(true);
     petNameFieldReservation.setEditable(true);
-    speciesFieldReservation.setEditable(false);
+    speciesFieldReservation.setDisable(true);
     ageFieldReservation.setEditable(true);
-    genderFieldReservation.setEditable(false);
-    colorFieldReservation.setEditable(false);
+    genderFieldReservation.setDisable(true);
+    colorFieldReservation.setDisable(true);
     commentsFieldReservation.setEditable(true);
-    priceFieldReservation.setEditable(false);
+    priceFieldReservation.setDisable(true);
   }
 
   public void UpdateReservationData() throws ParserException

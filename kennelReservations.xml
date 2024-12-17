@@ -29,6 +29,33 @@
   </kennelReservations>
   <kennelReservations>
     <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>30</day>
+    </endDate>
+    <price>100.0</price>
+    <pet>
+      <gender>Female</gender>
+      <color>White</color>
+      <species>Cat</species>
+      <price>0.0</price>
+      <name>Whiskers</name>
+      <comment>Loves cuddling and napping</comment>
+      <age>3</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>9</day>
+    </startDate>
+    <customer>
+      <emailAddress>janesmith@email.com</emailAddress>
+      <phoneNumber>23456789</phoneNumber>
+      <name>Jane Smith</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
       <month>4</month>
       <year>2025</year>
       <day>30</day>
@@ -108,32 +135,5 @@
       <name>David Green</name>
     </customer>
   </kennelReservations>
-  <kennelReservations>
-    <endDate>
-      <month>12</month>
-      <year>2024</year>
-      <day>27</day>
-    </endDate>
-    <price>88.0</price>
-    <pet>
-      <gender>Male</gender>
-      <color>Green</color>
-      <species>Snake</species>
-      <price>0.0</price>
-      <name>Slither</name>
-      <comment>Smooth and exotic</comment>
-      <age>3</age>
-    </pet>
-    <startDate>
-      <month>12</month>
-      <year>2024</year>
-      <day>24</day>
-    </startDate>
-    <customer>
-      <emailAddress>bobbrown@email.com</emailAddress>
-      <phoneNumber>45689123</phoneNumber>
-      <name>Bob Brown</name>
-    </customer>
-  </kennelReservations>
-  <currentNumberOfReservations>8</currentNumberOfReservations>
+  <currentNumberOfReservations>5</currentNumberOfReservations>
 </KennelReservationList>

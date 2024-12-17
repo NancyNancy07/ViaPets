@@ -20,12 +20,30 @@
   </pets>
   <pets>
     <gender>Female</gender>
+    <color>Orange</color>
+    <species>Fish</species>
+    <price>30.0</price>
+    <name>Nemo</name>
+    <comment>Calm and peaceful</comment>
+    <age>1</age>
+  </pets>
+  <pets>
+    <gender>Female</gender>
     <color>Golden</color>
     <species>Dog</species>
     <price>500.0</price>
     <name>Lucy</name>
     <comment>Very affectionate</comment>
     <age>3</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
+    <color>Black</color>
+    <species>Cat</species>
+    <price>350.0</price>
+    <name>Shadow</name>
+    <comment>Independent and quiet</comment>
+    <age>4</age>
   </pets>
   <pets>
     <gender>Female</gender>
@@ -40,7 +58,7 @@
     <gender>Male</gender>
     <color>Green</color>
     <species>Snake</species>
-    <price>0.0</price>
+    <price>250.0</price>
     <name>Slither</name>
     <comment>Smooth and exotic</comment>
     <age>3</age>
@@ -557,6 +575,15 @@
     <name>Buddy</name>
     <comment>Very energetic and playful</comment>
     <age>2</age>
+  </pets>
+  <pets>
+    <gender>Female</gender>
+    <color>White</color>
+    <species>Cat</species>
+    <price>0.0</price>
+    <name>Whiskers</name>
+    <comment>Loves cuddling and napping</comment>
+    <age>3</age>
   </pets>
   <pets>
     <gender>Male</gender>

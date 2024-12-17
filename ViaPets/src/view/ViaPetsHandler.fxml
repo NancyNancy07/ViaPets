@@ -746,10 +746,10 @@
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox alignment="BOTTOM_CENTER" layoutX="41.0" layoutY="241.0" prefHeight="28.0" prefWidth="218.0">
+                  <HBox alignment="BOTTOM_CENTER" layoutX="41.0" layoutY="241.0" prefHeight="28.0" prefWidth="316.0">
                      <children>
                         <Label text="Comments:" />
-                        <TextField fx:id="commentsFieldReservation" prefHeight="25.0" prefWidth="135.0">
+                        <TextField fx:id="commentsFieldReservation" prefHeight="25.0" prefWidth="234.0">
                            <HBox.margin>
                               <Insets left="6.0" />
                            </HBox.margin>

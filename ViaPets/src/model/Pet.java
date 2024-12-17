@@ -32,7 +32,12 @@ public class Pet implements Serializable
   public Pet(String species, int age, String gender, String color, String name,
       String comment, double price)
   {
+    if (species == null)
+    {
+      throw new IllegalArgumentException();
+    }
     this.species = species;
+
     this.age = age;
     this.gender = gender;
     this.color = color;
@@ -140,7 +145,11 @@ public class Pet implements Serializable
    */
   public void setSpecies(String species)
   {
-    this.species = species;
+    if (species != null)
+    {
+      this.species = species;
+
+    }
   }
 
   /**
