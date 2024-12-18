@@ -336,7 +336,7 @@
                                                                         </TextField>
                                                                     </children>
                                                                 </HBox>
-                                                <HBox fx:id="newSpecificBoxReservation" alignment="BASELINE_CENTER" layoutX="10.0" layoutY="229.0" prefHeight="25.0" prefWidth="541.0" visible="false">
+                                                <HBox fx:id="newSpecificBoxReservation" alignment="BASELINE_CENTER" layoutX="10.0" layoutY="229.0" prefHeight="25.0" prefWidth="541.0">
                                                    <children>
                                                       <Label fx:id="newSpecificLabel1Reservation" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="85.0" text="Breed:" />
                                                       <TextField fx:id="newSpecificFieldReservation" prefHeight="25.0" prefWidth="435.0" translateX="-6.0">

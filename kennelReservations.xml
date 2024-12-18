@@ -58,6 +58,34 @@
   </kennelReservations>
   <kennelReservations>
     <endDate>
+      <month>4</month>
+      <year>2025</year>
+      <day>30</day>
+    </endDate>
+    <price>100.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>Grey</color>
+      <species>Rabbit</species>
+      <price>0.0</price>
+      <name>Thumper</name>
+      <comment>Curious and loves carrots</comment>
+      <type>Pet</type>
+      <age>1</age>
+    </pet>
+    <startDate>
+      <month>4</month>
+      <year>2025</year>
+      <day>12</day>
+    </startDate>
+    <customer>
+      <emailAddress>bobbrown@email.com</emailAddress>
+      <phoneNumber>45689123</phoneNumber>
+      <name>Bob Brown</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
       <month>12</month>
       <year>2024</year>
       <day>30</day>
@@ -114,22 +142,22 @@
   </kennelReservations>
   <kennelReservations>
     <endDate>
-      <month>12</month>
-      <year>2024</year>
-      <day>29</day>
+      <month>1</month>
+      <year>2025</year>
+      <day>4</day>
     </endDate>
-    <price>100.0</price>
+    <price>700.0</price>
     <pet>
       <gender>Male</gender>
-      <color>Black</color>
-      <species>Dog</species>
+      <color>Gray</color>
+      <species>Cat</species>
       <price>0.0</price>
-      <name>Rex</name>
-      <breeder>Best Breeder</breeder>
-      <comment>Loyal and friendly</comment>
-      <type>Dog</type>
-      <age>5</age>
-      <breed>German Shepherd</breed>
+      <name>Shadow</name>
+      <breeder>Good Breeder</breeder>
+      <comment>Independent and quiet</comment>
+      <type>Cat</type>
+      <age>4</age>
+      <breed>Maine Coon</breed>
     </pet>
     <startDate>
       <month>12</month>
@@ -137,39 +165,68 @@
       <day>25</day>
     </startDate>
     <customer>
-      <emailAddress>nn@gmail.com</emailAddress>
-      <phoneNumber>1234567876</phoneNumber>
-      <name>Nancy</name>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
     </customer>
   </kennelReservations>
   <kennelReservations>
     <endDate>
-      <month>12</month>
-      <year>2024</year>
-      <day>28</day>
+      <month>1</month>
+      <year>2025</year>
+      <day>5</day>
     </endDate>
-    <price>999.0</price>
+    <price>800.0</price>
     <pet>
-      <gender>cxkjv</gender>
-      <color>ncvxc</color>
-      <isAggressive>false</isAggressive>
+      <gender>Female</gender>
+      <color>Brown</color>
+      <isAggressive>true</isAggressive>
       <species>Rodent</species>
       <price>0.0</price>
-      <name>hdvhdæ</name>
-      <comment>jkl</comment>
+      <name>Nibbles</name>
+      <comment>Likes to burrow</comment>
       <type>Rodent</type>
-      <age>89</age>
+      <age>1</age>
     </pet>
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>23</day>
+      <day>31</day>
     </startDate>
     <customer>
-      <emailAddress>evab@email.com</emailAddress>
-      <phoneNumber>78912456</phoneNumber>
-      <name>Eva Black</name>
+      <emailAddress>frankb@email.com</emailAddress>
+      <phoneNumber>89023567</phoneNumber>
+      <name>Frank Blue</name>
     </customer>
   </kennelReservations>
-  <currentNumberOfReservations>7</currentNumberOfReservations>
+  <kennelReservations>
+    <endDate>
+      <month>1</month>
+      <year>2025</year>
+      <day>5</day>
+    </endDate>
+    <price>300.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>White</color>
+      <species>Bird</species>
+      <price>0.0</price>
+      <name>Charlie</name>
+      <comment>Very vocal and playful</comment>
+      <preferredFood>Strawberries</preferredFood>
+      <type>Bird</type>
+      <age>2</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>30</day>
+    </startDate>
+    <customer>
+      <emailAddress>bobbrown@email.com</emailAddress>
+      <phoneNumber>45689123</phoneNumber>
+      <name>Bob Brown</name>
+    </customer>
+  </kennelReservations>
+  <currentNumberOfReservations>8</currentNumberOfReservations>
 </KennelReservationList>

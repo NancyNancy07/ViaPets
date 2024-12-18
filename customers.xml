@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CustomerList>
   <customers>
-    <emailAddress>johndoe@email.com</emailAddress>
-    <phoneNumber>12345678</phoneNumber>
+    <emailAddress> johndoe@email.com</emailAddress>
+    <phoneNumber> 12345678</phoneNumber>
     <name>John Doe</name>
   </customers>
   <customers>
-    <emailAddress>janesmith@email.com</emailAddress>
-    <phoneNumber>23456789</phoneNumber>
+    <emailAddress> janesmith@email.com</emailAddress>
+    <phoneNumber> 23456789</phoneNumber>
     <name>Jane Smith</name>
   </customers>
   <customers>
-    <emailAddress>alicej@email.com</emailAddress>
-    <phoneNumber>34678012</phoneNumber>
+    <emailAddress> alicej@email.com</emailAddress>
+    <phoneNumber> 34678012</phoneNumber>
     <name>Alice Johnson</name>
   </customers>
   <customers>
-    <emailAddress>charliew@email.com</emailAddress>
-    <phoneNumber>56790234</phoneNumber>
+    <emailAddress> bobbrown@email.com</emailAddress>
+    <phoneNumber> 45689123</phoneNumber>
+    <name>Bob Brown</name>
+  </customers>
+  <customers>
+    <emailAddress> charliew@email.com</emailAddress>
+    <phoneNumber> 56790234</phoneNumber>
     <name>Charlie White</name>
   </customers>
   <customers>
-    <emailAddress>davidg@email.com</emailAddress>
-    <phoneNumber>67801345</phoneNumber>
+    <emailAddress> davidg@email.com</emailAddress>
+    <phoneNumber> 67801345</phoneNumber>
     <name>David Green</name>
   </customers>
   <customers>
-    <emailAddress>evab@email.com</emailAddress>
-    <phoneNumber>78912456</phoneNumber>
+    <emailAddress> evab@email.com</emailAddress>
+    <phoneNumber> 78912456</phoneNumber>
     <name>Eva Black</name>
   </customers>
   <customers>
-    <emailAddress>frankb@email.com</emailAddress>
-    <phoneNumber>89023567</phoneNumber>
+    <emailAddress> frankb@email.com</emailAddress>
+    <phoneNumber> 89023567</phoneNumber>
     <name>Frank Blue</name>
   </customers>
   <customers>
-    <emailAddress>gracer@email.com</emailAddress>
-    <phoneNumber>90134678</phoneNumber>
+    <emailAddress> gracer@email.com</emailAddress>
+    <phoneNumber> 90134678</phoneNumber>
     <name>Grace Red</name>
   </customers>
   <customers>
-    <emailAddress>henryg@email.com</emailAddress>
-    <phoneNumber>10245789</phoneNumber>
+    <emailAddress> henryg@email.com</emailAddress>
+    <phoneNumber> 10245789</phoneNumber>
     <name>Henry Gray</name>
-  </customers>
-  <customers>
-    <emailAddress>nn@gmail.com</emailAddress>
-    <phoneNumber>1234567876</phoneNumber>
-    <name>Nancy</name>
   </customers>
 </CustomerList>

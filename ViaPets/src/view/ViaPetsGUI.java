@@ -25,7 +25,7 @@ public class ViaPetsGUI extends Application
   public void start(Stage window) throws Exception
   {
     window.setTitle("ViaPets Shop Management System");
-    window.setResizable(true);
+    window.setResizable(false);
     FXMLLoader loader = new FXMLLoader();
     loader.setLocation(getClass().getResource("ViaPetsHandler.fxml"));
     Scene scene = new Scene(loader.load());

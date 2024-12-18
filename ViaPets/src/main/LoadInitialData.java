@@ -19,16 +19,16 @@ public class LoadInitialData
     // Pet Data
     PetList pets = new PetList();
 
-    Pet pet1 = new Dog("Dog", 2, "Male", "Brown", "Buddy",
+    Pet pet1 = new Dog("Dog", 2, "Male", "Brown", "Husky",
         "Very energetic and playful", 600.0, "Labrador", "John's Breeder");
-    Pet pet2 = new Cat("Cat", 3, "Female", "White", "Whiskers",
+    Pet pet2 = new Cat("Cat", 3, "Female", "White", "Ziggy",
         "Loves cuddling and napping", 500.0, "Persian", "New Breeder");
-    Pet pet3 = new Rodent("Rodent", 1, "Male", "Grey", "Thumper",
+    Pet pet3 = new Rodent("Rodent", 1, "Male", "Grey", "Luna",
         "Curious and loves carrots", 100.0, false);
-    Pet pet4 = new Bird("Bird", 4, "Female", "Green", "Polly",
+    Pet pet4 = new Bird("Bird", 4, "Female", "Green", "Theo",
         "Likes to mimic sounds", 1000.0, "Chilli");
-    Pet pet5 = new Fish("Fish", 1, "Male", "Orange", "Bubbles",
-        "Calm and graceful", 50.0, false, true);
+    Pet pet5 = new Fish("Fish", 1, "Male", "Orange", "", "Calm and graceful",
+        50.0, false, true);
     Pet pet6 = new Various("Various", 2, "Female", "Golden", "Squeaky",
         "Likes to run in a wheel", 20.0);
     Pet pet7 = new Dog("Dog", 5, "Male", "Black", "Rex", "Loyal and friendly",
@@ -205,7 +205,6 @@ public class LoadInitialData
     SaleList saleFromFile = modelManager.readSales();
     KennelReservationList reservationsFromFile = modelManager.readKennelReservations();
 
-    System.out.println(petsFromFile);
     System.out.println("Done");
   }
 }

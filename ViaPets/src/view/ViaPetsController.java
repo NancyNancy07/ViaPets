@@ -140,7 +140,6 @@ public class ViaPetsController
   {
     modelManager = new ViaPetsModelManager("customers.xml", "pets.xml",
         "sales.bin", "kennelReservation.bin");
-    updatePetBox();
     customerDataDisplay.setVisible(false);
     petDataDisplay.setVisible(false);
     reservationDataDisplay.setVisible(false);
@@ -149,6 +148,45 @@ public class ViaPetsController
     updateButton2.setVisible(false);
     petSpecies();
     selectedSpecies();
+
+    petTable.setRowFactory(tv -> new TableRow<Pet>()
+    {
+      @Override protected void updateItem(Pet item, boolean empty)
+      {
+        super.updateItem(item, empty);
+        if (item != null && item.getPrice() == 0)
+          setStyle("-fx-background-color: #baffba;");
+
+        else
+          setStyle("");
+      }
+    });
+//    petTable.setRowFactory(tableView -> {
+//      TableRow<Pet> row = new TableRow<>();
+//
+//      row.itemProperty().addListener((observable, oldValue, newValue) -> {
+//        if (newValue == null || row.isEmpty())
+//        {
+//          row.setStyle("");
+//        }
+//        else
+//        {
+//          if (isPetReserved(newValue))
+//          {
+//            row.setStyle("-fx-background-color: lightgreen;");
+//          }
+//          else
+//          {
+//            row.setStyle("");
+//          }
+//        }
+//      });
+//
+//      return row;
+//    });
+
+    updatePetBox();
+
   }
 
   public void updateCustomerBox() throws ParserException
@@ -291,6 +329,33 @@ public class ViaPetsController
     updateCustomerBox();
   }
 
+  private boolean isPetReserved(Pet pet)
+  {
+    try
+    {
+      KennelReservationList allReservations = modelManager.readKennelReservations();
+      for (int i = 0;
+           i < allReservations.getAllNumberOfKennelReservations(); i++)
+      {
+        Pet reservedPet = null;
+        KennelReservation reservation = allReservations.getKennelReservation(i);
+        if (reservation != null)
+        {
+          reservedPet = reservation.getPet();
+        }
+        if (reservedPet != null && pet.equals(reservedPet))
+        {
+          return true;
+        }
+      }
+    }
+    catch (ParserException e)
+    {
+      e.printStackTrace();
+    }
+    return false;
+  }
+
   public void updatePetBox() throws ParserException
   {
     if (modelManager != null)
@@ -298,6 +363,7 @@ public class ViaPetsController
       PetList allPets = modelManager.readPets();
 
       petTable.getItems().clear();
+      petTable.setStyle("-fx-background-color: lightblue;");
 
       for (int i = 0; i < allPets.getNumberOfPets(); i++)
       {
@@ -357,6 +423,7 @@ public class ViaPetsController
         }
         return new SimpleStringProperty(specificInfo);
       });
+
       //      adding a listener to know which row is selected
       petTable.getSelectionModel().selectedItemProperty()
           .addListener((old, current, newP) -> {
@@ -1013,9 +1080,11 @@ public class ViaPetsController
       }
 
       Sale sale = new Sale(sellPrice, saleCustomer, salePet, myDate);
+      allPets.removePet(salePet);
+      modelManager.savePetList(allPets);
       modelManager.addSale(sale);
       updateSaleBox();
-
+      updatePetBox();
       customerComboBox.setValue("Select Customer");
       petComboBox.setValue("Select Pet");
 
@@ -1563,7 +1632,7 @@ public class ViaPetsController
             reservationPet, reservationCustomer, myStartDate, myEndDate);
         modelManager.addKennelReservation(reservation);
         updateKennelBox();
-
+        updatePetBox();
         reservationFieldPrice.clear();
         startDate.setValue(null);
         endDate.setValue(null);

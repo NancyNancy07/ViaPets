@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <PetList>
   <pets>
-    <gender>Male</gender>
-    <color>Brown</color>
-    <species>Dog</species>
-    <price>600.0</price>
-    <name>Buddy</name>
-    <breeder>John's Breeder</breeder>
-    <comment>Very energetic and playful</comment>
-    <type>Dog</type>
-    <age>2</age>
-    <breed>Labrador</breed>
-  </pets>
-  <pets>
     <gender>Female</gender>
     <color>White</color>
     <species>Cat</species>
     <price>500.0</price>
-    <name>Whiskers</name>
+    <name>Ziggy</name>
     <breeder>New Breeder</breeder>
     <comment>Loves cuddling and napping</comment>
     <type>Cat</type>
@@ -30,7 +18,7 @@
     <isAggressive>false</isAggressive>
     <species>Rodent</species>
     <price>100.0</price>
-    <name>Thumper</name>
+    <name>Luna</name>
     <comment>Curious and loves carrots</comment>
     <type>Rodent</type>
     <age>1</age>
@@ -40,7 +28,7 @@
     <color>Green</color>
     <species>Bird</species>
     <price>1000.0</price>
-    <name>Polly</name>
+    <name>Theo</name>
     <comment>Likes to mimic sounds</comment>
     <preferredFood>Chilli</preferredFood>
     <type>Bird</type>
@@ -51,7 +39,7 @@
     <color>Orange</color>
     <species>Fish</species>
     <price>50.0</price>
-    <name>Bubbles</name>
+    <name/>
     <isFreshWater>true</isFreshWater>
     <comment>Calm and graceful</comment>
     <isPredator>false</isPredator>
@@ -72,7 +60,7 @@
     <gender>Male</gender>
     <color>Black</color>
     <species>Dog</species>
-    <price>0.0</price>
+    <price>500.0</price>
     <name>Rex</name>
     <breeder>Best Breeder</breeder>
     <comment>Loyal and friendly</comment>
@@ -84,7 +72,7 @@
     <gender>Male</gender>
     <color>Gray</color>
     <species>Cat</species>
-    <price>400.0</price>
+    <price>0.0</price>
     <name>Shadow</name>
     <breeder>Good Breeder</breeder>
     <comment>Independent and quiet</comment>
@@ -97,7 +85,7 @@
     <color>Brown</color>
     <isAggressive>true</isAggressive>
     <species>Rodent</species>
-    <price>30.0</price>
+    <price>0.0</price>
     <name>Nibbles</name>
     <comment>Likes to burrow</comment>
     <type>Rodent</type>
@@ -175,7 +163,7 @@
     <gender>Male</gender>
     <color>White</color>
     <species>Bird</species>
-    <price>1200.0</price>
+    <price>0.0</price>
     <name>Charlie</name>
     <comment>Very vocal and playful</comment>
     <preferredFood>Strawberries</preferredFood>
@@ -249,6 +237,16 @@
     <age>3</age>
   </pets>
   <pets>
+    <gender>Male</gender>
+    <color>Grey</color>
+    <species>Rabbit</species>
+    <price>0.0</price>
+    <name>Thumper</name>
+    <comment>Curious and loves carrots</comment>
+    <type>Pet</type>
+    <age>1</age>
+  </pets>
+  <pets>
     <gender>Female</gender>
     <color>Green</color>
     <species>Parrot</species>
@@ -267,49 +265,5 @@
     <comment>Loyal and friendly</comment>
     <type>Pet</type>
     <age>5</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>black</color>
-    <species>Dog</species>
-    <price>10.0</price>
-    <name>test</name>
-    <comment>good</comment>
-    <type>Pet</type>
-    <age>4</age>
-  </pets>
-  <pets>
-    <gender>Female</gender>
-    <color>red</color>
-    <isAggressive>false</isAggressive>
-    <species>Rodent</species>
-    <price>300.0</price>
-    <name>New test</name>
-    <comment>no comments</comment>
-    <type>Rodent</type>
-    <age>5</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Red</color>
-    <species>Cat</species>
-    <price>900.0</price>
-    <name>Meow</name>
-    <breeder>Alice</breeder>
-    <comment>good</comment>
-    <type>Cat</type>
-    <age>6</age>
-    <breed>New</breed>
-  </pets>
-  <pets>
-    <gender>cxkjv</gender>
-    <color>ncvxc</color>
-    <isAggressive>false</isAggressive>
-    <species>Rodent</species>
-    <price>0.0</price>
-    <name>hdvhdæ</name>
-    <comment>jkl</comment>
-    <type>Rodent</type>
-    <age>89</age>
   </pets>
 </PetList>

@@ -7,7 +7,7 @@
       <day>1</day>
     </date>
     <finalPrice>1000.0</finalPrice>
-    <time>17:58:49</time>
+    <time>13:04:36</time>
     <pet>
       <gender>Male</gender>
       <color>Brown</color>
@@ -31,7 +31,7 @@
       <day>1</day>
     </date>
     <finalPrice>400.0</finalPrice>
-    <time>17:58:49</time>
+    <time>13:04:36</time>
     <pet>
       <gender>Female</gender>
       <color>White</color>
@@ -55,7 +55,7 @@
       <day>1</day>
     </date>
     <finalPrice>600.0</finalPrice>
-    <time>17:58:49</time>
+    <time>13:04:36</time>
     <pet>
       <gender>Male</gender>
       <color>Grey</color>
@@ -79,7 +79,7 @@
       <day>1</day>
     </date>
     <finalPrice>800.0</finalPrice>
-    <time>17:58:49</time>
+    <time>13:04:36</time>
     <pet>
       <gender>Female</gender>
       <color>Green</color>
@@ -103,7 +103,7 @@
       <day>1</day>
     </date>
     <finalPrice>300.0</finalPrice>
-    <time>17:58:49</time>
+    <time>13:04:36</time>
     <pet>
       <gender>Male</gender>
       <color>Black</color>
@@ -118,6 +118,32 @@
       <emailAddress>davidg@email.com</emailAddress>
       <phoneNumber>67801345</phoneNumber>
       <name>David Green</name>
+    </customer>
+  </saleList>
+  <saleList>
+    <date>
+      <month>12</month>
+      <year>2024</year>
+      <day>26</day>
+    </date>
+    <finalPrice>900.0</finalPrice>
+    <time>13:05:18</time>
+    <pet>
+      <gender>Male</gender>
+      <color>Brown</color>
+      <species>Dog</species>
+      <price>600.0</price>
+      <name>Husky</name>
+      <breeder>John's Breeder</breeder>
+      <comment>Very energetic and playful</comment>
+      <type>Dog</type>
+      <age>2</age>
+      <breed>Labrador</breed>
+    </pet>
+    <customer>
+      <emailAddress>bobbrown@email.com</emailAddress>
+      <phoneNumber>45689123</phoneNumber>
+      <name>Bob Brown</name>
     </customer>
   </saleList>
 </SaleList>
