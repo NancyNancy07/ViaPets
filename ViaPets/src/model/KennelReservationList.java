@@ -22,6 +22,39 @@ public class KennelReservationList
   }
 
   // Methods
+  public boolean canAddReservationWithoutOverlap(KennelReservation newReservation) {
+    int maxKennels = 10;
+
+    // Iterálunk az összes dátum naponként, hogy számoljuk a foglalásokat
+    for (int day = newReservation.getStartDate().dayCounter();
+         day <= newReservation.getEndDate().dayCounter(); day++) {
+
+      int overlappingCount = 1; // Kezdjük 1-gyel, mert az új foglalást vizsgáljuk
+
+      for (KennelReservation existing : kennelReservations) {
+        // Átfedést vizsgálunk napi szinten
+        if (datesOverlapOnDay(newReservation, existing, day)) {
+          overlappingCount++;
+        }
+        if (overlappingCount > maxKennels) {
+          return false; // Túl sok foglalás van
+        }
+      }
+    }
+    return true; // Ha sosem lépte túl a maximumot
+  }
+
+  private boolean datesOverlapOnDay(KennelReservation newRes, KennelReservation existingRes, int day) {
+    // Lekérjük az adott napra vonatkozó feltételeket
+    int startDay1 = newRes.getStartDate().dayCounter();
+    int endDay1 = newRes.getEndDate().dayCounter();
+    int startDay2 = existingRes.getStartDate().dayCounter();
+    int endDay2 = existingRes.getEndDate().dayCounter();
+
+    // Az átfedés akkor áll fenn, ha a nap a két foglalás valamelyikének intervallumában van
+    return day >= startDay1 && day <= endDay1 && day >= startDay2 && day <= endDay2;
+  }
+
   public boolean dateChecker(KennelReservation reservation)
   {
     int availableKennelsOriginally = 10;
@@ -34,7 +67,7 @@ public class KennelReservationList
         availableKennelsOriginally--;
       }
     }
-    return availableKennelsOriginally != 0;
+    return availableKennelsOriginally == 0;
   }
   /**
    * Adds a new reservation to the list.

@@ -806,7 +806,7 @@ public class ViaPetsController
 
         KennelReservation reservation = new KennelReservation(kennelPrice,
             reservationPet, reservationCustomer, myStartDate, myEndDate);
-        if (allReservations.dateChecker(reservation))
+        if (!allReservations.canAddReservationWithoutOverlap(reservation))
         {
           Alert alert = new Alert(Alert.AlertType.WARNING);
           alert.setTitle("Capacity Full");
@@ -814,13 +814,16 @@ public class ViaPetsController
           alert.setContentText("No more kennel reservations can make.");
           alert.showAndWait();
         }
-        modelManager.addKennelReservation(reservation);
-        updateKennelBox();
+        else
+        {
+          modelManager.addKennelReservation(reservation);
+          updateKennelBox();
 
-        reservationFieldPrice.clear();
-        startDate.setValue(null);
-        endDate.setValue(null);
-        System.out.println("reservation added");
+          reservationFieldPrice.clear();
+          startDate.setValue(null);
+          endDate.setValue(null);
+          System.out.println("reservation added");
+        }
       }
     }
   }

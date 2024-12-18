@@ -113,22 +113,55 @@ public class SaleList
    */
   public boolean equals(Object obj)
   {
-    if(obj == null || obj.getClass() != getClass())
+    // Check if the object is null or of a different class
+    if(obj == null || obj.getClass() != getClass()) // O(1) + O(1) for the checks
     {
-      return false;
+      return false; // O(1)
     }
-    SaleList tempSaleList = (SaleList)obj;
-    if(tempSaleList.getAllNumberOfSales() != getAllNumberOfSales())
+
+    // Cast the object to SaleList
+    SaleList tempSaleList = (SaleList)obj; // O(1)
+
+    // Compare the total number of sales
+    if(tempSaleList.getAllNumberOfSales() != getAllNumberOfSales()) // O(1)
     {
-      return false;
+      return false; // O(1)
     }
-    for(int i = 0; i < saleList.size(); i++)
+
+    // Compare each sale in the list
+    for(int i = 0; i < saleList.size(); i++) // O(n), where n = saleList.size()
     {
-      if(!saleList.get(i).equals(tempSaleList.getSale(i)))
+      if(!saleList.get(i).equals(tempSaleList.getSale(i))) // O(1) for get + O(k) for equals
       {
-        return false;
+        return false; // O(1)
       }
     }
-    return true;
+
+    return true; // O(1)
+
+    /*
+    Complexity Analysis:
+    - Line 3-5: Null check and class check take constant time -> O(1).
+    - Line 8: Casting an object to a specific type is constant -> O(1).
+    - Line 11: Comparing two integers (or simple types) is constant -> O(1).
+    - Line 15-19: A loop runs 'n' times (n = size of saleList).
+        - Each iteration involves:
+            1. `saleList.get(i)`: Constant time -> O(1).
+            2. `tempSaleList.getSale(i)`: Constant time -> O(1).
+            3. `equals` method on each object: Let it be O(k), where 'k' is the complexity of comparing sales.
+        - Therefore, each iteration is O(k).
+
+    - Total for the loop: O(n * k), where 'n' is the size of the list and 'k' is the complexity of the equals method for a sale object.
+
+    Dominating Term Analysis:
+    - The dominating term is the for loop: O(n * k).
+
+    Time Complexity:
+    - T(n) = O(1) + O(1) + O(1) + O(n * k) + O(1) = O(n * k).
+
+    Optimization Suggestion:
+    - If `equals` in Sale objects (k) can be optimized, the overall complexity will decrease.
+    - If the list sizes are known to be small, the practical impact of this loop is minimal.
+    */
   }
 }

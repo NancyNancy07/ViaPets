@@ -7,7 +7,7 @@
       <day>1</day>
     </date>
     <finalPrice>1000.0</finalPrice>
-    <time>22:47:24</time>
+    <time>18:44:20</time>
     <pet>
       <gender>Male</gender>
       <color>Brown</color>
@@ -30,7 +30,7 @@
       <day>1</day>
     </date>
     <finalPrice>400.0</finalPrice>
-    <time>22:47:24</time>
+    <time>18:44:20</time>
     <pet>
       <gender>Female</gender>
       <color>White</color>
@@ -53,7 +53,7 @@
       <day>1</day>
     </date>
     <finalPrice>600.0</finalPrice>
-    <time>22:47:24</time>
+    <time>18:44:20</time>
     <pet>
       <gender>Male</gender>
       <color>Grey</color>
@@ -76,7 +76,7 @@
       <day>1</day>
     </date>
     <finalPrice>800.0</finalPrice>
-    <time>22:47:24</time>
+    <time>18:44:20</time>
     <pet>
       <gender>Female</gender>
       <color>Green</color>
@@ -99,7 +99,7 @@
       <day>1</day>
     </date>
     <finalPrice>300.0</finalPrice>
-    <time>22:47:24</time>
+    <time>18:44:20</time>
     <pet>
       <gender>Male</gender>
       <color>Black</color>
