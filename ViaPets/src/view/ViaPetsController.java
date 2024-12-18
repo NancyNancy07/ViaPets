@@ -23,6 +23,7 @@ public class ViaPetsController
   @FXML private TableColumn<Pet, String> petColor;
   @FXML private TableColumn<Pet, String> petComments;
   @FXML private TableColumn<Pet, String> petPrice;
+  @FXML private TableColumn<Pet, String> petSpecificInfo;
   @FXML private Pane petDataDisplay;
   @FXML private TextField petNameField;
   @FXML private TextField speciesField;
@@ -46,6 +47,12 @@ public class ViaPetsController
   @FXML private TextField newColorField;
   @FXML private TextField newCommentsField;
   @FXML private TextField newPriceField;
+  @FXML private HBox newSpecificBox;
+  @FXML private HBox newSpecificBox2;
+  @FXML private TextField newSpecificField;
+  @FXML private TextField newSpecificField2;
+  @FXML private Label newSpecificLabel1;
+  @FXML private Label newSpecificLabel2;
   @FXML private ComboBox<String> newPetSpeciesComboBox2;
 
   @FXML private Tab kennelReservationTab;
@@ -89,6 +96,12 @@ public class ViaPetsController
   @FXML private Button updateButton2;
   @FXML private Button editButton2;
   @FXML private Button removeButton2;
+  @FXML private HBox newSpecificBoxReservation;
+  @FXML private HBox newSpecificBox2Reservation;
+  @FXML private TextField newSpecificFieldReservation;
+  @FXML private TextField newSpecificField2Reservation;
+  @FXML private Label newSpecificLabel1Reservation;
+  @FXML private Label newSpecificLabel2Reservation;
 
   @FXML private Tab saleTab;
   @FXML private Button removeButton1;
@@ -135,6 +148,7 @@ public class ViaPetsController
     updatePetButton.setVisible(false);
     updateButton2.setVisible(false);
     petSpecies();
+    selectedSpecies();
   }
 
   public void updateCustomerBox() throws ParserException
@@ -305,7 +319,44 @@ public class ViaPetsController
           String.valueOf(data.getValue().getComment())));
       petPrice.setCellValueFactory(data -> new SimpleStringProperty(
           String.valueOf(data.getValue().getPrice())));
+      petSpecificInfo.setCellValueFactory(data -> {
+        Pet pet = data.getValue();
+        String specificInfo = "";
 
+        if (pet instanceof Dog)
+        {
+          specificInfo = "Breed: " + ((Dog) pet).getBreed() + ", Breeder: "
+              + ((Dog) pet).getBreeder();
+        }
+        else if (pet instanceof Cat)
+        {
+          specificInfo = "Breed: " + ((Cat) pet).getBreed() + ", Breeder: "
+              + ((Cat) pet).getBreeder();
+        }
+        else if (pet instanceof Bird)
+        {
+          specificInfo = "Preferred Food: " + ((Bird) pet).getPreferredFood();
+        }
+        else if (pet instanceof Fish)
+        {
+          specificInfo =
+              "Predator: " + (((Fish) pet).isPredator() ? "Yes" : "No")
+                  + ", Fresh Water: " + (((Fish) pet).isFreshWater() ?
+                  "Yes" :
+                  "No");
+          ;
+        }
+        else if (pet instanceof Rodent)
+        {
+          specificInfo =
+              "Aggressive: " + (((Rodent) pet).isAggressive() ? "Yes" : "No");
+        }
+        else if (pet instanceof Various)
+        {
+          specificInfo = "-";
+        }
+        return new SimpleStringProperty(specificInfo);
+      });
       //      adding a listener to know which row is selected
       petTable.getSelectionModel().selectedItemProperty()
           .addListener((old, current, newP) -> {
@@ -320,19 +371,60 @@ public class ViaPetsController
 
   public void showPetData(Pet selectedPet)
   {
+    specialInfo.setVisible(false);
+    specialInfo2.setVisible(false);
+    specialLabel.setText("");
+    specialLabel2.setText("");
+    specialField.setText("");
+    specialField2.setText("");
+
     if (selectedPet != null && petTab.isSelected())
     {
       petDataDisplay.setVisible(true);
+
       if (selectedPet instanceof Dog)
       {
-        System.out.println(selectedPet);
-
         specialInfo.setVisible(true);
         specialInfo2.setVisible(true);
+        specialLabel.setText("Breed:");
+        specialLabel2.setText("Breeder:");
         specialField.setText(((Dog) selectedPet).getBreed());
         specialField2.setText(((Dog) selectedPet).getBreeder());
-
       }
+      else if (selectedPet instanceof Cat)
+      {
+        specialInfo.setVisible(true);
+        specialInfo2.setVisible(true);
+        specialLabel.setText("Breed:");
+        specialLabel2.setText("Breeder:");
+        specialField.setText(((Cat) selectedPet).getBreed());
+        specialField2.setText(((Cat) selectedPet).getBreeder());
+      }
+      else if (selectedPet instanceof Bird)
+      {
+        specialInfo.setVisible(true);
+        specialLabel.setText("Preferred Food:");
+        specialField.setText(((Bird) selectedPet).getPreferredFood());
+      }
+      else if (selectedPet instanceof Fish)
+      {
+        specialInfo.setVisible(true);
+        specialInfo2.setVisible(true);
+        specialLabel.setText("Is Fresh Water:");
+        specialField.setText(
+            ((Fish) selectedPet).isFreshWater() ? "Yes" : "No");
+
+        specialLabel2.setText("Is Predator:");
+        specialField2.setText(((Fish) selectedPet).isPredator() ? "Yes" : "No");
+      }
+      else if (selectedPet instanceof Rodent)
+      {
+        specialInfo.setVisible(true);
+        specialLabel.setText("Is Aggressive:");
+        specialField.setText(
+            ((Rodent) selectedPet).isAggressive() ? "Yes" : "No");
+      }
+
       petNameField.setText(selectedPet.getName());
       speciesField.setText(selectedPet.getSpecies());
       ageField.setText(String.valueOf(selectedPet.getAge()));
@@ -386,6 +478,8 @@ public class ViaPetsController
     speciesField.setDisable(true);
     genderField.setDisable(true);
     colorField.setDisable(true);
+    specialField.setDisable(true);
+    specialField2.setDisable(true);
   }
 
   public void UpdatePetData() throws ParserException
@@ -435,6 +529,12 @@ public class ViaPetsController
         alert.showAndWait();
       }
       modelManager.updatePet(currentIndex, selectedPet);
+
+      speciesField.setDisable(false);
+      genderField.setDisable(false);
+      colorField.setDisable(false);
+      specialField.setDisable(false);
+      specialField2.setDisable(false);
       setCloseButton();
       updatePetBox();
     }
@@ -494,8 +594,120 @@ public class ViaPetsController
     }
   }
 
+  public void selectedSpecies()
+  {
+    if (petTab.isSelected())
+    {
+      newSpecificBox.setVisible(false);
+      newSpecificBox2.setVisible(false);
+
+      String species = newPetSpeciesComboBox.getValue();
+
+      if (species != null && species.equals("Dog"))
+      {
+        newSpecificBox.setVisible(true);
+        newSpecificBox2.setVisible(true);
+      }
+
+      newPetSpeciesComboBox.valueProperty()
+          .addListener((observable, oldValue, newValue) -> {
+            if (newValue != null && newValue.equals("Dog"))
+            {
+              newSpecificBox.setVisible(true);
+              newSpecificBox2.setVisible(true);
+            }
+            else if (newValue != null && newValue.equals("Cat"))
+            {
+              newSpecificBox.setVisible(true);
+              newSpecificBox2.setVisible(true);
+            }
+            else if (newValue != null && newValue.equals("Bird"))
+            {
+              newSpecificBox.setVisible(true);
+              newSpecificBox2.setVisible(false);
+
+              newSpecificLabel1.setText("Preferred Food:");
+            }
+            else if (newValue != null && newValue.equals("Rodent"))
+            {
+              newSpecificBox.setVisible(true);
+              newSpecificBox2.setVisible(false);
+
+              newSpecificLabel1.setText("Aggressive:");
+            }
+            else if (newValue != null && newValue.equals("Fish"))
+            {
+              newSpecificBox.setVisible(true);
+              newSpecificBox2.setVisible(true);
+              newSpecificLabel1.setText("Predator:");
+              newSpecificLabel2.setText("Fresh Water:");
+            }
+            else
+            {
+              // Hide the breed and breeder fields for any other species
+              newSpecificBox.setVisible(false);
+              newSpecificBox2.setVisible(false);
+            }
+          });
+    }
+    if (kennelReservationTab.isSelected())
+    {
+      newSpecificBoxReservation.setVisible(false);
+      newSpecificBox2Reservation.setVisible(false);
+
+      String species = newPetSpeciesComboBox2.getValue();
+
+      if (species != null && species.equals("Dog"))
+      {
+        newSpecificBoxReservation.setVisible(true);
+        newSpecificBox2Reservation.setVisible(true);
+      }
+
+      newPetSpeciesComboBox2.valueProperty()
+          .addListener((observable, oldValue, newValue) -> {
+            if (newValue != null && newValue.equals("Dog"))
+            {
+              newSpecificBoxReservation.setVisible(true);
+              newSpecificBox2Reservation.setVisible(true);
+            }
+            else if (newValue != null && newValue.equals("Cat"))
+            {
+              newSpecificBoxReservation.setVisible(true);
+              newSpecificBox2Reservation.setVisible(true);
+            }
+            else if (newValue != null && newValue.equals("Bird"))
+            {
+              newSpecificBoxReservation.setVisible(true);
+              newSpecificBox2Reservation.setVisible(false);
+
+              newSpecificLabel1Reservation.setText("Preferred Food:");
+            }
+            else if (newValue != null && newValue.equals("Rodent"))
+            {
+              newSpecificBoxReservation.setVisible(true);
+              newSpecificBox2Reservation.setVisible(false);
+
+              newSpecificLabel1Reservation.setText("Aggressive:");
+            }
+            else if (newValue != null && newValue.equals("Fish"))
+            {
+              newSpecificBoxReservation.setVisible(true);
+              newSpecificBox2Reservation.setVisible(true);
+              newSpecificLabel1Reservation.setText("Predator:");
+              newSpecificLabel2Reservation.setText("Fresh Water:");
+            }
+            else
+            {
+              newSpecificBoxReservation.setVisible(false);
+              newSpecificBox2Reservation.setVisible(false);
+            }
+          });
+    }
+  }
+
   public void addPet() throws ParserException
   {
+
     String name = newPetName.getText();
     String species = newPetSpeciesComboBox.getValue();
     String ageText = newPetAge.getText();
@@ -503,10 +715,15 @@ public class ViaPetsController
     String color = newColorField.getText();
     String priceText = newPriceField.getText();
     String comment = newCommentsField.getText();
-
+    String specificField = newSpecificField.getText();
+    String specificField2 = newSpecificField2.getText();
     if (name.isEmpty() || species.isEmpty() || ageText.isEmpty()
         || gender.isEmpty() || color.isEmpty() || priceText.isEmpty()
-        || comment.isEmpty())
+        || comment.isEmpty() || (
+        species.equals("Dog") || species.equals("Cat") || (species.equals(
+            "Fish")) ?
+            (specificField.isEmpty() || specificField2.isEmpty()) :
+            specificField.isEmpty()))
     {
       Alert alert = new Alert(Alert.AlertType.WARNING);
       alert.setTitle("Missing Fields");
@@ -531,8 +748,44 @@ public class ViaPetsController
           return;
         }
 
-        Pet newPet = new Pet(species, age, gender, color, name, comment, price);
-        modelManager.addPet(newPet);
+        Pet newPet = null;
+
+        switch (species)
+        {
+          case "Dog":
+            newPet = new Dog(species, age, gender, color, name, comment, price,
+                specificField, specificField2);
+            break;
+          case "Cat":
+            newPet = new Cat(species, age, gender, color, name, comment, price,
+                specificField, specificField2);
+            break;
+          case "Bird":
+            newPet = new Bird(species, age, gender, color, name, comment, price,
+                specificField);
+            break;
+          case "Fish":
+            boolean fresh = Boolean.getBoolean(specificField);
+            boolean predator = Boolean.getBoolean(specificField2);
+            newPet = new Fish(species, age, gender, color, name, comment, price,
+                fresh, predator);
+            break;
+          case "Rodent":
+            boolean isAggressive = Boolean.getBoolean(specificField);
+
+            newPet = new Rodent(species, age, gender, color, name, comment,
+                price, isAggressive);
+            break;
+          default:
+            newPet = new Various(species, age, gender, color, name, comment,
+                price);
+            break;
+        }
+
+        if (newPet != null)
+        {
+          modelManager.addPet(newPet);
+        }
       }
       catch (NumberFormatException e)
       {
@@ -787,11 +1040,11 @@ public class ViaPetsController
         kennelReservationTable.getItems().add(reservationData);
       }
 
-      reservationPetName.setCellValueFactory(
-          data -> new SimpleStringProperty(data.getValue().getPet().getName()));
+      reservationPetName.setCellValueFactory(data -> new SimpleStringProperty(
+          data.getValue().getPet().toString()));
       reservationCustomerName.setCellValueFactory(
           data -> new SimpleStringProperty(
-              data.getValue().getCustomer().getName()));
+              data.getValue().getCustomer().toString()));
       reservationPrice.setCellValueFactory(data -> new SimpleStringProperty(
           String.valueOf(data.getValue().getPrice())));
       reservationStartDate.setCellValueFactory(data -> new SimpleStringProperty(
@@ -810,13 +1063,13 @@ public class ViaPetsController
 
       for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
       {
-        String name = allCustomers.getCustomer(i).getName();
+        String name = allCustomers.getCustomer(i).toString();
         reservationCustomerComboBox.getItems().add(name);
       }
 
       for (int i = 0; i < allPets.getNumberOfPets(); i++)
       {
-        String name = allPets.getPet(i).getName();
+        String name = allPets.getPet(i).toString();
         reservationPetComboBox.getItems().add(name);
       }
 
@@ -958,6 +1211,10 @@ public class ViaPetsController
       setCloseButton();
       updateButton2.setVisible(false);
       editButton2.setVisible(true);
+      genderFieldReservation.setDisable(false);
+      colorFieldReservation.setDisable(false);
+      commentsFieldReservation.setEditable(false);
+      priceFieldReservation.setDisable(false);
       updateKennelBox();
       updateCustomerBox();
     }
@@ -1070,51 +1327,136 @@ public class ViaPetsController
     PetList allPets = modelManager.readPets();
 
     String name = reservationNewPetName.getText();
-    String species = reservationNewPetSpecies.getText();
-    int age = Integer.parseInt(reservationNewPetAge.getText());
+    String species = newPetSpeciesComboBox2.getValue();
+    String ageText = (reservationNewPetAge.getText());
     String gender = reservationNewPetGender.getText();
     String color = reservationNewPetColor.getText();
-    double price = Double.parseDouble(reservationNewPetPrice.getText());
+    String priceText = (reservationNewPetPrice.getText());
     String comments = reservationNewPetComments.getText();
+    String specificField = newSpecificFieldReservation.getText();
+    String specificField2 = newSpecificField2Reservation.getText();
 
-    Pet pet = new Pet(species, age, gender, color, name, comments, price);
-
-    boolean petExists = false;
-
-    for (int i = 0; i < allPets.getNumberOfPets(); i++)
+    if (species == null || species.trim().isEmpty())
     {
-      Pet existingPet = allPets.getPet(i);
-      if (pet.equals(existingPet))
-      {
-        petExists = true;
-        break;
-      }
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Missing Species");
+      alert.setHeaderText(null);
+      alert.setContentText("Species is required. Please select a species.");
+      alert.showAndWait();
+      return;
     }
-    if (!petExists)
+    if (name.isEmpty() || species.isEmpty() || ageText.isEmpty()
+        || gender.isEmpty() || color.isEmpty() || priceText.isEmpty()
+        || comments.isEmpty() || (
+        species.equals("Dog") || species.equals("Cat") || (species.equals(
+            "Fish")) ?
+            (specificField.isEmpty() || specificField2.isEmpty()) :
+            specificField.isEmpty()))
     {
-      modelManager.addPet(pet);
-      updateKennelBox();
-      updateSaleBox();
-      updatePetBox();
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Missing Fields");
+      alert.setHeaderText(null);
+      alert.setContentText("Please fill all the fields to add a pet.");
+      alert.showAndWait();
     }
     else
     {
-      Alert alert = new Alert(Alert.AlertType.WARNING);
-      alert.setTitle("Duplicate Pet");
-      alert.setHeaderText(null);
-      alert.setContentText("This pet already exists in the system.");
-      alert.showAndWait();
-      System.out.println("Pet already exists");
+      try
+      {
+        int age = Integer.parseInt(ageText);
+        double price = Double.parseDouble(priceText);
 
+        if (age < 0 || price < 0)
+        {
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+          alert.setTitle("Invalid Value");
+          alert.setHeaderText(null);
+          alert.setContentText("Cannot be negative.");
+          alert.showAndWait();
+          return;
+        }
+
+        Pet newPet = null;
+
+        switch (species)
+        {
+          case "Dog":
+            newPet = new Dog(species, age, gender, color, name, comments, price,
+                specificField, specificField2);
+            break;
+          case "Cat":
+            newPet = new Cat(species, age, gender, color, name, comments, price,
+                specificField, specificField2);
+            break;
+          case "Bird":
+            newPet = new Bird(species, age, gender, color, name, comments,
+                price, specificField);
+            break;
+          case "Fish":
+            boolean fresh = Boolean.getBoolean(specificField);
+            boolean predator = Boolean.getBoolean(specificField2);
+            newPet = new Fish(species, age, gender, color, name, comments,
+                price, fresh, predator);
+            break;
+          case "Rodent":
+            boolean isAggressive = Boolean.getBoolean(specificField);
+
+            newPet = new Rodent(species, age, gender, color, name, comments,
+                price, isAggressive);
+            break;
+          default:
+            newPet = new Various(species, age, gender, color, name, comments,
+                price);
+            break;
+        }
+
+        boolean petExists = false;
+
+        for (int i = 0; i < allPets.getNumberOfPets(); i++)
+        {
+          Pet existingPet = allPets.getPet(i);
+          if (newPet.equals(existingPet))
+          {
+            petExists = true;
+            break;
+          }
+        }
+        if (!petExists)
+        {
+          modelManager.addPet(newPet);
+          updateKennelBox();
+          updateSaleBox();
+          updatePetBox();
+        }
+        else
+        {
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+          alert.setTitle("Duplicate Pet");
+          alert.setHeaderText(null);
+          alert.setContentText("This pet already exists in the system.");
+          alert.showAndWait();
+          System.out.println("Pet already exists");
+
+        }
+        reservationNewPetName.clear();
+        reservationNewPetAge.clear();
+        reservationNewPetGender.clear();
+        reservationNewPetComments.clear();
+        reservationNewPetColor.clear();
+        reservationNewPetPrice.clear();
+        reservationNewPetDialog.setVisible(false);
+
+      }
+      catch (NumberFormatException e)
+      {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Invalid Input");
+        alert.setHeaderText(null);
+        alert.setContentText(
+            "Please enter valid numeric values for age and price.");
+        alert.showAndWait();
+      }
     }
-    reservationNewPetName.clear();
-    reservationNewPetSpecies.clear();
-    reservationNewPetAge.clear();
-    reservationNewPetGender.clear();
-    reservationNewPetComments.clear();
-    reservationNewPetColor.clear();
-    reservationNewPetPrice.clear();
-    reservationNewPetDialog.setVisible(false);
   }
 
   public void addReservation() throws ParserException
@@ -1136,7 +1478,7 @@ public class ViaPetsController
       Customer reservationCustomer = null;
       for (int i = 0; i < allCustomers.getAllNumberOfCustomers(); i++)
       {
-        if (customerName.equals(allCustomers.getCustomer(i).getName()))
+        if (customerName.equals(allCustomers.getCustomer(i).toString()))
         {
           reservationCustomer = allCustomers.getCustomer(i);
         }
@@ -1146,7 +1488,7 @@ public class ViaPetsController
       Pet reservationPet = null;
       for (int i = 0; i < allPets.getNumberOfPets(); i++)
       {
-        if (petName.equals(allPets.getPet(i).getName()))
+        if (petName.equals(allPets.getPet(i).toString()))
         {
           allPets.getPet(i).setPrice(0);
           reservationPet = allPets.getPet(i);
@@ -1235,23 +1577,35 @@ public class ViaPetsController
     if (customerTab.isSelected())
     {
       customerDataDisplay.setVisible(false);
+      editButton.setVisible(true);
+      updateButton.setVisible(false);
+
     }
     else if (kennelReservationTab.isSelected())
     {
       reservationDataDisplay.setVisible(false);
+      genderFieldReservation.setDisable(false);
+      colorFieldReservation.setDisable(false);
+      commentsFieldReservation.setEditable(false);
+      priceFieldReservation.setDisable(false);
+      reservationNewCustomerDialog.setVisible(false);
+      reservationNewPetDialog.setVisible(false);
     }
     else if (petTab.isSelected())
     {
       petDataDisplay.setVisible(false);
+      speciesField.setDisable(false);
+      genderField.setDisable(false);
+      colorField.setDisable(false);
+      specialField.setDisable(false);
+      specialField2.setDisable(false);
+      editPetButton.setVisible(true);
+      updatePetButton.setVisible(false);
     }
-    editButton.setVisible(true);
-    updateButton.setVisible(false);
-    editPetButton.setVisible(true);
-    updatePetButton.setVisible(false);
-    saleNewCustomerDialog.setVisible(false);
-    reservationNewCustomerDialog.setVisible(false);
-    reservationNewPetDialog.setVisible(false);
-
+    else if (saleTab.isSelected())
+    {
+      saleNewCustomerDialog.setVisible(false);
+    }
   }
 
   public void tabChanged() throws ParserException

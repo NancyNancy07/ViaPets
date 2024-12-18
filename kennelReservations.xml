@@ -14,6 +14,7 @@
       <price>0.0</price>
       <name>Buddy</name>
       <comment>Very energetic and playful</comment>
+      <type>Pet</type>
       <age>2</age>
     </pet>
     <startDate>
@@ -41,6 +42,7 @@
       <price>0.0</price>
       <name>Whiskers</name>
       <comment>Loves cuddling and napping</comment>
+      <type>Pet</type>
       <age>3</age>
     </pet>
     <startDate>
@@ -52,33 +54,6 @@
       <emailAddress>janesmith@email.com</emailAddress>
       <phoneNumber>23456789</phoneNumber>
       <name>Jane Smith</name>
-    </customer>
-  </kennelReservations>
-  <kennelReservations>
-    <endDate>
-      <month>4</month>
-      <year>2025</year>
-      <day>30</day>
-    </endDate>
-    <price>100.0</price>
-    <pet>
-      <gender>Male</gender>
-      <color>Grey</color>
-      <species>Rabbit</species>
-      <price>0.0</price>
-      <name>Thumper</name>
-      <comment>Curious and loves carrots</comment>
-      <age>1</age>
-    </pet>
-    <startDate>
-      <month>4</month>
-      <year>2025</year>
-      <day>12</day>
-    </startDate>
-    <customer>
-      <emailAddress>bobbrown@email.com</emailAddress>
-      <phoneNumber>45689123</phoneNumber>
-      <name>Bob Brown</name>
     </customer>
   </kennelReservations>
   <kennelReservations>
@@ -95,6 +70,7 @@
       <price>0.0</price>
       <name>Polly</name>
       <comment>Likes to mimic sounds</comment>
+      <type>Pet</type>
       <age>4</age>
     </pet>
     <startDate>
@@ -122,6 +98,7 @@
       <price>0.0</price>
       <name>Rex</name>
       <comment>Loyal and friendly</comment>
+      <type>Pet</type>
       <age>5</age>
     </pet>
     <startDate>
@@ -135,5 +112,64 @@
       <name>David Green</name>
     </customer>
   </kennelReservations>
-  <currentNumberOfReservations>5</currentNumberOfReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>29</day>
+    </endDate>
+    <price>100.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>Black</color>
+      <species>Dog</species>
+      <price>0.0</price>
+      <name>Rex</name>
+      <breeder>Best Breeder</breeder>
+      <comment>Loyal and friendly</comment>
+      <type>Dog</type>
+      <age>5</age>
+      <breed>German Shepherd</breed>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>25</day>
+    </startDate>
+    <customer>
+      <emailAddress>nn@gmail.com</emailAddress>
+      <phoneNumber>1234567876</phoneNumber>
+      <name>Nancy</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>28</day>
+    </endDate>
+    <price>999.0</price>
+    <pet>
+      <gender>cxkjv</gender>
+      <color>ncvxc</color>
+      <isAggressive>false</isAggressive>
+      <species>Rodent</species>
+      <price>0.0</price>
+      <name>hdvhdæ</name>
+      <comment>jkl</comment>
+      <type>Rodent</type>
+      <age>89</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>23</day>
+    </startDate>
+    <customer>
+      <emailAddress>evab@email.com</emailAddress>
+      <phoneNumber>78912456</phoneNumber>
+      <name>Eva Black</name>
+    </customer>
+  </kennelReservations>
+  <currentNumberOfReservations>7</currentNumberOfReservations>
 </KennelReservationList>

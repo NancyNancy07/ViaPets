@@ -40,13 +40,13 @@ public class Dog extends Pet implements Serializable
    * @param comment any additional comments about the dog
    * @param price the price of the dog
    */
-  public Dog(String species, int age, String gender, String color,
-      String comment, double price)
-  {
-    super(species, age, gender, color, comment, price);
-    this.breed = breed;
-    this.breeder = breeder;
-  }
+//  public Dog(String species, int age, String gender, String color,
+//      String comment, double price)
+//  {
+//    super(species, age, gender, color, comment, price);
+//    this.breed = breed;
+//    this.breeder = breeder;
+//  }
 
   /**
    * Gets the breed of the dog.

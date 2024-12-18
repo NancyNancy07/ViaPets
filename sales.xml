@@ -7,7 +7,7 @@
       <day>1</day>
     </date>
     <finalPrice>1000.0</finalPrice>
-    <time>15:58:39</time>
+    <time>17:58:49</time>
     <pet>
       <gender>Male</gender>
       <color>Brown</color>
@@ -15,6 +15,7 @@
       <price>0.0</price>
       <name>Buddy</name>
       <comment>Very energetic and playful</comment>
+      <type>Pet</type>
       <age>2</age>
     </pet>
     <customer>
@@ -30,7 +31,7 @@
       <day>1</day>
     </date>
     <finalPrice>400.0</finalPrice>
-    <time>15:58:39</time>
+    <time>17:58:49</time>
     <pet>
       <gender>Female</gender>
       <color>White</color>
@@ -38,6 +39,7 @@
       <price>0.0</price>
       <name>Whiskers</name>
       <comment>Loves cuddling and napping</comment>
+      <type>Pet</type>
       <age>3</age>
     </pet>
     <customer>
@@ -53,7 +55,7 @@
       <day>1</day>
     </date>
     <finalPrice>600.0</finalPrice>
-    <time>15:58:39</time>
+    <time>17:58:49</time>
     <pet>
       <gender>Male</gender>
       <color>Grey</color>
@@ -61,6 +63,7 @@
       <price>0.0</price>
       <name>Thumper</name>
       <comment>Curious and loves carrots</comment>
+      <type>Pet</type>
       <age>1</age>
     </pet>
     <customer>
@@ -76,7 +79,7 @@
       <day>1</day>
     </date>
     <finalPrice>800.0</finalPrice>
-    <time>15:58:39</time>
+    <time>17:58:49</time>
     <pet>
       <gender>Female</gender>
       <color>Green</color>
@@ -84,6 +87,7 @@
       <price>0.0</price>
       <name>Polly</name>
       <comment>Likes to mimic sounds</comment>
+      <type>Pet</type>
       <age>4</age>
     </pet>
     <customer>
@@ -99,7 +103,7 @@
       <day>1</day>
     </date>
     <finalPrice>300.0</finalPrice>
-    <time>15:58:39</time>
+    <time>17:58:49</time>
     <pet>
       <gender>Male</gender>
       <color>Black</color>
@@ -107,6 +111,7 @@
       <price>0.0</price>
       <name>Rex</name>
       <comment>Loyal and friendly</comment>
+      <type>Pet</type>
       <age>5</age>
     </pet>
     <customer>

@@ -12,48 +12,48 @@ public class LoadInitialData
   public static void main(String[] args)
       throws IOException, ClassNotFoundException, ParserException
   {
-    //    Customer Data
+    // Customer Data
     CustomerList customers = new CustomerList();
     String[] customerArr = null;
 
-    //    Pet Data
+    // Pet Data
     PetList pets = new PetList();
 
-    Dog pet1 = new Dog("Dog", 2, "Male", "Brown", "Buddy",
+    Pet pet1 = new Dog("Dog", 2, "Male", "Brown", "Buddy",
         "Very energetic and playful", 600.0, "Labrador", "John's Breeder");
     Pet pet2 = new Cat("Cat", 3, "Female", "White", "Whiskers",
         "Loves cuddling and napping", 500.0, "Persian", "New Breeder");
-    Pet pet3 = new Rodent("Rabbit", 1, "Male", "Grey", "Thumper",
+    Pet pet3 = new Rodent("Rodent", 1, "Male", "Grey", "Thumper",
         "Curious and loves carrots", 100.0, false);
-    Pet pet4 = new Bird("Parrot", 4, "Female", "Green", "Polly",
+    Pet pet4 = new Bird("Bird", 4, "Female", "Green", "Polly",
         "Likes to mimic sounds", 1000.0, "Chilli");
-    Pet pet5 = new Fish("Goldfish", 1, "Male", "Orange", "Bubbles",
+    Pet pet5 = new Fish("Fish", 1, "Male", "Orange", "Bubbles",
         "Calm and graceful", 50.0, false, true);
-    Pet pet6 = new Various("Hamster", 2, "Female", "Golden", "Squeaky",
+    Pet pet6 = new Various("Various", 2, "Female", "Golden", "Squeaky",
         "Likes to run in a wheel", 20.0);
     Pet pet7 = new Dog("Dog", 5, "Male", "Black", "Rex", "Loyal and friendly",
         500.0, "German Shepherd", "Best Breeder");
     Pet pet8 = new Cat("Cat", 4, "Male", "Gray", "Shadow",
         "Independent and quiet", 400.0, "Maine Coon", "Good Breeder");
-    Pet pet9 = new Rodent("Gerbil", 1, "Female", "Brown", "Nibbles",
+    Pet pet9 = new Rodent("Rodent", 1, "Female", "Brown", "Nibbles",
         "Likes to burrow", 30.0, true);
-    Pet pet10 = new Bird("Canary", 3, "Male", "Yellow", "Sunny",
+    Pet pet10 = new Bird("Bird", 3, "Male", "Yellow", "Sunny",
         "Sings melodious tunes", 80.0, "Carrots");
-    Pet pet11 = new Fish("Betta", 2, "Female", "Blue", "Finny",
+    Pet pet11 = new Fish("Fish", 2, "Female", "Blue", "Finny",
         "Aggressive but beautiful", 25.0, true, false);
-    Pet pet12 = new Various("Ferret", 3, "Male", "White", "Zippy",
+    Pet pet12 = new Various("Various", 3, "Male", "White", "Zippy",
         "Energetic and curious", 200.0);
     Pet pet13 = new Dog("Dog", 6, "Female", "Brown", "Bella",
         "Friendly and protective", 700.0, "Golden Retriever", "Lovely Breeder");
     Pet pet14 = new Cat("Cat", 5, "Female", "Black", "Midnight",
         "Quiet and graceful", 550.0, "Sphynx", "Joyful Breeder");
-    Pet pet15 = new Rodent("Hamster", 2, "Male", "White", "Fluffy",
+    Pet pet15 = new Rodent("Rodent", 2, "Male", "White", "Fluffy",
         "Loves to run on wheels", 15.0, false);
-    Pet pet16 = new Bird("Cockatoo", 2, "Male", "White", "Charlie",
+    Pet pet16 = new Bird("Bird", 2, "Male", "White", "Charlie",
         "Very vocal and playful", 1200.0, "Strawberries");
-    Pet pet17 = new Fish("Tetra", 1, "Female", "Silver", "Twinkle",
+    Pet pet17 = new Fish("Fish", 1, "Female", "Silver", "Twinkle",
         "Peaceful community fish", 15.0, false, true);
-    Pet pet18 = new Various("Chinchilla", 1, "Male", "Gray", "Dusty",
+    Pet pet18 = new Various("Various", 1, "Male", "Gray", "Dusty",
         "Loves dust baths", 350.0);
     Pet pet19 = new Dog("Dog", 4, "Female", "Spotted", "Daisy", "Loves running",
         600.0, "Dalmatian", "Elite Breeder");
@@ -82,7 +82,7 @@ public class LoadInitialData
     pets.addPet(pet19);
     pets.addPet(pet20);
 
-    //    sale data
+    // Sale Data
     Pet newPet1 = new Pet("Dog", 2, "Male", "Brown", "Buddy",
         "Very energetic and playful", 600.0);
     Pet newPet2 = new Pet("Cat", 3, "Female", "White", "Whiskers",
@@ -105,9 +105,7 @@ public class LoadInitialData
     Customer customer5 = new Customer("David Green", "67801345",
         "davidg@email.com");
 
-
-
-//    sale
+    // Sale
     MyDate saleDate1 = new MyDate(1, 3, 2024);
     MyDate saleDate2 = new MyDate(1, 3, 2024);
     MyDate saleDate3 = new MyDate(1, 3, 2024);
@@ -127,6 +125,7 @@ public class LoadInitialData
     sales.addSale(sale4);
     sales.addSale(sale5);
 
+    // Reservation Data
     MyDate startDate1 = new MyDate(5, 3, 2025);
     MyDate startDate2 = new MyDate(9, 12, 2024);
     MyDate startDate3 = new MyDate(12, 4, 2025);
@@ -138,7 +137,8 @@ public class LoadInitialData
     MyDate endDate3 = new MyDate(30, 4, 2025);
     MyDate endDate4 = new MyDate(30, 12, 2024);
     MyDate endDate5 = new MyDate(16, 12, 2025);
-    //    kennel data
+
+    // Kennel Data
     KennelReservation reservation1 = new KennelReservation(100.0, newPet1,
         customer1, startDate1, endDate1);
     KennelReservation reservation2 = new KennelReservation(100.0, newPet2,
@@ -164,6 +164,7 @@ public class LoadInitialData
       reservation.getPet().setPrice(0);
     }
 
+    // Read customer data
     try
     {
       customerArr = (String[]) MyFileHandler.readArrayFromTextFile(
@@ -184,22 +185,7 @@ public class LoadInitialData
       System.out.println("File was not found, or could not be opened");
     }
 
-//    try
-//    {
-//      MyFileHandler.writeToBinaryFile("customers.bin", customers);
-//      MyFileHandler.writeToBinaryFile("pets.bin", pets);
-//      MyFileHandler.writeToBinaryFile("sales.bin", sales);
-//      MyFileHandler.writeToBinaryFile("reservations.bin", sales);
-//    }
-//    catch (FileNotFoundException e)
-//    {
-//      System.out.println("Error opening file ");
-//    }
-//    catch (IOException e)
-//    {
-//      System.out.println("IO Error writing to file ");
-//    }
-
+    // Save to XML
     ViaPetsShop viaPetsShop = new ViaPetsShop();
     viaPetsShop.setCustomerList(customers);
     viaPetsShop.setPetList(pets);
@@ -212,11 +198,14 @@ public class LoadInitialData
     modelManager.writePets();
     modelManager.writeSales();
     modelManager.writeKennelReservations();
+
+    // Read and display data
     CustomerList customersFromFile = modelManager.readCustomers();
     PetList petsFromFile = modelManager.readPets();
     SaleList saleFromFile = modelManager.readSales();
     KennelReservationList reservationsFromFile = modelManager.readKennelReservations();
-//   System.out.println(petsFromFile);
+
+    System.out.println(petsFromFile);
     System.out.println("Done");
   }
 }

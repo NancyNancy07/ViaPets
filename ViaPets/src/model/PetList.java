@@ -130,7 +130,17 @@ public class PetList implements Serializable
     String output = "";
     for (int i = 0; i < pets.size(); i++)
     {
-      output += (pets.get(i) + "\n");
+      Pet pet = pets.get(i);
+      // If pet is a Dog, include breed and breeder info
+      if (pet instanceof Dog)
+      {
+        Dog dog = (Dog) pet;
+        output += (pet + " Breed: " + dog.getBreed() + " Breeder: " + dog.getBreeder() + "\n");
+      }
+      else
+      {
+        output += (pet + "\n");
+      }
     }
     return output;
   }

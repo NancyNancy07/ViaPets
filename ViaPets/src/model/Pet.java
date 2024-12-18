@@ -2,6 +2,9 @@ package model;
 
 import java.io.Serializable;
 
+import com.google.gson.annotations.JsonAdapter;
+
+@JsonAdapter(PetTypeAdapter.class)
 /**
  * A class containing of Pet object.
  *

@@ -6,8 +6,11 @@
     <species>Dog</species>
     <price>600.0</price>
     <name>Buddy</name>
+    <breeder>John's Breeder</breeder>
     <comment>Very energetic and playful</comment>
+    <type>Dog</type>
     <age>2</age>
+    <breed>Labrador</breed>
   </pets>
   <pets>
     <gender>Female</gender>
@@ -15,53 +18,67 @@
     <species>Cat</species>
     <price>500.0</price>
     <name>Whiskers</name>
+    <breeder>New Breeder</breeder>
     <comment>Loves cuddling and napping</comment>
+    <type>Cat</type>
     <age>3</age>
+    <breed>Persian</breed>
   </pets>
   <pets>
     <gender>Male</gender>
     <color>Grey</color>
-    <species>Rabbit</species>
+    <isAggressive>false</isAggressive>
+    <species>Rodent</species>
     <price>100.0</price>
     <name>Thumper</name>
     <comment>Curious and loves carrots</comment>
+    <type>Rodent</type>
     <age>1</age>
   </pets>
   <pets>
     <gender>Female</gender>
     <color>Green</color>
-    <species>Parrot</species>
+    <species>Bird</species>
     <price>1000.0</price>
     <name>Polly</name>
     <comment>Likes to mimic sounds</comment>
+    <preferredFood>Chilli</preferredFood>
+    <type>Bird</type>
     <age>4</age>
   </pets>
   <pets>
     <gender>Male</gender>
     <color>Orange</color>
-    <species>Goldfish</species>
+    <species>Fish</species>
     <price>50.0</price>
     <name>Bubbles</name>
+    <isFreshWater>true</isFreshWater>
     <comment>Calm and graceful</comment>
+    <isPredator>false</isPredator>
+    <type>Fish</type>
     <age>1</age>
   </pets>
   <pets>
     <gender>Female</gender>
     <color>Golden</color>
-    <species>Hamster</species>
+    <species>Various</species>
     <price>20.0</price>
     <name>Squeaky</name>
     <comment>Likes to run in a wheel</comment>
+    <type>Various</type>
     <age>2</age>
   </pets>
   <pets>
     <gender>Male</gender>
     <color>Black</color>
     <species>Dog</species>
-    <price>500.0</price>
+    <price>0.0</price>
     <name>Rex</name>
+    <breeder>Best Breeder</breeder>
     <comment>Loyal and friendly</comment>
+    <type>Dog</type>
     <age>5</age>
+    <breed>German Shepherd</breed>
   </pets>
   <pets>
     <gender>Male</gender>
@@ -69,43 +86,54 @@
     <species>Cat</species>
     <price>400.0</price>
     <name>Shadow</name>
+    <breeder>Good Breeder</breeder>
     <comment>Independent and quiet</comment>
+    <type>Cat</type>
     <age>4</age>
+    <breed>Maine Coon</breed>
   </pets>
   <pets>
     <gender>Female</gender>
     <color>Brown</color>
-    <species>Gerbil</species>
+    <isAggressive>true</isAggressive>
+    <species>Rodent</species>
     <price>30.0</price>
     <name>Nibbles</name>
     <comment>Likes to burrow</comment>
+    <type>Rodent</type>
     <age>1</age>
   </pets>
   <pets>
     <gender>Male</gender>
     <color>Yellow</color>
-    <species>Canary</species>
+    <species>Bird</species>
     <price>80.0</price>
     <name>Sunny</name>
     <comment>Sings melodious tunes</comment>
+    <preferredFood>Carrots</preferredFood>
+    <type>Bird</type>
     <age>3</age>
   </pets>
   <pets>
     <gender>Female</gender>
     <color>Blue</color>
-    <species>Betta</species>
+    <species>Fish</species>
     <price>25.0</price>
     <name>Finny</name>
+    <isFreshWater>false</isFreshWater>
     <comment>Aggressive but beautiful</comment>
+    <isPredator>true</isPredator>
+    <type>Fish</type>
     <age>2</age>
   </pets>
   <pets>
     <gender>Male</gender>
     <color>White</color>
-    <species>Ferret</species>
+    <species>Various</species>
     <price>200.0</price>
     <name>Zippy</name>
     <comment>Energetic and curious</comment>
+    <type>Various</type>
     <age>3</age>
   </pets>
   <pets>
@@ -114,8 +142,11 @@
     <species>Dog</species>
     <price>700.0</price>
     <name>Bella</name>
+    <breeder>Lovely Breeder</breeder>
     <comment>Friendly and protective</comment>
+    <type>Dog</type>
     <age>6</age>
+    <breed>Golden Retriever</breed>
   </pets>
   <pets>
     <gender>Female</gender>
@@ -123,43 +154,54 @@
     <species>Cat</species>
     <price>550.0</price>
     <name>Midnight</name>
+    <breeder>Joyful Breeder</breeder>
     <comment>Quiet and graceful</comment>
+    <type>Cat</type>
     <age>5</age>
+    <breed>Sphynx</breed>
   </pets>
   <pets>
     <gender>Male</gender>
     <color>White</color>
-    <species>Hamster</species>
+    <isAggressive>false</isAggressive>
+    <species>Rodent</species>
     <price>15.0</price>
     <name>Fluffy</name>
     <comment>Loves to run on wheels</comment>
+    <type>Rodent</type>
     <age>2</age>
   </pets>
   <pets>
     <gender>Male</gender>
     <color>White</color>
-    <species>Cockatoo</species>
+    <species>Bird</species>
     <price>1200.0</price>
     <name>Charlie</name>
     <comment>Very vocal and playful</comment>
+    <preferredFood>Strawberries</preferredFood>
+    <type>Bird</type>
     <age>2</age>
   </pets>
   <pets>
     <gender>Female</gender>
     <color>Silver</color>
-    <species>Tetra</species>
+    <species>Fish</species>
     <price>15.0</price>
     <name>Twinkle</name>
+    <isFreshWater>true</isFreshWater>
     <comment>Peaceful community fish</comment>
+    <isPredator>false</isPredator>
+    <type>Fish</type>
     <age>1</age>
   </pets>
   <pets>
     <gender>Male</gender>
     <color>Gray</color>
-    <species>Chinchilla</species>
+    <species>Various</species>
     <price>350.0</price>
     <name>Dusty</name>
     <comment>Loves dust baths</comment>
+    <type>Various</type>
     <age>1</age>
   </pets>
   <pets>
@@ -168,8 +210,11 @@
     <species>Dog</species>
     <price>600.0</price>
     <name>Daisy</name>
+    <breeder>Elite Breeder</breeder>
     <comment>Loves running</comment>
+    <type>Dog</type>
     <age>4</age>
+    <breed>Dalmatian</breed>
   </pets>
   <pets>
     <gender>Male</gender>
@@ -177,8 +222,11 @@
     <species>Cat</species>
     <price>450.0</price>
     <name>Marmalade</name>
+    <breeder>Calm Breeder</breeder>
     <comment>Affectionate and friendly</comment>
+    <type>Cat</type>
     <age>6</age>
+    <breed>British Shorthair</breed>
   </pets>
   <pets>
     <gender>Male</gender>
@@ -187,6 +235,7 @@
     <price>0.0</price>
     <name>Buddy</name>
     <comment>Very energetic and playful</comment>
+    <type>Pet</type>
     <age>2</age>
   </pets>
   <pets>
@@ -196,16 +245,8 @@
     <price>0.0</price>
     <name>Whiskers</name>
     <comment>Loves cuddling and napping</comment>
+    <type>Pet</type>
     <age>3</age>
-  </pets>
-  <pets>
-    <gender>Male</gender>
-    <color>Grey</color>
-    <species>Rabbit</species>
-    <price>0.0</price>
-    <name>Thumper</name>
-    <comment>Curious and loves carrots</comment>
-    <age>1</age>
   </pets>
   <pets>
     <gender>Female</gender>
@@ -214,6 +255,7 @@
     <price>0.0</price>
     <name>Polly</name>
     <comment>Likes to mimic sounds</comment>
+    <type>Pet</type>
     <age>4</age>
   </pets>
   <pets>
@@ -223,6 +265,51 @@
     <price>0.0</price>
     <name>Rex</name>
     <comment>Loyal and friendly</comment>
+    <type>Pet</type>
     <age>5</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
+    <color>black</color>
+    <species>Dog</species>
+    <price>10.0</price>
+    <name>test</name>
+    <comment>good</comment>
+    <type>Pet</type>
+    <age>4</age>
+  </pets>
+  <pets>
+    <gender>Female</gender>
+    <color>red</color>
+    <isAggressive>false</isAggressive>
+    <species>Rodent</species>
+    <price>300.0</price>
+    <name>New test</name>
+    <comment>no comments</comment>
+    <type>Rodent</type>
+    <age>5</age>
+  </pets>
+  <pets>
+    <gender>Male</gender>
+    <color>Red</color>
+    <species>Cat</species>
+    <price>900.0</price>
+    <name>Meow</name>
+    <breeder>Alice</breeder>
+    <comment>good</comment>
+    <type>Cat</type>
+    <age>6</age>
+    <breed>New</breed>
+  </pets>
+  <pets>
+    <gender>cxkjv</gender>
+    <color>ncvxc</color>
+    <isAggressive>false</isAggressive>
+    <species>Rodent</species>
+    <price>0.0</price>
+    <name>hdvhdæ</name>
+    <comment>jkl</comment>
+    <type>Rodent</type>
+    <age>89</age>
   </pets>
 </PetList>
