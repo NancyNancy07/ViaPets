@@ -4,13 +4,14 @@ import java.io.Serializable;
 
 import com.google.gson.annotations.JsonAdapter;
 
-@JsonAdapter(PetTypeAdapter.class)
 /**
  * A class containing of Pet object.
- *
  * @author Kamin Khan Rahmany
  * @version 1.0
  */
+
+@JsonAdapter(PetTypeAdapter.class)
+
 public class Pet implements Serializable
 {
   private String species;
