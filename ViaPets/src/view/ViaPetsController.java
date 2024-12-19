@@ -161,29 +161,29 @@ public class ViaPetsController
           setStyle("");
       }
     });
-//    petTable.setRowFactory(tableView -> {
-//      TableRow<Pet> row = new TableRow<>();
-//
-//      row.itemProperty().addListener((observable, oldValue, newValue) -> {
-//        if (newValue == null || row.isEmpty())
-//        {
-//          row.setStyle("");
-//        }
-//        else
-//        {
-//          if (isPetReserved(newValue))
-//          {
-//            row.setStyle("-fx-background-color: lightgreen;");
-//          }
-//          else
-//          {
-//            row.setStyle("");
-//          }
-//        }
-//      });
-//
-//      return row;
-//    });
+    //    petTable.setRowFactory(tableView -> {
+    //      TableRow<Pet> row = new TableRow<>();
+    //
+    //      row.itemProperty().addListener((observable, oldValue, newValue) -> {
+    //        if (newValue == null || row.isEmpty())
+    //        {
+    //          row.setStyle("");
+    //        }
+    //        else
+    //        {
+    //          if (isPetReserved(newValue))
+    //          {
+    //            row.setStyle("-fx-background-color: lightgreen;");
+    //          }
+    //          else
+    //          {
+    //            row.setStyle("");
+    //          }
+    //        }
+    //      });
+    //
+    //      return row;
+    //    });
 
     updatePetBox();
 
@@ -1264,9 +1264,14 @@ public class ViaPetsController
           return;
         }
 
-        Pet pet = new Pet(species, age, gender, color, petName, comment, price);
+        if (species != null)
+        {
+          Pet pet = new Pet(species, age, gender, color, petName, comment,
+              price);
+          selectedReservation.setPet(pet);
 
-        selectedReservation.setPet(pet);
+        }
+
       }
       catch (NumberFormatException e)
       {
@@ -1641,13 +1646,14 @@ public class ViaPetsController
     }
   }
 
-  public void setCloseButton()
+  public void setCloseButton() throws ParserException
   {
     if (customerTab.isSelected())
     {
       customerDataDisplay.setVisible(false);
       editButton.setVisible(true);
       updateButton.setVisible(false);
+      updateCustomerBox();
 
     }
     else if (kennelReservationTab.isSelected())
@@ -1659,6 +1665,7 @@ public class ViaPetsController
       priceFieldReservation.setDisable(false);
       reservationNewCustomerDialog.setVisible(false);
       reservationNewPetDialog.setVisible(false);
+      updateKennelBox();
     }
     else if (petTab.isSelected())
     {
@@ -1670,10 +1677,12 @@ public class ViaPetsController
       specialField2.setDisable(false);
       editPetButton.setVisible(true);
       updatePetButton.setVisible(false);
+      updatePetBox();
     }
     else if (saleTab.isSelected())
     {
       saleNewCustomerDialog.setVisible(false);
+      updateSaleBox();
     }
   }
 
