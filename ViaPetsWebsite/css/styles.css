@@ -1,0 +1,132 @@
+body {
+  background-color: #f2ebe8 !important;
+}
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+p {
+  margin-bottom: 0.6rem !important;
+  padding: 0;
+}
+
+/* nav bar */
+nav {
+  background-color: #2b0606;
+}
+
+#collapsibleNavbar {
+  font-size: 110%;
+}
+.nav-link {
+  color: #f5f0df !important;
+}
+.navbar-brand {
+  color: #f5f0df !important;
+  text-shadow: -2px 2px 0 #9a552e, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000 !important;
+}
+.nav-item-spacing {
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+}
+.logo {
+  margin-left: 1rem;
+  font-weight: 900;
+  font-size: 2.5rem !important;
+}
+
+/* main */
+main {
+  padding-top: 6rem;
+}
+/* pets page 2 */
+.card-margin {
+  margin: 11%;
+}
+
+/* kennel page 3 */
+.text-col {
+  padding: 20px;
+}
+.image-grid img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgb(139, 128, 128);
+}
+
+.calendar {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  background-color: rosybrown;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.day-name {
+  font-weight: bold;
+  background-color: rgb(241, 221, 221);
+  padding: 10px;
+  text-align: center;
+}
+
+.cal-col {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  height: 70px;
+}
+
+.empty-day {
+  background-color: rgb(249, 235, 235);
+}
+
+.current-day {
+  background-color: rosybrown;
+  color: #fff;
+  border-radius: 50%;
+}
+.title {
+  color: rgb(157, 91, 91);
+  text-align: center;
+}
+.sub-title {
+  color: rosybrown;
+}
+.vacancy {
+  text-align: center;
+  color: #2b0606;
+  margin-bottom: 2rem;
+}
+.margin-top {
+  margin-top: 3rem;
+}
+
+/* contact page 4 */
+.banner {
+  background-color: #c5ada5;
+  color: #fff;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* footer */
+footer {
+  /* position: fixed; */
+  padding: 1rem;
+  background-color: #2b0606;
+  color: #f5f0df;
+}
+.lastContact {
+  margin-bottom: 0 !important;
+}

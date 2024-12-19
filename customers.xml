@@ -26,11 +26,6 @@
     <name>Charlie White</name>
   </customers>
   <customers>
-    <emailAddress>davidg@email.com</emailAddress>
-    <phoneNumber>67801345</phoneNumber>
-    <name>David Green</name>
-  </customers>
-  <customers>
     <emailAddress>evab@email.com</emailAddress>
     <phoneNumber>78912456</phoneNumber>
     <name>Eva Black</name>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <title>Pets</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand logo" href="index.html">VIAPets</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item nav-item-spacing">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item nav-item-spacing">
+                <a class="nav-link" href="pets.html">Pets</a>
+              </li>
+              <li class="nav-item nav-item-spacing">
+                <a class="nav-link" href="kennel.html">Kennel</a>
+              </li>
+              <li class="nav-item nav-item-spacing">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Kamin code -->
+      <div class="banner">
+        <h2>Pets for Adoption</h2>
+      </div>
+
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3" id="cards">
+        </div>
+      </div>
+    </main>
+
+    <footer class="container-fluid">
+      <div class="row d-flex justify-content-around">
+        <div class="col-sm-6 col-md-2 order-sm-2">
+          <p>Contact Us:</p>
+          <p>Phone: 71234523</p>
+          <p>Email:viapets@email.com</p>
+          <p id="lastContact">Horsens, Denmark</p>
+        </div>
+
+        <div class="col-sm-6 col-md-2 align-self-center order-sm-1">
+          <p>&copy;VIAPets 2024</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

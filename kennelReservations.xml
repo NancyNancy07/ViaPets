@@ -114,34 +114,6 @@
   </kennelReservations>
   <kennelReservations>
     <endDate>
-      <month>12</month>
-      <year>2025</year>
-      <day>16</day>
-    </endDate>
-    <price>100.0</price>
-    <pet>
-      <gender>Male</gender>
-      <color>Black</color>
-      <species>Dog</species>
-      <price>0.0</price>
-      <name>Rex</name>
-      <comment>Loyal and friendly</comment>
-      <type>Pet</type>
-      <age>5</age>
-    </pet>
-    <startDate>
-      <month>10</month>
-      <year>2025</year>
-      <day>16</day>
-    </startDate>
-    <customer>
-      <emailAddress>davidg@email.com</emailAddress>
-      <phoneNumber>67801345</phoneNumber>
-      <name>David Green</name>
-    </customer>
-  </kennelReservations>
-  <kennelReservations>
-    <endDate>
       <month>1</month>
       <year>2025</year>
       <day>4</day>
@@ -257,5 +229,61 @@
       <name>Eva Black</name>
     </customer>
   </kennelReservations>
-  <currentNumberOfReservations>10</currentNumberOfReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </endDate>
+    <price>50.0</price>
+    <pet>
+      <gender>Female</gender>
+      <color>Golden</color>
+      <species>Various</species>
+      <price>0.0</price>
+      <name>Squeaky</name>
+      <comment>Likes to run in a wheel</comment>
+      <type>Various</type>
+      <age>2</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>18</day>
+    </startDate>
+    <customer>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </endDate>
+    <price>50.0</price>
+    <pet>
+      <gender>Female</gender>
+      <color>Golden</color>
+      <species>Various</species>
+      <price>0.0</price>
+      <name>Squeaky</name>
+      <comment>Likes to run in a wheel</comment>
+      <type>Various</type>
+      <age>2</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>18</day>
+    </startDate>
+    <customer>
+      <emailAddress>bobbrown@email.com</emailAddress>
+      <phoneNumber>45689123</phoneNumber>
+      <name>Bob Brown</name>
+    </customer>
+  </kennelReservations>
+  <currentNumberOfReservations>13</currentNumberOfReservations>
 </KennelReservationList>

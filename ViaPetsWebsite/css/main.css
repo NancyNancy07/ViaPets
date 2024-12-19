@@ -1,0 +1,19 @@
+/* main */
+.carousel-item img {
+    border-color: #2b0606 !important;
+}
+
+.viapets-pictures {
+    margin-bottom: 2rem;
+}
+
+.text-box-title {
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.text-box {
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+}

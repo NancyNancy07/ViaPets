@@ -165,4 +165,29 @@
       <name>asd</name>
     </customer>
   </saleList>
+  <saleList>
+    <date>
+      <month>12</month>
+      <year>2024</year>
+      <day>3</day>
+    </date>
+    <finalPrice>50.0</finalPrice>
+    <pet>
+      <gender>Male</gender>
+      <color>Black</color>
+      <species>Dog</species>
+      <price>500.0</price>
+      <name>Rex</name>
+      <breeder>Best Breeder</breeder>
+      <comment>Loyal and friendly</comment>
+      <type>Dog</type>
+      <age>5</age>
+      <breed>German Shepherd</breed>
+    </pet>
+    <customer>
+      <emailAddress>bobbrown@email.com</emailAddress>
+      <phoneNumber>45689123</phoneNumber>
+      <name>Bob Brown</name>
+    </customer>
+  </saleList>
 </SaleList>
