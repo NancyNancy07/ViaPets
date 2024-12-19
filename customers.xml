@@ -45,14 +45,4 @@
     <phoneNumber>10245789</phoneNumber>
     <name>Henry Gray</name>
   </customers>
-  <customers>
-    <emailAddress>asd</emailAddress>
-    <phoneNumber>asd</phoneNumber>
-    <name>asd</name>
-  </customers>
-  <customers>
-    <emailAddress>brbr</emailAddress>
-    <phoneNumber>brbr</phoneNumber>
-    <name>brbr</name>
-  </customers>
 </CustomerList>
