@@ -118,24 +118,6 @@ public class KennelReservation
   }
 
   /**
-   * Sets the start date of the reservation.
-   * @param startDate the start date of the reservation
-   */
-  public void setStartDate(MyDate startDate)
-  {
-    this.startDate = startDate;
-  }
-
-  /**
-   * Sets the end date of the reservation.
-   * @param endDate the end date of the reservation
-   */
-  public void setEndDate(MyDate endDate)
-  {
-    this.endDate = endDate;
-  }
-
-  /**
    * Returns a string representation of the KennelReservation object.
    * @return a string representation of the KennelReservation object
    */

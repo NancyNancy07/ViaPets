@@ -31,38 +31,12 @@ public class Rodent extends Pet implements Serializable
   }
 
   /**
-   * Constructs a new Rodent instance initializing all fields including those inherited from Pet.
-   * @param species the species of the rodent
-   * @param age the age of the rodent
-   * @param gender the gender of the rodent
-   * @param color the color of the rodent
-   * @param comment any additional comments about the rodent
-   * @param price the purchase price of the rodent
-   * @param isAggressive whether the rodent is typically aggressive
-   */
-  public Rodent(String species, int age, String gender, String color,
-      String comment, double price, boolean isAggressive)
-  {
-    super(species, age, gender, color, comment, price);
-    this.isAggressive = isAggressive;
-  }
-
-  /**
    * Returns whether this rodent is aggressive.
    * @return true if this rodent is aggressive, false otherwise.
    */
   public boolean isAggressive()
   {
     return isAggressive;
-  }
-
-  /**
-   * Sets the aggressive behavior of this rodent.
-   * @param aggressive true to indicate the rodent is aggressive, false otherwise.
-   */
-  public void setAggressive(boolean aggressive)
-  {
-    isAggressive = aggressive;
   }
 
   /**

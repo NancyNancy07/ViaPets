@@ -32,23 +32,6 @@ public class Cat extends Pet implements Serializable
   }
 
   /**
-   * Constructs a new Cat object with specified details without breed and breeder information.
-   * @param species the species of the cat
-   * @param age the age of the cat
-   * @param gender the gender of the cat
-   * @param color the color of the cat
-   * @param comment any additional comments about the cat
-   * @param price the price of the cat
-   */
-  public Cat(String species, int age, String gender, String color,
-      String comment, double price)
-  {
-    super(species, age, gender, color, comment, price);
-    this.breed = breed;
-    this.breeder = breeder;
-  }
-
-  /**
    * Gets the breed of the cat.
    * @return the breed of the cat
    */
@@ -58,30 +41,12 @@ public class Cat extends Pet implements Serializable
   }
 
   /**
-   * Sets the breed of the cat.
-   * @param breed the breed of the cat
-   */
-  public void setBreed(String breed)
-  {
-    this.breed = breed;
-  }
-
-  /**
    * Gets the name of the breeder.
    * @return the breeder's name
    */
   public String getBreeder()
   {
     return breeder;
-  }
-
-  /**
-   * Sets the breeder's name.
-   * @param breeder the name of the breeder
-   */
-  public void setBreeder(String breeder)
-  {
-    this.breeder = breeder;
   }
 
   /**

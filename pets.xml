@@ -35,18 +35,6 @@
     <age>4</age>
   </pets>
   <pets>
-    <gender>Male</gender>
-    <color>Orange</color>
-    <species>Fish</species>
-    <price>50.0</price>
-    <name/>
-    <isFreshWater>true</isFreshWater>
-    <comment>Calm and graceful</comment>
-    <isPredator>false</isPredator>
-    <type>Fish</type>
-    <age>1</age>
-  </pets>
-  <pets>
     <gender>Female</gender>
     <color>Golden</color>
     <species>Various</species>
@@ -95,7 +83,7 @@
     <gender>Male</gender>
     <color>Yellow</color>
     <species>Bird</species>
-    <price>80.0</price>
+    <price>0.0</price>
     <name>Sunny</name>
     <comment>Sings melodious tunes</comment>
     <preferredFood>Carrots</preferredFood>
@@ -265,5 +253,17 @@
     <comment>Loyal and friendly</comment>
     <type>Pet</type>
     <age>5</age>
+  </pets>
+  <pets>
+    <gender>Turbo</gender>
+    <color>Brown</color>
+    <species>Dog</species>
+    <price>5.0</price>
+    <name>Turbo</name>
+    <breeder>Turbo</breeder>
+    <comment>Turbo</comment>
+    <type>Dog</type>
+    <age>5</age>
+    <breed>Turbo</breed>
   </pets>
 </PetList>

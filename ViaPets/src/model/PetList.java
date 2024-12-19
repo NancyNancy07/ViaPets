@@ -90,26 +90,6 @@ public class PetList implements Serializable
   }
 
   /**
-   * Retrieves a list of pets that are for sale. A pet is considered for sale
-   * if its price is not zero.
-   *
-   * @return an array of Pet objects that are for sale
-   */
-  public Pet[] getPetsForSale()
-  {
-    ArrayList<Pet> forSaleList = new ArrayList<>();
-    for (int i = 0; i < pets.size(); i++)
-    {
-      Pet pet = pets.get(i);
-      if (pets.get(i).getPrice() != 0)
-      {
-        forSaleList.add(pet);
-      }
-    }
-    return forSaleList.toArray(new Pet[0]);
-  }
-
-  /**
    * Returns the number of pets in the list.
    *
    * @return the total number of pets

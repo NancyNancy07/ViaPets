@@ -27,60 +27,6 @@ public class MyDate
 
   //Methods
   /**
-   * Gets the day of the date.
-   * @return the day of the date
-   */
-  public int getDay()
-  {
-    return day;
-  }
-
-  /**
-   * Gets the month of the date.
-   * @return the month of the date
-   */
-  public int getMonth()
-  {
-    return month;
-  }
-
-  /**
-   * Gets the year of the date.
-   * @return the year of the date
-   */
-  public int getYear()
-  {
-    return year;
-  }
-
-  /**
-   * Sets the day of the date.
-   * @param day the day of the date
-   */
-  public void setDay(int day)
-  {
-    this.day = day;
-  }
-
-  /**
-   * Sets the month of the date.
-   * @param month the month of the date
-   */
-  public void setMonth(int month)
-  {
-    this.month = month;
-  }
-
-  /**
-   * Sets the year of the date.
-   * @param year the year of the date
-   */
-  public void setYear(int year)
-  {
-    this.year = year;
-  }
-
-  /**
    * Returns a string representation of the date.
    * @return a string representation of the date
    */

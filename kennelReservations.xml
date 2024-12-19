@@ -228,5 +228,34 @@
       <name>Bob Brown</name>
     </customer>
   </kennelReservations>
-  <currentNumberOfReservations>8</currentNumberOfReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </endDate>
+    <price>50.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>Yellow</color>
+      <species>Bird</species>
+      <price>0.0</price>
+      <name>Sunny</name>
+      <comment>Sings melodious tunes</comment>
+      <preferredFood>Carrots</preferredFood>
+      <type>Bird</type>
+      <age>3</age>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>17</day>
+    </startDate>
+    <customer>
+      <emailAddress>evab@email.com</emailAddress>
+      <phoneNumber>78912456</phoneNumber>
+      <name>Eva Black</name>
+    </customer>
+  </kennelReservations>
+  <currentNumberOfReservations>10</currentNumberOfReservations>
 </KennelReservationList>

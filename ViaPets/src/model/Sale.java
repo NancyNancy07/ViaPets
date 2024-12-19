@@ -1,8 +1,5 @@
 package model;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 /**
  * A class containing of Sale object.
  * @author Bence Antal Orbán
@@ -14,8 +11,6 @@ public class Sale
   private Customer customer;
   private Pet pet;
   private MyDate date;
-  private String time;
-
   //Constructor
   /**
    * Constructs a new Sale object with specified details including the final price, customer, pet and date.
@@ -30,10 +25,6 @@ public class Sale
     this.customer = customer;
     this.pet = pet;
     this.date = date.copy();
-
-    LocalDateTime now = LocalDateTime.now();
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-    this.time = now.format(formatter);
   }
 
   // Getters and Setters
@@ -44,28 +35,6 @@ public class Sale
   public double getFinalPrice()
   {
     return finalPrice;
-  }
-
-  /**
-   * Sets the final price of the sale.
-   * @param finalPrice the final price of the sale
-   */
-  public void setFinalPrice(double finalPrice)
-  {
-    if (finalPrice < 0)
-    {
-      throw new IllegalArgumentException("Price cannot be negative");
-    }
-    this.finalPrice = finalPrice;
-  }
-
-  /**
-   * Gets the time of the sale.
-   * @return the time of the sale
-   */
-  public String getTime()
-  {
-    return time;
   }
 
   /**
@@ -96,15 +65,6 @@ public class Sale
   }
 
   /**
-   * Sets the time of the sale.
-   * @param time the customer object
-   */
-  public void setTime(String time)
-  {
-    this.time = time;
-  }
-
-  /**
    *
    * Returns a string representation of the Sale object.
    * @return a string representation of the Sale object
@@ -112,7 +72,7 @@ public class Sale
   public String toString()
   {
     return "Final Price: " + finalPrice + "\n" + customer + "\n" + pet
-        + "\nDate: " + date + "\nTime: " + time + "\n";
+        + "\nDate: " + date + "\n";
   }
 
   /**
@@ -135,9 +95,7 @@ public class Sale
     return finalPrice == tempSale.finalPrice // O(1)
         && customer.equals(tempSale.customer) // O(3), where 3 = three string comparisons in customer.equals()
         && pet.equals(tempSale.pet) // O(7), where 7 = six string comparisons and one numeric comparison in pet.equals()
-        && date.equals(tempSale.date) // O(3), where 3 = three numeric comparisons in date.equals()
-        && time.equals(tempSale.time); // O(1), for string equals
-
+        && date.equals(tempSale.date); // O(3), where 3 = three numeric comparisons in date.equals()
     /*
     Complexity Analysis:
     We do a null check and class check -> O(1).
@@ -147,13 +105,12 @@ public class Sale
         - `customer.equals(tempSale.customer)`: O(3).
         - `pet.equals(tempSale.pet)`: O(7).
         - `date.equals(tempSale.date)`: O(1).
-        - `time.equals(tempSale.time)`: O(1).
 
     Dominating Term Analysis:
     - The dominating term is the pet comparison with O(7).
 
     Time Complexity:
-    - T(n) = O(1) + O(1) + O(3) + O(7) + O(1) + O(1).
+    - T(n) = O(1) + O(1) + O(3) + O(7) + O(1).
     - Simplifying: O(7).
      */
   }

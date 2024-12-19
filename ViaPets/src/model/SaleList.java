@@ -30,23 +30,6 @@ public class SaleList
   }
 
   /**
-   * Removes a sale from the list.
-   * @param index the index of the sale to be removed
-   */
-  public void removeSale(int index)
-  {
-    if(index < 0 || index >= saleList.size())
-    {
-      //Exceptions to add
-      System.out.println("Invalid index");
-    }
-    else
-    {
-      saleList.remove(index);
-    }
-  }
-
-  /**
    * Sets a sale at the specified index in the list.
    * @param sale the sale object
    * @param index the index of the sale to be set

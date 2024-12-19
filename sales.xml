@@ -7,7 +7,6 @@
       <day>1</day>
     </date>
     <finalPrice>1000.0</finalPrice>
-    <time>13:04:36</time>
     <pet>
       <gender>Male</gender>
       <color>Brown</color>
@@ -31,7 +30,6 @@
       <day>1</day>
     </date>
     <finalPrice>400.0</finalPrice>
-    <time>13:04:36</time>
     <pet>
       <gender>Female</gender>
       <color>White</color>
@@ -55,7 +53,6 @@
       <day>1</day>
     </date>
     <finalPrice>600.0</finalPrice>
-    <time>13:04:36</time>
     <pet>
       <gender>Male</gender>
       <color>Grey</color>
@@ -79,7 +76,6 @@
       <day>1</day>
     </date>
     <finalPrice>800.0</finalPrice>
-    <time>13:04:36</time>
     <pet>
       <gender>Female</gender>
       <color>Green</color>
@@ -103,7 +99,6 @@
       <day>1</day>
     </date>
     <finalPrice>300.0</finalPrice>
-    <time>13:04:36</time>
     <pet>
       <gender>Male</gender>
       <color>Black</color>
@@ -127,7 +122,6 @@
       <day>26</day>
     </date>
     <finalPrice>900.0</finalPrice>
-    <time>13:05:18</time>
     <pet>
       <gender>Male</gender>
       <color>Brown</color>
@@ -144,6 +138,31 @@
       <emailAddress>bobbrown@email.com</emailAddress>
       <phoneNumber>45689123</phoneNumber>
       <name>Bob Brown</name>
+    </customer>
+  </saleList>
+  <saleList>
+    <date>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </date>
+    <finalPrice>50.0</finalPrice>
+    <pet>
+      <gender>Male</gender>
+      <color>Orange</color>
+      <species>Fish</species>
+      <price>50.0</price>
+      <name/>
+      <isFreshWater>true</isFreshWater>
+      <comment>Calm and graceful</comment>
+      <isPredator>false</isPredator>
+      <type>Fish</type>
+      <age>1</age>
+    </pet>
+    <customer>
+      <emailAddress>asd</emailAddress>
+      <phoneNumber>asd</phoneNumber>
+      <name>asd</name>
     </customer>
   </saleList>
 </SaleList>

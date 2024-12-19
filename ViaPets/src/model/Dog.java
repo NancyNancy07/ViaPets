@@ -32,23 +32,6 @@ public class Dog extends Pet implements Serializable
   }
 
   /**
-   * Constructs a new Dog object with specified details without breed and breeder information.
-   * @param species the species of the dog
-   * @param age the age of the dog
-   * @param gender the gender of the dog
-   * @param color the color of the dog
-   * @param comment any additional comments about the dog
-   * @param price the price of the dog
-   */
-//  public Dog(String species, int age, String gender, String color,
-//      String comment, double price)
-//  {
-//    super(species, age, gender, color, comment, price);
-//    this.breed = breed;
-//    this.breeder = breeder;
-//  }
-
-  /**
    * Gets the breed of the dog.
    * @return the breed of the dog
    */
@@ -58,30 +41,12 @@ public class Dog extends Pet implements Serializable
   }
 
   /**
-   * Sets the breed of the dog.
-   * @param breed the breed of the fog
-   */
-  public void setBreed(String breed)
-  {
-    this.breed = breed;
-  }
-
-  /**
    * Gets the name of the breeder.
    * @return the breeder's name
    */
   public String getBreeder()
   {
     return breeder;
-  }
-
-  /**
-   * Sets the breeder's name.
-   * @param breeder the name of the breeder
-   */
-  public void setBreeder(String breeder)
-  {
-    this.breeder = breeder;
   }
 
   /**

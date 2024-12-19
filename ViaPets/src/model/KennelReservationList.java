@@ -49,23 +49,6 @@ public class KennelReservationList
   }
 
   /**
-   * Removes a reservation from the list.
-   *
-   * @param index the index of the reservation to be removed
-   */
-  public void removeReservation(int index)
-  {
-    if (index >= 0 && index < kennelReservations.size())
-    {
-      kennelReservations.remove(index);
-    }
-    else
-    {
-      System.out.println("Invalid index. Cannot remove reservation.");
-    }
-  }
-
-  /**
    * Sets a reservation at a specific index.
    *
    * @param index       the index of the reservation to be set
@@ -118,17 +101,6 @@ public class KennelReservationList
       System.out.println("Invalid index. Returning null.");
       return null;
     }
-  }
-
-  /**
-   * Gets all reservations in the list.
-   *
-   * @return an array of all reservations
-   */
-  public KennelReservation[] getAllKennelReservations()
-  {
-    return kennelReservations.toArray(
-        new KennelReservation[currentNumberOfReservations]);
   }
 
   /**

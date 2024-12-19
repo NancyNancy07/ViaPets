@@ -28,39 +28,6 @@ public class CustomerList implements Serializable
     customers.add(customer);
   }
 
-  /**
-   * Replaces the customer at the specified index with a new customer.
-   * @param customer the new Customer to set at the specified index
-   * @param index the index where the customer will be set
-   */
-  public void setCustomers(Customer customer, int index)
-  {
-    if (index < 0 || index >= customers.size())
-    {
-      System.out.println("Invalid index");
-    }
-    else
-    {
-      customers.set(index, customer);
-
-    }
-  }
-
-  /**
-   * Removes the customer at the specified index.
-   * @param index the index of the customer to be removed
-   */
-  public void removeCustomer(int index)
-  {
-    if (index < 0 || index >= customers.size())
-    {
-      System.out.println("Invalid index");
-    }
-    else
-    {
-      customers.remove(index);
-    }
-  }
 
   /**
    * Removes the specified customer from the list.

@@ -36,25 +36,6 @@ public class Fish extends Pet implements Serializable
   }
 
   /**
-   * Constructs a new Fish instance with detailed information about the fish.
-   * @param species the species of the fish
-   * @param age the age of the fish
-   * @param gender the gender of the fish
-   * @param color the color of the fish
-   * @param comment any comments about the fish
-   * @param price the price of the fish
-   * @param isPredator true if the fish is a predator; false otherwise
-   * @param isFreshWater true if the fish is a freshwater fish; false otherwise
-   */
-  public Fish(String species, int age, String gender, String color,
-      String comment, double price, boolean isPredator, boolean isFreshWater)
-  {
-    super(species, age, gender, color, comment, price);
-    this.isFreshWater = isFreshWater;
-    this.isPredator = isPredator;
-  }
-
-  /**
    * Returns true if the fish lives in freshwater.
    * @return true if this is a freshwater fish; false otherwise.
    */
@@ -64,30 +45,12 @@ public class Fish extends Pet implements Serializable
   }
 
   /**
-   * Sets whether the fish lives in freshwater.
-   * @param freshWater true if the fish lives in freshwater; false otherwise.
-   */
-  public void setFreshWater(boolean freshWater)
-  {
-    isFreshWater = freshWater;
-  }
-
-  /**
    * Returns true if the fish is a predator.
    * @return true if this fish is a predator; false otherwise.
    */
   public boolean isPredator()
   {
     return isPredator;
-  }
-
-  /**
-   * Sets whether the fish is a predator.
-   * @param predator true if the fish is a predator; false otherwise.
-   */
-  public void setPredator(boolean predator)
-  {
-    this.isPredator = isPredator;
   }
 
   /**

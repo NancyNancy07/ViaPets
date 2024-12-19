@@ -29,23 +29,6 @@ public class Bird extends Pet implements Serializable
     this.preferredFood = preferredFood;
   }
 
-  /**
-   * Constructs a new Bird instance with detailed information about the bird including
-   * its preferred food.
-   * @param species the species of the bird
-   * @param age the age of the bird
-   * @param gender the gender of the bird
-   * @param color the color of the bird
-   * @param comment additional comments about the bird
-   * @param price the price of the bird
-   * @param preferredFood the preferred food of the bird
-   */
-  public Bird(String species, int age, String gender, String color,
-      String comment, double price, String preferredFood)
-  {
-    super(species, age, gender, color, comment, price);
-    this.preferredFood = preferredFood;
-  }
 
   /**
    * Gets the preferred food of the bird.
@@ -54,15 +37,6 @@ public class Bird extends Pet implements Serializable
   public String getPreferredFood()
   {
     return preferredFood;
-  }
-
-  /**
-   * Sets the preferred food of the bird.
-   * @param preferredFood the preferred food to set
-   */
-  public void setPreferredFood(String preferredFood)
-  {
-    this.preferredFood = preferredFood;
   }
 
   /**
