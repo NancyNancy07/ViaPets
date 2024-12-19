@@ -122,13 +122,40 @@ public class Sale
    */
   public boolean equals(Object obj)
   {
-    if (obj == null || obj.getClass() != getClass())
+    // We check if the object is null or of a different class
+    if (obj == null || obj.getClass() != getClass()) // O(1) + O(1)
     {
-      return false;
+      return false; // O(1)
     }
-    Sale tempSale = (Sale) obj;
-    return finalPrice == tempSale.finalPrice && customer.equals(
-        tempSale.customer) && pet.equals(tempSale.pet) && date.equals(
-        tempSale.date) && time.equals(tempSale.time);
+
+    // We cast the object to Sale after making sure it is a Sale
+    Sale tempSale = (Sale) obj; // O(1)
+
+    // We compare all fields of Sale
+    return finalPrice == tempSale.finalPrice // O(1)
+        && customer.equals(tempSale.customer) // O(3), where 3 = three string comparisons in customer.equals()
+        && pet.equals(tempSale.pet) // O(7), where 7 = six string comparisons and one numeric comparison in pet.equals()
+        && date.equals(tempSale.date) // O(3), where 3 = three numeric comparisons in date.equals()
+        && time.equals(tempSale.time); // O(1), for string equals
+
+    /*
+    Complexity Analysis:
+    We do a null check and class check -> O(1).
+    We are casting the object -> O(1).
+    Comparing all fields of Sale:
+        - `finalPrice == tempSale.finalPrice`: O(1).
+        - `customer.equals(tempSale.customer)`: O(3).
+        - `pet.equals(tempSale.pet)`: O(7).
+        - `date.equals(tempSale.date)`: O(1).
+        - `time.equals(tempSale.time)`: O(1).
+
+    Dominating Term Analysis:
+    - The dominating term is the pet comparison with O(7).
+
+    Time Complexity:
+    - T(n) = O(1) + O(1) + O(3) + O(7) + O(1) + O(1).
+    - Simplifying: O(7).
+     */
   }
+
 }

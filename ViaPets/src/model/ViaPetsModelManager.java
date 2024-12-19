@@ -215,41 +215,78 @@ public class ViaPetsModelManager
    */
   public void writeKennelReservations() throws ParserException
   {
-    KennelReservationList allKennelReservations = getAllKennelReservations();
+    // We get all kennel reservations
+    KennelReservationList allKennelReservations = getAllKennelReservations(); // O(1)
 
-    if (allKennelReservations == null || allKennelReservations.getAllNumberOfKennelReservations() == 0) {
-      System.out.println("No kennel reservation to write");
-      return;
+    // We check if there are any reservations to write
+    if (allKennelReservations == null || allKennelReservations.getAllNumberOfKennelReservations() == 0) // O(1) + O(1)
+    {
+      System.out.println("No kennel reservation to write"); // O(1)
+      return; // O(1)
     }
 
-    PetList allPets = readPets();
+    // We read all pets
+    PetList allPets = readPets(); // O(1)
 
-    for (int i = 0; i < allKennelReservations.getAllNumberOfKennelReservations(); i++) {
-      KennelReservation reservation = allKennelReservations.getKennelReservation(i);
-      Pet reservationPet = reservation.getPet();
+    // We loop through all kennel reservations
+    for (int i = 0; i < allKennelReservations.getAllNumberOfKennelReservations(); i++) // O(r), where r = number of kennel reservations
+    {
+      KennelReservation reservation = allKennelReservations.getKennelReservation(i); // O(1)
+      Pet reservationPet = reservation.getPet(); // O(1)
 
-      boolean petExists = false;
-      for (int j = 0; j < allPets.getNumberOfPets(); j++) {
-        if (allPets.getPet(j).equals(reservationPet)) {
-          petExists = true;
-          break;
+      // We check if the pet exists in the list of all pets
+      boolean petExists = false; // O(1)
+      for (int j = 0; j < allPets.getNumberOfPets(); j++) // O(p), where p = number of pets
+      {
+        if (allPets.getPet(j).equals(reservationPet)) // O(1) for get + O(3) for equals
+        {
+          petExists = true; // O(1)
+          break; // O(1)
         }
       }
 
-      if (!petExists) {
-        allPets.addPet(reservationPet);
+      // If the pet does not exist, add it to the list of pets
+      if (!petExists) // O(1)
+      {
+        allPets.addPet(reservationPet); // O(1)
 
-        XmlJsonParser parser = new XmlJsonParser();
-        File petsFile = parser.toXml(allPets, "pets.xml");
-        System.out.println("Wrote new kennel pet data to pets.xml");
+        // We write the updated list of pets to an XML file
+        XmlJsonParser parser = new XmlJsonParser(); // O(1)
+        File petsFile = parser.toXml(allPets, "pets.xml"); // O(w), where w = complexity of writing to XML
+        System.out.println("Wrote new kennel pet data to pets.xml"); // O(1)
       }
     }
 
-    // Write updated kennel reservations
-    XmlJsonParser parser = new XmlJsonParser();
-    File kennelReservationsFile = parser.toXml(allKennelReservations, "kennelReservations.xml");
-    System.out.println("Wrote kennel reservations data to XML file");
+    /*
+    Complexity Analysis:
+    Getting all kennel reservations -> O(1).
+    Null check and logging -> O(1).
+    Reading all pets -> O(1).
+    Looping through all kennel reservations -> O(r), where r = number of kennel reservations.
+        - Each iteration involves:
+            1. `getKennelReservation(i)` and `getPet()` -> O(1) each.
+            2. Inner loop over all pets -> O(p), where p = number of pets.
+                - Each iteration performs:
+                  -`getPet(j)` -> 0(1).
+                  -`equals()` -> O(7).
+            - Total for inner loop: O(p * 7).
+            - Simplified: O(p).
+        - Outer loop: O(r * p).
+    Adding a new pet and writing to XML -> O(1) + O(w), where w = complexity of writing to XML.
+
+    Dominating Term Analysis:
+    - The dominating term is the nested loop: O(r * p).
+
+    Time Complexity:
+    - T(n) = O(1) + O(1) + O(1) + O(r * p) + O(w).
+    - Simplifying: O(r * p + w).
+
+    Optimization Suggestion:
+    - If XML writing (w) can be optimized, the overall complexity will decrease.
+    - Caching previously checked pets to avoid repeated comparisons could reduce inner loop complexity [ O(r*p) -> O(r) ].
+    */
   }
+
 
   /**
    * Reads the customers from an XML file
