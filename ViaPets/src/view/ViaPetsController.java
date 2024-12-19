@@ -329,33 +329,6 @@ public class ViaPetsController
     updateCustomerBox();
   }
 
-  private boolean isPetReserved(Pet pet)
-  {
-    try
-    {
-      KennelReservationList allReservations = modelManager.readKennelReservations();
-      for (int i = 0;
-           i < allReservations.getAllNumberOfKennelReservations(); i++)
-      {
-        Pet reservedPet = null;
-        KennelReservation reservation = allReservations.getKennelReservation(i);
-        if (reservation != null)
-        {
-          reservedPet = reservation.getPet();
-        }
-        if (reservedPet != null && pet.equals(reservedPet))
-        {
-          return true;
-        }
-      }
-    }
-    catch (ParserException e)
-    {
-      e.printStackTrace();
-    }
-    return false;
-  }
-
   public void updatePetBox() throws ParserException
   {
     if (modelManager != null)
