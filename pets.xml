@@ -162,7 +162,7 @@
     <gender>Male</gender>
     <color>Gray</color>
     <species>Various</species>
-    <price>350.0</price>
+    <price>0.0</price>
     <name>Dusty</name>
     <comment>Loves dust baths</comment>
     <type>Various</type>
@@ -172,7 +172,7 @@
     <gender>Female</gender>
     <color>Spotted</color>
     <species>Dog</species>
-    <price>600.0</price>
+    <price>0.0</price>
     <name>Daisy</name>
     <breeder>Elite Breeder</breeder>
     <comment>Loves running</comment>
@@ -216,7 +216,7 @@
     <gender>Turbo</gender>
     <color>Brown</color>
     <species>Dog</species>
-    <price>5.0</price>
+    <price>0.0</price>
     <name>Turbo</name>
     <breeder>Turbo</breeder>
     <comment>Turbo</comment>

@@ -1509,17 +1509,6 @@ public class ViaPetsController
   public void addReservation() throws ParserException
   {
 
-    KennelReservationList allReservations = modelManager.readKennelReservations();
-    if (allReservations.getAllNumberOfKennelReservations() >= 10)
-    {
-      Alert alert = new Alert(Alert.AlertType.WARNING);
-      alert.setTitle("Capacity Full");
-      alert.setHeaderText(null);
-      alert.setContentText("No more kennel reservations can make.");
-      alert.showAndWait();
-    }
-    else
-    {
       String customerName = reservationCustomerComboBox.getValue();
       CustomerList allCustomers = modelManager.readCustomers();
       Customer reservationCustomer = null;
@@ -1570,7 +1559,7 @@ public class ViaPetsController
           alert.showAndWait();
           return;
         }
-      }
+
 
       LocalDate newStartDate = null;
       MyDate myStartDate = null;
@@ -1608,13 +1597,25 @@ public class ViaPetsController
       {
         KennelReservation reservation = new KennelReservation(kennelPrice,
             reservationPet, reservationCustomer, myStartDate, myEndDate);
-        modelManager.addKennelReservation(reservation);
-        updateKennelBox();
-        updatePetBox();
-        reservationFieldPrice.clear();
-        startDate.setValue(null);
-        endDate.setValue(null);
-        System.out.println("reservation added");
+        try
+        {
+          modelManager.addKennelReservation(reservation);
+          updateKennelBox();
+          updatePetBox();
+          reservationFieldPrice.clear();
+          startDate.setValue(null);
+          endDate.setValue(null);
+          System.out.println("reservation added");
+        }
+        catch (IllegalArgumentException e)
+        {
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+          alert.setTitle("Invalid Date");
+          alert.setHeaderText(null);
+          alert.setContentText("Kennel is full during this period!");
+          alert.showAndWait();
+          return;
+        }
       }
     }
   }

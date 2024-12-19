@@ -10,43 +10,21 @@ import java.util.ArrayList;
  */
 public class KennelReservationList
 {
-  private int currentNumberOfReservations;
   private ArrayList<KennelReservation> kennelReservations;
 
   // Constructor
 
   /**
-   * Constructs a new KennelReservationList object with specified details including the maximum number of reservations.
-   *
-   * @param maxNumberOfReservations the maximum number of reservations
+   * Constructs a new KennelReservationList object
    */
-  public KennelReservationList(int maxNumberOfReservations)
+  public KennelReservationList()
   {
-    this.currentNumberOfReservations = 0;
-    this.kennelReservations = new ArrayList<KennelReservation>(
-        maxNumberOfReservations);
+    this.kennelReservations = new ArrayList<KennelReservation>();
   }
 
   // Methods
 
-  /**
-   * Adds a new reservation to the list.
-   *
-   * @param reservation the reservation object
-   */
-  public void addKennelReservation(KennelReservation reservation)
-  {
-    if (kennelReservations.size() < 10)
-    {
-      kennelReservations.add(reservation);
-      currentNumberOfReservations++;
-    }
-    else
-    {
-      System.out.println(
-          "Cannot add more reservations. Maximum capacity reached.");
-    }
-  }
+
 
   /**
    * Sets a reservation at a specific index.
@@ -111,7 +89,7 @@ public class KennelReservationList
   public String toString()
   {
     String str = "";
-    for (int i = 0; i < currentNumberOfReservations; i++)
+    for (int i = 0; i < kennelReservations.size(); i++)
     {
       str += kennelReservations.get(i) + "\n";
     }
@@ -131,15 +109,63 @@ public class KennelReservationList
 
     KennelReservationList other = (KennelReservationList) obj;
 
-    if (this.currentNumberOfReservations != other.currentNumberOfReservations)
+    if (this.kennelReservations.size() != other.kennelReservations.size())
       return false;
 
-    for (int i = 0; i < currentNumberOfReservations; i++)
+    for (int i = 0; i < kennelReservations.size(); i++)
     {
       if (!kennelReservations.get(i).equals(other.kennelReservations.get(i)))
         return false;
     }
     return true;
+  }
+
+  /**
+   * Checks if two reservations overlap.
+   * @param res1 the first reservation
+   * @param res2 the second reservation
+   * @return true if the reservations overlap, false otherwise
+   */
+  private boolean reservationsOverlap(KennelReservation res1, KennelReservation res2) {
+    MyDate start1 = res1.getStartDate();
+    MyDate end1 = res1.getEndDate();
+    MyDate start2 = res2.getStartDate();
+    MyDate end2 = res2.getEndDate();
+
+    return !(end1.compareTo(start2) < 0 || start1.compareTo(end2) > 0);
+  }
+
+  /**
+   * Checks if the reservation overlaps with any other reservation.
+   * @param res1 the reservation to check
+   * @return true if the reservation does not overlap with any other reservation, false otherwise
+   */
+  public boolean dateChecker(KennelReservation res1)
+  {
+
+    int overlappingReservations = 0;
+
+    for (KennelReservation existingReservation : kennelReservations) {
+      if (reservationsOverlap(res1, existingReservation)) {
+        overlappingReservations++;
+      }
+    }
+    return overlappingReservations < 10;
+  }
+  /**
+   * Adds a new reservation to the list.
+   * @param reservation the reservation object
+   */
+  public void addKennelReservation(KennelReservation reservation) {
+    if (reservation == null) {
+      throw new IllegalArgumentException("Reservation cannot be null");
+    }
+
+    if (dateChecker(reservation)) {
+      kennelReservations.add(reservation);
+    } else {
+      throw new IllegalArgumentException("Cannot add reservation. Overlapping reservations.");
+    }
   }
 }
 

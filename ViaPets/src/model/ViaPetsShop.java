@@ -19,7 +19,7 @@ public class ViaPetsShop
     * Constructor initializing the ViaPetsShop
     */
   public ViaPetsShop() {
-    this.kennelReservationList = new KennelReservationList(10);
+    this.kennelReservationList = new KennelReservationList();
     this.saleList = new SaleList();
     this.customerList = new CustomerList();
     this.petList = new PetList();

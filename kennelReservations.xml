@@ -2,121 +2,9 @@
 <KennelReservationList>
   <kennelReservations>
     <endDate>
-      <month>5</month>
-      <year>2025</year>
-      <day>5</day>
-    </endDate>
-    <price>100.0</price>
-    <pet>
-      <gender>Male</gender>
-      <color>Brown</color>
-      <species>Dog</species>
-      <price>0.0</price>
-      <name>Buddy</name>
-      <comment>Very energetic and playful</comment>
-      <type>Pet</type>
-      <age>2</age>
-    </pet>
-    <startDate>
-      <month>3</month>
-      <year>2025</year>
-      <day>5</day>
-    </startDate>
-    <customer>
-      <emailAddress>johndoe@email.com</emailAddress>
-      <phoneNumber>12345678</phoneNumber>
-      <name>John Doe</name>
-    </customer>
-  </kennelReservations>
-  <kennelReservations>
-    <endDate>
       <month>12</month>
       <year>2024</year>
-      <day>30</day>
-    </endDate>
-    <price>100.0</price>
-    <pet>
-      <gender>Female</gender>
-      <color>White</color>
-      <species>Cat</species>
-      <price>0.0</price>
-      <name>Whiskers</name>
-      <comment>Loves cuddling and napping</comment>
-      <type>Pet</type>
-      <age>3</age>
-    </pet>
-    <startDate>
-      <month>12</month>
-      <year>2024</year>
-      <day>9</day>
-    </startDate>
-    <customer>
-      <emailAddress>janesmith@email.com</emailAddress>
-      <phoneNumber>23456789</phoneNumber>
-      <name>Jane Smith</name>
-    </customer>
-  </kennelReservations>
-  <kennelReservations>
-    <endDate>
-      <month>4</month>
-      <year>2025</year>
-      <day>30</day>
-    </endDate>
-    <price>100.0</price>
-    <pet>
-      <gender>Male</gender>
-      <color>Grey</color>
-      <species>Rabbit</species>
-      <price>0.0</price>
-      <name>Thumper</name>
-      <comment>Curious and loves carrots</comment>
-      <type>Pet</type>
-      <age>1</age>
-    </pet>
-    <startDate>
-      <month>4</month>
-      <year>2025</year>
-      <day>12</day>
-    </startDate>
-    <customer>
-      <emailAddress>bobbrown@email.com</emailAddress>
-      <phoneNumber>45689123</phoneNumber>
-      <name>Bob Brown</name>
-    </customer>
-  </kennelReservations>
-  <kennelReservations>
-    <endDate>
-      <month>12</month>
-      <year>2024</year>
-      <day>30</day>
-    </endDate>
-    <price>100.0</price>
-    <pet>
-      <gender>Female</gender>
-      <color>Green</color>
-      <species>Parrot</species>
-      <price>0.0</price>
-      <name>Polly</name>
-      <comment>Likes to mimic sounds</comment>
-      <type>Pet</type>
-      <age>4</age>
-    </pet>
-    <startDate>
-      <month>11</month>
-      <year>2024</year>
-      <day>30</day>
-    </startDate>
-    <customer>
-      <emailAddress>charliew@email.com</emailAddress>
-      <phoneNumber>56790234</phoneNumber>
-      <name>Charlie White</name>
-    </customer>
-  </kennelReservations>
-  <kennelReservations>
-    <endDate>
-      <month>1</month>
-      <year>2025</year>
-      <day>4</day>
+      <day>20</day>
     </endDate>
     <price>700.0</price>
     <pet>
@@ -134,7 +22,7 @@
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>25</day>
+      <day>17</day>
     </startDate>
     <customer>
       <emailAddress>charliew@email.com</emailAddress>
@@ -144,60 +32,32 @@
   </kennelReservations>
   <kennelReservations>
     <endDate>
-      <month>1</month>
-      <year>2025</year>
-      <day>5</day>
-    </endDate>
-    <price>800.0</price>
-    <pet>
-      <gender>Female</gender>
-      <color>Brown</color>
-      <isAggressive>true</isAggressive>
-      <species>Rodent</species>
-      <price>0.0</price>
-      <name>Nibbles</name>
-      <comment>Likes to burrow</comment>
-      <type>Rodent</type>
-      <age>1</age>
-    </pet>
-    <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>31</day>
-    </startDate>
-    <customer>
-      <emailAddress>frankb@email.com</emailAddress>
-      <phoneNumber>89023567</phoneNumber>
-      <name>Frank Blue</name>
-    </customer>
-  </kennelReservations>
-  <kennelReservations>
-    <endDate>
-      <month>1</month>
-      <year>2025</year>
-      <day>5</day>
+      <day>20</day>
     </endDate>
-    <price>300.0</price>
+    <price>700.0</price>
     <pet>
       <gender>Male</gender>
-      <color>White</color>
-      <species>Bird</species>
+      <color>Gray</color>
+      <species>Cat</species>
       <price>0.0</price>
-      <name>Charlie</name>
-      <comment>Very vocal and playful</comment>
-      <preferredFood>Strawberries</preferredFood>
-      <type>Bird</type>
-      <age>2</age>
+      <name>Shadow</name>
+      <breeder>Good Breeder</breeder>
+      <comment>Independent and quiet</comment>
+      <type>Cat</type>
+      <age>4</age>
+      <breed>Maine Coon</breed>
     </pet>
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>30</day>
+      <day>17</day>
     </startDate>
     <customer>
-      <emailAddress>bobbrown@email.com</emailAddress>
-      <phoneNumber>45689123</phoneNumber>
-      <name>Bob Brown</name>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
     </customer>
   </kennelReservations>
   <kennelReservations>
@@ -206,22 +66,233 @@
       <year>2024</year>
       <day>20</day>
     </endDate>
-    <price>50.0</price>
+    <price>700.0</price>
     <pet>
       <gender>Male</gender>
-      <color>Yellow</color>
-      <species>Bird</species>
+      <color>Gray</color>
+      <species>Cat</species>
       <price>0.0</price>
-      <name>Sunny</name>
-      <comment>Sings melodious tunes</comment>
-      <preferredFood>Carrots</preferredFood>
-      <type>Bird</type>
-      <age>3</age>
+      <name>Shadow</name>
+      <breeder>Good Breeder</breeder>
+      <comment>Independent and quiet</comment>
+      <type>Cat</type>
+      <age>4</age>
+      <breed>Maine Coon</breed>
     </pet>
     <startDate>
       <month>12</month>
       <year>2024</year>
       <day>17</day>
+    </startDate>
+    <customer>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </endDate>
+    <price>700.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>Gray</color>
+      <species>Cat</species>
+      <price>0.0</price>
+      <name>Shadow</name>
+      <breeder>Good Breeder</breeder>
+      <comment>Independent and quiet</comment>
+      <type>Cat</type>
+      <age>4</age>
+      <breed>Maine Coon</breed>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>17</day>
+    </startDate>
+    <customer>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </endDate>
+    <price>700.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>Gray</color>
+      <species>Cat</species>
+      <price>0.0</price>
+      <name>Shadow</name>
+      <breeder>Good Breeder</breeder>
+      <comment>Independent and quiet</comment>
+      <type>Cat</type>
+      <age>4</age>
+      <breed>Maine Coon</breed>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>17</day>
+    </startDate>
+    <customer>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </endDate>
+    <price>700.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>Gray</color>
+      <species>Cat</species>
+      <price>0.0</price>
+      <name>Shadow</name>
+      <breeder>Good Breeder</breeder>
+      <comment>Independent and quiet</comment>
+      <type>Cat</type>
+      <age>4</age>
+      <breed>Maine Coon</breed>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>17</day>
+    </startDate>
+    <customer>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </endDate>
+    <price>700.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>Gray</color>
+      <species>Cat</species>
+      <price>0.0</price>
+      <name>Shadow</name>
+      <breeder>Good Breeder</breeder>
+      <comment>Independent and quiet</comment>
+      <type>Cat</type>
+      <age>4</age>
+      <breed>Maine Coon</breed>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>17</day>
+    </startDate>
+    <customer>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </endDate>
+    <price>700.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>Gray</color>
+      <species>Cat</species>
+      <price>0.0</price>
+      <name>Shadow</name>
+      <breeder>Good Breeder</breeder>
+      <comment>Independent and quiet</comment>
+      <type>Cat</type>
+      <age>4</age>
+      <breed>Maine Coon</breed>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>17</day>
+    </startDate>
+    <customer>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>20</day>
+    </endDate>
+    <price>700.0</price>
+    <pet>
+      <gender>Male</gender>
+      <color>Gray</color>
+      <species>Cat</species>
+      <price>0.0</price>
+      <name>Shadow</name>
+      <breeder>Good Breeder</breeder>
+      <comment>Independent and quiet</comment>
+      <type>Cat</type>
+      <age>4</age>
+      <breed>Maine Coon</breed>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>17</day>
+    </startDate>
+    <customer>
+      <emailAddress>charliew@email.com</emailAddress>
+      <phoneNumber>56790234</phoneNumber>
+      <name>Charlie White</name>
+    </customer>
+  </kennelReservations>
+  <kennelReservations>
+    <endDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>22</day>
+    </endDate>
+    <price>50.0</price>
+    <pet>
+      <gender>Turbo</gender>
+      <color>Brown</color>
+      <species>Dog</species>
+      <price>0.0</price>
+      <name>Turbo</name>
+      <breeder>Turbo</breeder>
+      <comment>Turbo</comment>
+      <type>Dog</type>
+      <age>5</age>
+      <breed>Turbo</breed>
+    </pet>
+    <startDate>
+      <month>12</month>
+      <year>2024</year>
+      <day>16</day>
     </startDate>
     <customer>
       <emailAddress>evab@email.com</emailAddress>
@@ -233,57 +304,56 @@
     <endDate>
       <month>12</month>
       <year>2024</year>
-      <day>20</day>
+      <day>29</day>
     </endDate>
     <price>50.0</price>
     <pet>
-      <gender>Female</gender>
-      <color>Golden</color>
+      <gender>Male</gender>
+      <color>Gray</color>
       <species>Various</species>
       <price>0.0</price>
-      <name>Squeaky</name>
-      <comment>Likes to run in a wheel</comment>
+      <name>Dusty</name>
+      <comment>Loves dust baths</comment>
       <type>Various</type>
-      <age>2</age>
+      <age>1</age>
     </pet>
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>18</day>
+      <day>27</day>
     </startDate>
     <customer>
-      <emailAddress>charliew@email.com</emailAddress>
-      <phoneNumber>56790234</phoneNumber>
-      <name>Charlie White</name>
+      <emailAddress>janesmith@email.com</emailAddress>
+      <phoneNumber>23456789</phoneNumber>
+      <name>Jane Smith</name>
     </customer>
   </kennelReservations>
   <kennelReservations>
     <endDate>
       <month>12</month>
       <year>2024</year>
-      <day>20</day>
+      <day>22</day>
     </endDate>
     <price>50.0</price>
     <pet>
       <gender>Female</gender>
-      <color>Golden</color>
-      <species>Various</species>
+      <color>White</color>
+      <species>Cat</species>
       <price>0.0</price>
-      <name>Squeaky</name>
-      <comment>Likes to run in a wheel</comment>
-      <type>Various</type>
-      <age>2</age>
+      <name>Whiskers</name>
+      <comment>Loves cuddling and napping</comment>
+      <type>Pet</type>
+      <age>3</age>
     </pet>
     <startDate>
       <month>12</month>
       <year>2024</year>
-      <day>18</day>
+      <day>21</day>
     </startDate>
     <customer>
-      <emailAddress>bobbrown@email.com</emailAddress>
-      <phoneNumber>45689123</phoneNumber>
-      <name>Bob Brown</name>
+      <emailAddress>evab@email.com</emailAddress>
+      <phoneNumber>78912456</phoneNumber>
+      <name>Eva Black</name>
     </customer>
   </kennelReservations>
-  <currentNumberOfReservations>13</currentNumberOfReservations>
 </KennelReservationList>

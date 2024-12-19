@@ -119,7 +119,7 @@ public class ViaPetsModelManager
     if (viaPetsShop != null)
     {
       KennelReservationList allKennelReservations = new KennelReservationList(
-          10);
+          );
       allKennelReservations = viaPetsShop.getKennelReservationList();
       return allKennelReservations;
     }

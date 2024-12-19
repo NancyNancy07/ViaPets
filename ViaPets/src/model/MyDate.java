@@ -26,6 +26,21 @@ public class MyDate
   }
 
   //Methods
+
+  /**
+   * Compares two dates to each other.
+   * @param other the other date to compare with
+   * @return the difference between the two dates
+   */
+  public int compareTo(MyDate other) {
+    if (year != other.year) {
+      return year - other.year;
+    } else if (month != other.month) {
+      return month - other.month;
+    } else {
+      return day - other.day;
+    }
+  }
   /**
    * Returns a string representation of the date.
    * @return a string representation of the date
@@ -59,5 +74,8 @@ public class MyDate
     MyDate other = (MyDate) obj;
     return day == other.day && month == other.month && year == other.year;
   }
+
+
+
 }
 

@@ -6,11 +6,22 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
+/**
+ * A class containing of PetTypeAdapter object.
+ * @version 1.0
+ * @author Nancy
+ */
 public class PetTypeAdapter extends TypeAdapter<Pet>
 {
 
   private static final String TYPE_FIELD = "type";
 
+  /**
+   * Writes a Pet object into a JsonWriter object.
+   * @param out the JsonWriter object
+   * @param pet the Pet object
+   * @throws IOException if an I/O error occurs
+   */
   @Override public void write(JsonWriter out, Pet pet) throws IOException
   {
     out.beginObject();
@@ -60,6 +71,12 @@ public class PetTypeAdapter extends TypeAdapter<Pet>
     out.endObject();
   }
 
+  /**
+   * Reads a JsonReader object into a Pet object.
+   * @param in the JsonReader object
+   * @return the Pet object
+   * @throws IOException if an I/O error occurs
+   */
   @Override public Pet read(JsonReader in) throws IOException
   {
     JsonObject jsonObject = parseJsonReader(in);
@@ -143,6 +160,12 @@ public class PetTypeAdapter extends TypeAdapter<Pet>
     return pet;
   }
 
+  /**
+   * Parses a JsonReader object into a JsonObject.
+   * @param in the JsonReader object
+   * @return the JsonObject
+   * @throws IOException if an I/O error occurs
+   */
   private JsonObject parseJsonReader(JsonReader in) throws IOException
   {
     JsonParser parser = new JsonParser(); // For backward compatibility
